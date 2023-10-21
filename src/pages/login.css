@@ -1,0 +1,15 @@
+.line-3, .line-3 * {
+    box-sizing: border-box;
+    }
+
+.line-3 {
+    border-style: solid;
+    border-color: #000000;
+    border-width: 2px 0 0 0;
+    margin-top: 20px;
+    width: 1157px;
+    height: 0px;
+    position: relative;
+    transform-origin: 0 0;
+    transform: rotate(-0.149deg) scale(1, 1);
+}
