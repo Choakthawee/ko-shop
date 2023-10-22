@@ -9,14 +9,15 @@
     padding-top: 20px;
     font-size: 72px;
     font-weight: bold;
-    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(246, 236, 120) 65%, rgb(239, 245, 71) 50%, rgb(225, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(127, 62, 62) 65%, rgb(137, 56, 40) 50%, rgb(255, 0, 0) 100%);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     background-clip: text;
     -webkit-background-clip: text;
     /* สำหรับเบราว์เซอร์ Safari */
     color: transparent;
-    -webkit-text-stroke: 1px transparent;
+    -webkit-text-stroke: 0.1px transparent;
     /* ใส่ stroke ขอบของตัวอักษรด้วยขอบสีดำ */
-    text-stroke: 1px transparent;
+    text-stroke: 0.1px transparent;
     /* ใส่ stroke ขอบของตัวอักษรด้วยขอบสีดำ */
     
 }
@@ -24,7 +25,8 @@
 .font-topup2 {
     text-align: center;
     font-size: 24px;
-    color: white;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     font-weight: bold;
 }
 
@@ -37,7 +39,8 @@
 }
 
 .box1 {
-    background-color: #2B2D42;
+    background-color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 30px;
     width: 40%;
     height: 70%;
@@ -56,7 +59,8 @@
 }
 
 .box2 {
-    background-color: #2B2D42;
+    background-color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 30px;
     width: 40%;
     height: 70%;
@@ -128,7 +132,6 @@
     .box1,
     .box2 {
         width: 100%;
-        background: #your_new_background_color;
         padding-bottom: 30px;
         /* เปลี่ยนพื้นหลัง .box1 และ .box2 เมื่อหน้าจอเล็กลง */
     }
