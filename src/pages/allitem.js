@@ -14,7 +14,7 @@ const AllItem = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <h1>สมัครสมาชิก</h1>
+      <h1>หมวดหมู่สินค้าทั้งหมด</h1>
     </div>
   );
 };

@@ -1,0 +1,24 @@
+.line-3, .line-3 * {
+    box-sizing: border-box;
+    }
+
+.line-3 {
+    border-style: solid;
+    border-color: #000000;
+    border-width: 2px 0 0 0;
+    margin-top: 20px;
+    width: 90%;
+    height: 0px;
+    position: relative;
+    transform-origin: 0 0;
+    transform: rotate(-0.149deg) scale(1, 1);
+}
+
+.registerbg {
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    border-radius:30px;
+    padding-left:40px;
+    padding-top:40px;
+}
