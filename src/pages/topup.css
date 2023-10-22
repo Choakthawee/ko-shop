@@ -1,10 +1,141 @@
-.background{
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 20px;
-    border:1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+.background {
+    background:transparent;
     width: 80%;
     height: 80%;
+}
+
+.font-topup {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 72px;
+    font-weight: bold;
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(246, 236, 120) 65%, rgb(239, 245, 71) 50%, rgb(225, 255, 0) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* สำหรับเบราว์เซอร์ Safari */
+    color: transparent;
+    -webkit-text-stroke: 1px transparent;
+    /* ใส่ stroke ขอบของตัวอักษรด้วยขอบสีดำ */
+    text-stroke: 1px transparent;
+    /* ใส่ stroke ขอบของตัวอักษรด้วยขอบสีดำ */
+    
+}
+
+.font-topup2 {
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+}
+
+.boxflex {
+    display: flex;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box1 {
+    background-color: #2B2D42;
+    border-radius: 30px;
+    width: 40%;
+    height: 70%;
+    border: 5px solid;
+    border-color: rgb(0, 38, 255);
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    /* เปิดใช้ Flexbox */
+    align-items: center;
+    /* จัดตำแหน่งแนวนอนให้อยู่ตรงกลาง */
+    flex-direction: column;
+
+
+}
+
+.box2 {
+    background-color: #2B2D42;
+    border-radius: 30px;
+    width: 40%;
+    height: 70%;
+    border: 5px solid;
+    border-color: rgb(255, 196, 0);
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    /* เปิดใช้ Flexbox */
+    align-items: center;
+    /* จัดตำแหน่งแนวนอนให้อยู่ตรงกลาง */
+    flex-direction: column;
+
+
+}
+
+.Topup-Name {
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: bold;
+
+}
+
+.Topup-tax {
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.Promptpay {
+    width: 180px;
+    height: 180px;
+    border: 5px solid #ffffff;
+    margin: 20px;
+    border-radius: 30px;
+}
+
+.Truemoney {
+    width: 180px;
+    height: 180px;
+    border: 5px solid rgb(255, 196, 0);
+    margin: 20px;
+    border-radius: 30px;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, black 50%, red 50%);
+    background-clip: text;
+    color: transparent;
+}
+
+@media (max-width: 768px) {
+    .font-topup {
+        font-size: 48px;
+        
+    }
+
+    .font-topup2 {
+        font-size: 16px;
+        margin-bottom: 80px;
+    }
+    .boxflex {
+        flex-direction: column; /* จัดเรียงแนวตั้งเมื่อหน้าจอเล็กลง */
+    }
+    .box1,
+    .box2 {
+        width: 100%;
+        background: #your_new_background_color;
+        padding-bottom: 30px;
+        /* เปลี่ยนพื้นหลัง .box1 และ .box2 เมื่อหน้าจอเล็กลง */
+    }
+
+    .Promptpay,
+    .Truemoney {
+        width: 140px;
+        height: 140px;
+    }
 }
