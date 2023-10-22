@@ -9,24 +9,19 @@
     padding-top: 20px;
     font-size: 72px;
     font-weight: bold;
-    background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(127, 62, 62) 65%, rgb(137, 56, 40) 50%, rgb(255, 0, 0) 100%);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom, rgb(248, 197, 153) 0%, rgb(240, 146, 75) 50%, rgb(255, 102, 0) 100%);
     background-clip: text;
-    -webkit-background-clip: text;
-    /* สำหรับเบราว์เซอร์ Safari */
+    -webkit-background-clip: text; /* สำหรับเบราวเซอร์ Safari */
     color: transparent;
-    -webkit-text-stroke: 0.1px transparent;
-    /* ใส่ stroke ขอบของตัวอักษรด้วยขอบสีดำ */
-    text-stroke: 0.1px transparent;
-    /* ใส่ stroke ขอบของตัวอักษรด้วยขอบสีดำ */
-    
+    -webkit-text-stroke: 1px transparent;
+    text-stroke: 1px transparent;
 }
 
 .font-topup2 {
     text-align: center;
     font-size: 24px;
-    color: black;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
     font-weight: bold;
 }
 
@@ -35,7 +30,8 @@
     height: 80%;
     justify-content: center;
     align-items: center;
-
+    
+    
 }
 
 .box1 {
@@ -45,7 +41,8 @@
     width: 40%;
     height: 70%;
     border: 5px solid;
-    border-color: rgb(0, 38, 255);
+    border-color: rgb(255, 94, 0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     margin-left: 10px;
     margin-top: 10px;
     margin-right: 10px;
@@ -65,7 +62,8 @@
     width: 40%;
     height: 70%;
     border: 5px solid;
-    border-color: rgb(255, 196, 0);
+    border-color: rgb(255, 94, 0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     margin-left: 10px;
     margin-top: 10px;
     margin-right: 10px;
@@ -80,34 +78,47 @@
 
 .Topup-Name {
     text-align: center;
-    color: white;
+    color: rgb(128, 128, 128);
     font-size: 28px;
     margin-bottom: 10px;
     font-weight: bold;
 
 }
+.Topup-Name-Truemoney {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.Topup-Name-Truemoney::before {
+    content: 'True';
+    color: red;
+}
+
+.Topup-Name-Truemoney::after {
+    content: 'Money';
+    color: orange;
+}
 
 .Topup-tax {
     text-align: center;
-    color: white;
+    color: rgb(255, 98, 0);
     font-size: 14px;
     font-weight: bold;
 }
 
-.Promptpay {
-    width: 180px;
-    height: 180px;
-    border: 5px solid #ffffff;
+.Qrcode  {
+    width:70%;
+    height: 50%;
     margin: 20px;
-    border-radius: 30px;
+    
 }
 
 .Truemoney {
-    width: 180px;
-    height: 180px;
-    border: 5px solid rgb(255, 196, 0);
+    width: 70%;
+    height: 50%;
     margin: 20px;
-    border-radius: 30px;
 }
 
 .gradient-text {
@@ -136,9 +147,22 @@
         /* เปลี่ยนพื้นหลัง .box1 และ .box2 เมื่อหน้าจอเล็กลง */
     }
 
-    .Promptpay,
-    .Truemoney {
+    .Promptpay{
         width: 140px;
         height: 140px;
     }
+    .Truemoney {
+        width: 250px;
+        height: 140px;
+    }
+}
+.box1, .box2 {
+    /* รายละเอียดของกล่องที่จะขยับเมื่อเอาเมาส์ไปชี้ */
+    transition: transform 0.2s;
+}
+
+.box1:hover, .box2:hover {
+    /* รายละเอียดเมื่อกล่องถูกเมาส์ชี้ */
+    transform: translateY(-10px); /* ขยับขึ้นข้างบน 10px */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5); /* เพิ่มเงาด้านล่างของกล่อง */
 }
