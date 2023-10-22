@@ -1,5 +1,6 @@
 import React from 'react';
 import background from "../images/bg.png";
+import './topup.css'
 
 const Topup = () => {
   return (
@@ -14,7 +15,10 @@ const Topup = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <h1>เติมเงิน</h1>
+      <div className='background'>
+        <h1>เลือกช่องทางการเติมเงิน</h1>
+
+      </div>
     </div>
   );
 };
