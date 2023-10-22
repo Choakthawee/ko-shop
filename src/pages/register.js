@@ -1,9 +1,8 @@
 import React from 'react';
 import background from "../images/bg.png";
-import './register.css'
+import './register.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserPlus,faBackward } from '@fortawesome/free-solid-svg-icons'; 
-
+import { faUserPlus, faBackward } from '@fortawesome/free-solid-svg-icons';
 
 const Register = () => {
   return (
@@ -19,12 +18,22 @@ const Register = () => {
       }}
     >
       <div className='registerbg'>
-        <h1 style={{fontSize:'50px',color:'#E63946'}}>สมัครสมาชิก</h1>
-        <div class="line-3" ></div>
-        <div>ป้อนinput</div>
-        <div style={{flexDirection:'row',justifyContent:'space-around'}}>
-          <button type="button" style={{backgroundColor:'#06D6A0',borderWidth:'0px',color:'white',borderRadius:'5px',width:'300px',height:'50px',fontSize:'20px'}}><FontAwesomeIcon icon={faUserPlus} style={{marginRight:5}}/>สมัครสมาชิก</button>
-          <button type="button" style={{backgroundColor:'#E63946',borderWidth:'0px',color:'white',borderRadius:'5px',width:'300px',height:'50px',fontSize:'20px'}}><FontAwesomeIcon icon={faBackward} style={{marginRight:5}}/>กลับสู่หน้าหลัก</button>
+        <h1 style={{ fontSize: '50px', color: '#E63946' }}>สมัครสมาชิก</h1>
+        <div className="line-3"></div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{ background: '#EF233C', borderRadius: '10px', display: 'inline-block', marginBottom: '10px', marginTop: '10px', color: 'white' }}>
+            <label htmlFor="username" style={{ color: 'white', fontSize: '24px' }}>USERNAME</label>
+            <input
+              id="username"
+              style={{ background: '#2B2D42', color: 'white', width: '300px', height: '50px', fontSize: '20px', borderWidth: '0px', borderTopRightRadius: '10px', borderBottomRightRadius: '10px', paddingLeft: '10px' }}
+              type="text"
+              placeholder="กรุณากรอก username"
+            />
+          </div>
+        </div>
+        <div style={{ flexDirection: 'row' }}>
+          <button type="button" style={{ backgroundColor: '#06D6A0', borderWidth: '0px', color: 'white', borderRadius: '5px', width: '300px', height: '50px', fontSize: '20px' }}><FontAwesomeIcon icon={faUserPlus} style={{ marginRight: 5 }} /> สมัครสมาชิก</button>
+          <button type="button" style={{ backgroundColor: '#E63946', borderWidth: '0px', color: 'white', borderRadius: '5px', width: '300px', height: '50px', fontSize: '20px' }}><FontAwesomeIcon icon={faBackward} style={{ marginRight: 5 }} /> กลับสู่หน้าหลัก</button>
         </div>
       </div>
     </div>
