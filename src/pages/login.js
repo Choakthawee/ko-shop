@@ -1,5 +1,4 @@
 import React from 'react';
-import background from "../images/bg.png";
 import './login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faUser ,faDoorOpen} from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +8,7 @@ const Register = () => {
   return (
     <div className='registerScreen'>
       <div className='registerbg'>
-        <h1 className='fontRegister'>เข้าสู่ระบบ</h1>
+        <h1 className='fontLogin'>เข้าสู่ระบบ</h1>
         <div className="line-3"></div>
         
         <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:'50px'}}>
