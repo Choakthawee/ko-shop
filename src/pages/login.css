@@ -1,15 +1,74 @@
-.line-3, .line-3 * {
-    box-sizing: border-box;
-    }
-
 .line-3 {
     border-style: solid;
     border-color: #000000;
     border-width: 2px 0 0 0;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 90%;
     height: 0px;
     position: relative;
     transform-origin: 0 0;
     transform: rotate(-0.149deg) scale(1, 1);
+    margin-bottom: 20px;
+}
+
+.fontRegister{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    color: #E63946;
+}
+
+.registerScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../images/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+form {
+    font-size: 24px;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+form .form-group {
+    margin-bottom: 20px;
+}
+
+form .form-control {
+    padding: 15px;
+    font-size: 18px;
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.registerbg {
+    background-image: url('../images/bglogin.png');
+    width: 80%;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+    .registerbg {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
 }

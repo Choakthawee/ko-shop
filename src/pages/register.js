@@ -14,35 +14,43 @@ const Register = () => {
         
         <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:'50px'}}>
           <Form>
-            <Form.Group>
+            <Form.Group style={{marginBottom:'10px'}}>
               <Form.Label>Username</Form.Label>
               <Form.Control
                 type='text'
                 name='username'
+                placeholder='กรุณากรอก username'
+                style={{borderRadius:'15px',borderWidth:'1px'}}
               />
             </Form.Group>
 
-            <Form.Group>
+            <Form.Group style={{marginBottom:'10px'}}>
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type='password'
                 name='password'
+                placeholder='กรุณากรอก password'
+                style={{borderRadius:'15px',borderWidth:'1px'}}
               />
             </Form.Group>
 
-            <Form.Group>
+            <Form.Group style={{marginBottom:'10px'}}>
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control
                 type='password'
                 name='confirmPassword'
+                placeholder='กรุณากรอก confirm password'
+                style={{borderRadius:'15px',borderWidth:'1px'}}
               />
             </Form.Group>
 
-            <Form.Group>
+            <Form.Group style={{marginBottom:'10px'}}>
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type='email'
                 name='email'
+                placeholder='กรุณากรอก email'
+                style={{borderRadius:'15px',borderWidth:'1px'}}
               />
             </Form.Group>
           </Form>
