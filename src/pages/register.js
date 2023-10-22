@@ -3,38 +3,61 @@ import background from "../images/bg.png";
 import './register.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faBackward } from '@fortawesome/free-solid-svg-icons';
+import { Form, Button } from 'react-bootstrap';
 
 const Register = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        backgroundImage: `url(${background})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
+    <div className='registerScreen'>
       <div className='registerbg'>
-        <h1 style={{ fontSize: '50px', color: '#E63946' }}>สมัครสมาชิก</h1>
+        <h1 className='fontRegister'>สมัครสมาชิก</h1>
         <div className="line-3"></div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <div style={{ background: '#EF233C', borderRadius: '10px', display: 'inline-block', marginBottom: '10px', marginTop: '10px', color: 'white' }}>
-            <label htmlFor="username" style={{ color: 'white', fontSize: '24px' }}>USERNAME</label>
-            <input
-              id="username"
-              style={{ background: '#2B2D42', color: 'white', width: '300px', height: '50px', fontSize: '20px', borderWidth: '0px', borderTopRightRadius: '10px', borderBottomRightRadius: '10px', paddingLeft: '10px' }}
-              type="text"
-              placeholder="กรุณากรอก username"
-            />
+        
+        <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:'50px'}}>
+          <Form>
+            <Form.Group>
+              <Form.Label>Username</Form.Label>
+              <Form.Control
+                type='text'
+                name='username'
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type='password'
+                name='password'
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <Form.Label>Confirm Password</Form.Label>
+              <Form.Control
+                type='password'
+                name='confirmPassword'
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type='email'
+                name='email'
+              />
+            </Form.Group>
+          </Form>
+        </div>
+
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2%' }}>
+            <Button className= "button" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginRight: '10%', borderWidth: '0' }}>
+              <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: 5 }} /> สมัครสมาชิก
+            </Button>
+            <Button className= "button" type="button" style={{ backgroundColor: '#E63946', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginBottom: '2%', borderWidth: '0' }}>
+              <FontAwesomeIcon icon={faBackward} style={{ marginRight: 5 }} /> กลับสู่หน้าหลัก
+            </Button>
           </div>
-        </div>
-        <div style={{ flexDirection: 'row' }}>
-          <button type="button" style={{ backgroundColor: '#06D6A0', borderWidth: '0px', color: 'white', borderRadius: '5px', width: '300px', height: '50px', fontSize: '20px' }}><FontAwesomeIcon icon={faUserPlus} style={{ marginRight: 5 }} /> สมัครสมาชิก</button>
-          <button type="button" style={{ backgroundColor: '#E63946', borderWidth: '0px', color: 'white', borderRadius: '5px', width: '300px', height: '50px', fontSize: '20px' }}><FontAwesomeIcon icon={faBackward} style={{ marginRight: 5 }} /> กลับสู่หน้าหลัก</button>
-        </div>
+
+        <div className="line-3"></div>
       </div>
     </div>
   );
