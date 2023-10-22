@@ -16,8 +16,18 @@ const Topup = () => {
       }}
     >
       <div className='background'>
-        <h1>เลือกช่องทางการเติมเงิน</h1>
+        <h1 className='font-topup'>เลือกช่องทางการเติมเงิน</h1>
+        <div className='boxflex'>
+          <div className='box1'>
+          <div className='box1'>
+              <img src="../images/icon-thaiqr.png" alt="promptpay" />
+          </div>
 
+          </div>
+          <div className='box2'>
+            true
+          </div>
+        </div>
       </div>
     </div>
   );

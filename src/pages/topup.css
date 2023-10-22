@@ -1,10 +1,51 @@
 .background{
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 20px;
-    border:1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    background-color: white;
+    border-radius: 30px;
     width: 80%;
     height: 80%;
+    border: 5px solid;
+    border-color:#0D1321;
+    
+}
+
+.font-topup{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 48px;
+    color: #E63946;
+}
+.boxflex{
+    display: flex;
+    border: black solid;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+}
+.box1{
+    background-color: #2B2D42;
+    border-radius: 30px;
+    width: 50%;
+    height: 80%;
+    border: 5px solid;
+    border-color:rgb(0, 38, 255);
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex; /* เปิดใช้ Flexbox */
+    justify-content: center; /* จัดตำแหน่งแนวนอนให้อยู่ตรงกลาง */
+    
+}
+.box2{
+    background-color: #2B2D42;
+    border-radius: 30px;
+    width: 50%;
+    height: 80%;
+    border: 5px solid;
+    border-color:rgb(255, 196, 0);
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex; /* เปิดใช้ Flexbox */
+    justify-content: center; /* จัดตำแหน่งแนวนอนให้อยู่ตรงกลาง */
+   
 }
