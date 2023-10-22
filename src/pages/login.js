@@ -6,7 +6,7 @@ import { Form, Button } from 'react-bootstrap';
 
 const Register = () => {
   return (
-    <div className='registerScreen'>
+    <div className='loginScreen'>
       <div className='registerbg'>
         <h1 className='fontLogin'>เข้าสู่ระบบ</h1>
         <div className="line-3"></div>
