@@ -30,15 +30,16 @@ const Qrcodepay = () => {
                 <div className='Formgroup'>
                   <p className='QrText'>กรอกจำนวนเงินที่ต้องการ</p>
                   <Form.Control
+                    className='boxmoney'
                     type='text'
                     name='เติมเงิน'
                     placeholder='จำนวนเงิน'
-                    style={{ borderRadius: '15px', borderWidth: '1px', textAlign: 'center' }}
+                    style={{ borderRadius: '15px', borderWidth: '1px', textAlign: 'center',justifyContent:'center'}}
                   />
                   <p className='QrText1'>มีค่าธรรมเนียม 1% ต่อรายการ</p>
 
                   <div>
-                    <Button className="paybutton" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '400px', height: '50px', fontSize: '20px', marginRight: '10%', borderWidth: '0' }}>
+                    <Button className="paybutton" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px',minWidth:"300px", height: '50px', fontSize: '20px',borderWidth: '0' }}>
                       <FontAwesomeIcon icon={faQrcode} /> สร้างคิวอาร์โค๊ด
                     </Button>
                   </div>
@@ -52,8 +53,8 @@ const Qrcodepay = () => {
             <div className='Qrscan'>
               <img src={QrcodePromptpay} alt="QrcodePromptpay " className='QrcodePromptpay ' />
             </div>
-            <div className='textmoneybox'>
-              <Button className="paybutton" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '400px', height: '50px', fontSize: '20px', marginRight: '10%', borderWidth: '0' ,marginLeft:'20%'}}>
+            <div className=''>
+              <Button className="paybutton" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '280px', height: '50px', fontSize: '20px', borderWidth: '0'}}>
                 <FontAwesomeIcon icon={faSquareCheck} /> ยืนยันการเติมเงิน
               </Button>
             </div>
