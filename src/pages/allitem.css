@@ -10,9 +10,20 @@
     position: relative; /* เพิ่มเพื่อกำหนดพิกัดและขนาดของ pseudo-element */
 }
 
+.font-suballitem {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    position: relative;
+    margin-bottom: 35px;
+}
+
 .allitemScreen {
     padding: 3rem;
-    height: 100vh;
+    height: 160vh;
     background-image: url('../images/bg.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -60,7 +71,7 @@
     flex-wrap: wrap; /* ให้กล่อง Wrap เมื่อเกิน 3 กล่อง */
     justify-content: center;
     align-items: center;
-    height: 90%;
+    height: 70%;
     width: auto;
     background-color: white;
     padding-left: 1rem;
