@@ -4,7 +4,8 @@ import './truemoney.css'
 import Truemoney from '../images/true-money.png';
 import { Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserPlus, faBackward } from '@fortawesome/free-solid-svg-icons';
+
+import { faUserPlus, faBackward,faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 const Truemoneypay = () => {
   return (
     <div
@@ -37,7 +38,7 @@ const Truemoneypay = () => {
               </div>
               <div >
                 <Button className="paybutton" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '500px', height: '50px', fontSize: '20px', marginRight: '10%', borderWidth: '0' }}>
-                  <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: 5 }} /> ยืนยันการเติมเงิน
+                  <FontAwesomeIcon icon={faSquareCheck} /> ยืนยันการเติมเงิน
                 </Button>
               </div>
             </Form.Group>
