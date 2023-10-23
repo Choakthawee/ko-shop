@@ -38,10 +38,10 @@
     align-items: center;
     /* จัดตำแหน่งแนวนอนให้อยู่ตรงกลาง */
     flex-direction: column;
+    justify-content: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 .TruemoenyImg{
-    margin-top: 10px;
     width: 30%;
     height: 30%;
 }
@@ -64,4 +64,5 @@
 }
 .paybutton{
     justify-content: center;
+    margin-top: 10px;
 }
