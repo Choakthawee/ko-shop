@@ -8,6 +8,8 @@ import Topup from './pages/topup';
 import Login from './pages/login';
 import Qrcodepay from './pages/qrcode';
 import Truemoneypay from './pages/truemoney';
+import Valorant from './pages-games/valorant';
+import Apex from './pages-games/apex';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path='/login' component={Login} />
         <Route path='/qrcode' component={Qrcodepay}/>
         <Route path='/truemoney' component={Truemoneypay}/>
+        <Route path='/valorant' component={Valorant} />
+        <Route path='/apex' component={Apex}/>
       </Switch>
     </Router>
   );

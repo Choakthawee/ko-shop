@@ -1,87 +1,110 @@
 .font-allitem {
-    margin: 20px;
-    font-size: 3rem;
-    font-weight: bold;
-    background: -webkit-linear-gradient(#d44300, #ff6900);
-    background-clip: text;
-    -webkit-background-clip: text; /* สำหรับเบราวเซอร์ Safari */
-    color: transparent;
-    -webkit-text-stroke: 1px transparent;
-    position: relative; /* เพิ่มเพื่อกำหนดพิกัดและขนาดของ pseudo-element */
+  margin: 20px;
+  font-size: 3rem;
+  font-weight: bold;
+  background: -webkit-linear-gradient(#d44300, #ff6900);
+  background-clip: text;
+  -webkit-background-clip: text; /* สำหรับเบราวเซอร์ Safari */
+  color: transparent;
+  -webkit-text-stroke: 1px transparent;
+  position: relative; /* เพิ่มเพื่อกำหนดพิกัดและขนาดของ pseudo-element */
 }
 
 .font-suballitem {
-    font-size: 2rem;
-    font-weight: bold;
-    color: black;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    background-clip: text;
-    -webkit-background-clip: text;
-    position: relative;
-    margin-bottom: 35px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  position: relative;
+  margin-bottom: 35px;
 }
 
 .allitemScreen {
-    padding: 3rem;
-    height: 160vh;
-    background-image: url('../images/bg.png');
-    background-size: cover;
-    background-repeat: no-repeat;
+  padding: 3rem;
+  height: 160vh;
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .boxallitem {
-    background-color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 30px;
-    width: 50%; /* ขนาดของแต่ละกล่องเป็น 33.33% ของความกว้าง */
-    height: 100%;
-    border: 5px solid;
-    border-color: rgb(255, 94, 0);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    margin-left: 5px;
-    margin-right: 5px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;
+  background-color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  width: 100%; /* ขนาดของแต่ละกล่องเป็น 33.33% ของความกว้าง */
+  height: 50%;
+  border: 5px solid;
+  border-color: rgb(255, 94, 0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .boxallitem:hover {
-    cursor: pointer;
-    transform: translateY(-5px);
-    transition: transform 0.4s ease;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transform: translateY(-5px);
+  transition: transform 0.4s ease;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .boxallitem img {
-    max-width: 100%; /* ไม่เกินความกว้างของกล่อง */
-    max-height: 100%; /* ไม่เกินความสูงของกล่อง */
+  max-width: 100%; /* ไม่เกินความกว้างของกล่อง */
+  max-height: 100%; /* ไม่เกินความสูงของกล่อง */
 }
 
 .boxallflex1 {
-    margin-top: 1rem;
-    display: flex;
-    height: 50%;
-    width: 100%;
-    justify-content: space-between;
+  margin-top: 1rem;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.boxallflex2 {
+  display: flex;
+  justify-content: space-between;
 }
 
 .my-container {
-    display: flex;
-    flex-wrap: wrap; /* ให้กล่อง Wrap เมื่อเกิน 3 กล่อง */
-    justify-content: center;
-    align-items: center;
-    height: 70%;
-    width: auto;
-    background-color: white;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    padding-bottom: 3rem;
+  display: flex;
+  flex-wrap: wrap; /* ให้กล่อง Wrap เมื่อเกิน 3 กล่อง */
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  width: auto;
+  background-color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
-.valorant{
-    width:100%;
-    height: 90%;
+.valorant {
+  width: 100%;
+  height: 100%;
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.font-allitem-mall {
+  padding-left: 1rem;
+  padding-top: 0.3rem;
+  font-weight: bold;
+  background-color: #ff6900;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 20px;
 }

@@ -6,7 +6,8 @@ import Qrcode from '../images/topup-qrcode.png'; // ตรงนี้คือ�
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import THcode from '../images/thai_qr_payment.png';
 import QrcodePromptpay from '../images/Qrcodepromtpay.png'
-import { faUserPlus, faBackward, faSquareCheck, faQrcode } from '@fortawesome/free-solid-svg-icons';
+import { faSquareCheck, faQrcode } from '@fortawesome/free-solid-svg-icons';
+
 const Qrcodepay = () => {
   return (
     <div

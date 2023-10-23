@@ -5,7 +5,7 @@ import Truemoney from '../images/true-money.png';
 import { Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { faUserPlus, faBackward,faSquareCheck } from '@fortawesome/free-solid-svg-icons';
+import {faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 const Truemoneypay = () => {
   return (
     <div
