@@ -3,6 +3,7 @@ import './login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus ,faDoorOpen} from '@fortawesome/free-solid-svg-icons';
 import { Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   return (
@@ -40,9 +41,13 @@ const Register = () => {
             <Button className= "button" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginRight: '10%', borderWidth: '0' }}>
               <FontAwesomeIcon icon={faDoorOpen} style={{ marginRight: 5 }} /> เข้าสู่ระบบ
             </Button>
-            <Button className= "button" type="button" style={{ backgroundColor: '#E63946', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginBottom: '4%', borderWidth: '0' }}>
-              <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: 5 }} /> สมัครสมาชิก
-            </Button>
+
+            <Link to="/register">
+              <Button className= "button" type="button" style={{ backgroundColor: '#E63946', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginBottom: '4%', borderWidth: '0' }}>
+                <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: 5 }} /> สมัครสมาชิก
+              </Button>
+            </Link>
+            
           </div>
 
         <div className="line-3"></div>

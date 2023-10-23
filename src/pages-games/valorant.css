@@ -1,6 +1,6 @@
 .valorantScreen {
     padding: 3rem;
-    height: 160vh;
+    height: 220vh;
     background-image: url('../images/bg.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -9,6 +9,18 @@
 .valorantContainer {
     background-color: white;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* รูปภาพจะเรียงในแถวละ 3 */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.checkboxValo {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding-right: 50px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -16,7 +28,7 @@
 .form-section__number{
     border: 4px solid #fff;
     border-radius: 50%;
-    margin: -10px 0;
+    margin: -15px 0;
     margin-left: 20px;
     position: absolute;
     font-family: NotoSans-Bold,sans-serif;
@@ -27,7 +39,7 @@
     text-align: center;
     -webkit-font-smoothing: subpixel-antialiased!important;
     -moz-osx-font-smoothing: grayscale!important;
-    background-color: #6242fc;
+    background-color: rgb(255, 138, 60);
     color: #fff;
 }
 
@@ -75,18 +87,31 @@
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
+    width: 30%; /* รูปภาพจะเป็น 33.33% ของความกว้างและมีระยะห่าง */
+    box-sizing: border-box;
 }
   
 .image-box img {
-    width: 200px;
+    width: 100%;
     height: auto;
 }
   
 .image-box p {
     margin: 10px 0;
 }
-
+  
 .image-box.clicked {
     background-color: #32de84;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .valorantContainer {
+        flex-direction: column; /* เมื่อหน้าจอย่อลงแล้วจะเรียงแถวละ 1 */
+        align-items: center;
+    }
+  
+    .image-box {
+        width: 100%; /* เปลี่ยนเป็น 100% ในรุปแบบเล็กลง */
+    }
 }

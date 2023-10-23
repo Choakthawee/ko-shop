@@ -25,17 +25,17 @@ const AllItem = () => {
               <img src={valorant} alt="valorant" className='valorant' />
             </Link>
 
-            <div className='boxallitem'>
+            <Link to="/roblox" className='boxallitem'>
               <img src={roblox} alt="roblox" className='valorant' />
-            </div>
+            </Link>
             
           </div>
 
           <div className='boxallflex2'>
 
-            <div className='boxallitem'>
+            <Link to="/rov" className='boxallitem'>
               <img src={rov} alt="rov" className='valorant' />
-            </div>
+            </Link>
 
             <Link to="/apex" className='boxallitem'>
               <img src={apex} alt="apex" className='valorant' />

@@ -10,6 +10,8 @@ import Qrcodepay from './pages/qrcode';
 import Truemoneypay from './pages/truemoney';
 import Valorant from './pages-games/valorant';
 import Apex from './pages-games/apex';
+import Rov from './pages-games/rov';
+import Roblox from './pages-games/roblox';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path='/truemoney' component={Truemoneypay}/>
         <Route path='/valorant' component={Valorant} />
         <Route path='/apex' component={Apex}/>
+        <Route path='/rov' component={Rov}/>
+        <Route path='/roblox' component={Roblox}/>
       </Switch>
     </Router>
   );

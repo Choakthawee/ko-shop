@@ -3,6 +3,7 @@ import './register.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faBackward } from '@fortawesome/free-solid-svg-icons';
 import { Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   return (
@@ -59,9 +60,13 @@ const Register = () => {
             <Button className= "button" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginRight: '10%', borderWidth: '0' }}>
               <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: 5 }} /> สมัครสมาชิก
             </Button>
-            <Button className= "button" type="button" style={{ backgroundColor: '#E63946', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginBottom: '2%', borderWidth: '0' }}>
-              <FontAwesomeIcon icon={faBackward} style={{ marginRight: 5 }} /> กลับสู่หน้าหลัก
-            </Button>
+
+            <Link to="/allitem">
+              <Button className= "button" type="button" style={{ backgroundColor: '#E63946', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginBottom: '2%', borderWidth: '0' }}>
+                <FontAwesomeIcon icon={faBackward} style={{ marginRight: 5 }} /> กลับสู่หน้าหลัก
+              </Button>
+            </Link>
+
           </div>
 
         <div className="line-3"></div>
