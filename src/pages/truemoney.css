@@ -41,9 +41,27 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 .TruemoenyImg{
+    margin-top: 10px;
     width: 30%;
     height: 30%;
 }
-.box-topup{
-
+.Wallet{
+    font-size: 18px;
+    text-align: center;
+    margin: 10px;
+}
+.Walletbox{
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+.fonttext{
+    padding: 5px;
+}
+.paybutton{
+    justify-content: center;
 }
