@@ -21,29 +21,26 @@ const Topup = () => {
         <h1 className='font-topup'>TOPUP CREDIT</h1>
         <h2 className='font-topup2'>เติมเงินเข้าบัญชี</h2>
         <div className='boxflex'>
-<<<<<<< HEAD
           <div className='box1'>
-            <img src={Qrcode } alt="Qrcode " className='Qrcode' />
-=======
-          <Link to="/qrcode" className="box1">
-            <img src={Qrcode} alt="Qrcode " className='Qrcode ' />
->>>>>>> 9d31e1bfe597a47e2df08afe5ece53d58d69db5e
-            <p className='Topup-Name'>
-              QR Code
-            </p>
-            <p className='Topup-tax'>
-              ค่าธรรมเนียม 1 %
-            </p>
-          </Link>
-          <Link to="/truemoney" className="box2">
-            <img src={Truemoney} alt="truemoney" className='Truemoney' />
-            <p className='Topup-Name-Truemoney'>
+            <Link to="/qrcode" className="box1">
+              <img src={Qrcode} alt="Qrcode " className='Qrcode ' />
+              <p className='Topup-Name'>
+                QR Code
+              </p>
+              <p className='Topup-tax'>
+                ค่าธรรมเนียม 1 %
+              </p>
+            </Link>
+            <Link to="/truemoney" className="box2">
+              <img src={Truemoney} alt="truemoney" className='Truemoney' />
+              <p className='Topup-Name-Truemoney'>
 
-            </p>
-            <p className='Topup-tax'>
-              ค่าธรรมเนียม 0 %
-            </p>
-          </Link>
+              </p>
+              <p className='Topup-tax'>
+                ค่าธรรมเนียม 0 %
+              </p>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
