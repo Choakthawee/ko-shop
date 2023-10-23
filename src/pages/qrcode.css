@@ -33,43 +33,60 @@
 .boxqr {
     margin-top: 50px;
     background: white;
-    width: 70%;
-    height: 80%;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 50px;
+    gap: 20px;
+    /* width: 70%; */
+    /* height: 80%; */
     border-radius: 30px;
-    display: flex;
     /* เปิดใช้ Flexbox */
     align-items: center;
     /* จัดตำแหน่งแนวนอนให้อยู่ตรงกลาง */
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     border: 5px solids;
+
+}
+
+.box-qrcode {
+    gap: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .QrText {
     font-size: 32px;
     text-align: center;
-    margin: 30px;
+
 }
 
 .QrText1 {
     font-size: 18px;
     text-align: center;
-    margin: 30px;
+
 }
 
 .boxpic {
     display: flex;
-    margin-top: 10px;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
-    padding-right: 10px;
-    justify-content: center;
+    /* width: 100%;
+    height: 100%; */
+    /* justify-content: center; */
     align-items: center;
+    gap: 20px;
+    /* min-width: 400px;
+    margin-right: 10%; */
 }
 
 .Formgroup {
-    margin-left: 10px;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .THcode {
@@ -80,6 +97,7 @@
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 30px;
+    min-width: 80%;
 
 }
 
@@ -87,6 +105,7 @@
     width: 60%;
     height: 60%;
     display: flex;
+    min-width: 80%;
     /* เปิดใช้ Flexbox */
     align-items: center;
     /* จัดตำแหน่งแนวนอนให้อยู่ตรงกลาง */
@@ -95,11 +114,6 @@
     margin-left: 5%;
 }
 
-.textmoneybox {
-    width: 100%;
-    height: 20%;
-    margin: 10px;
-}
 
 .QrcodePromptpay {
     width: 60%;
@@ -107,10 +121,16 @@
 
 }
 
+.boxmeoney {
+    width: 90%;
+}
+
 .paybutton {
+    align-items: center;
+    align-self: center;
     justify-content: center;
-    margin-top: 10px;
-    margin-left: 20px;
+    /* margin-top: 10px;
+    margin-left: 20px; */
     overflow: hidden;
     /* เพิ่ม overflow: hidden */
     transition: transform 0.2s;
@@ -120,6 +140,64 @@
 .paybutton:hover {
     transform: scale(1.1);
     /* เพิ่มขนาดของปุ่มเมื่อ hover */
+    align-items: center;
+    align-self: center;
+    justify-content: center;
 
 }
 
+@media (max-width: 768px) {
+    .backgroundqr {
+        width: 90%;
+        /* ปรับขนาดเมื่อหน้าจอย่อลง */
+    }
+
+    .qrtopup {
+        font-size: 40px;
+        /* ปรับขนาดตัวอักษรเมื่อหน้าจอย่อลง */
+    }
+
+    .qrtopup2 {
+        font-size: 18px;
+        /* ปรับขนาดตัวอักษรเมื่อหน้าจอย่อลง */
+    }
+
+    .boxmeoney {
+        width: 80%;
+    }
+
+    .boxqr {
+        width: 100%;
+        
+        /* ปรับขนาดเมื่อหน้าจอย่อลง */
+        grid-template-columns: 1fr;
+    }
+
+    .QrText,
+    .QrText1 {
+        font-size: 20px;
+        /* ปรับขนาดตัวอักษรเมื่อหน้าจอย่อลง */
+    }
+
+    .THcode {
+        width: 75%;
+        /* ปรับขนาดเมื่อหน้าจอย่อลง */
+    }
+
+    .Qrscan {
+        width: 90%;
+        /* ปรับขนาดเมื่อหน้าจอย่อลง */
+    }
+
+    .textmoneybox {
+        width: 90%;
+        /* ปรับขนาดเมื่อหน้าจอย่อลง */
+    }
+
+    .paybutton {
+        width: 50%;
+        align-items: center;
+        align-self: center;
+        justify-content: center;
+    }
+}
