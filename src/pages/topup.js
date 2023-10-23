@@ -21,7 +21,7 @@ const Topup = () => {
         <h2 className='font-topup2'>เติมเงินเข้าบัญชี</h2>
         <div className='boxflex'>
           <div className='box1'>
-            <img src={Qrcode } alt="Qrcode " className='Qrcode ' />
+            <img src={Qrcode } alt="Qrcode " className='Qrcode' />
             <p className='Topup-Name'>
               QR Code
             </p>
