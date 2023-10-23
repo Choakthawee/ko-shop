@@ -31,7 +31,7 @@ const Truemoneypay = () => {
                 type='text'
                 name='เติมเงิน'
                 placeholder='กรุณากรอก URL'
-                style={{ borderRadius: '15px', borderWidth: '1px' }}
+                style={{ borderRadius: '15px', borderWidth: '1px' ,textAlign:'center'}}
               />
               <div className='Walletbox'>
                 <div className='fonttext'>กรุณากรอกลิ้งซองของขวัญ</div>

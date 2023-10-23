@@ -29,13 +29,72 @@
 .boxqr{
     margin-top: 50px;
     background: white;
-    width:80%;
+    width:70%;
     height: 80%;
     border-radius: 30px;
     display: flex;
     /* เปิดใช้ Flexbox */
     align-items: center;
     /* จัดตำแหน่งแนวนอนให้อยู่ตรงกลาง */
-    flex-direction: column;
+    flex-direction: row;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border: 5px solids;
+}
+.QrText{
+    font-size: 32px;
+    text-align: center;
+    margin: 30px;
+}
+.QrText1{
+    font-size: 18px;
+    text-align: center;
+    margin: 30px;
+}
+.boxpic{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding-right: 10px;
+    justify-content: center;
+}
+.Formgroup{
+    margin-left: 10px;
+}
+.THcode{
+    width:  100%;
+    height: 30%;
+    margin: 10px;
+    padding-right: 10px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 30px;
+    
+}
+.Qrscan{
+    width: 100%;
+    height: 70%;
+    margin: 10px;
+    display: flex;
+    /* เปิดใช้ Flexbox */
+    align-items: center;
+    /* จัดตำแหน่งแนวนอนให้อยู่ตรงกลาง */
+    flex-direction: row;
+    justify-content: center;
+}
+.textmoneybox{
+    width: 100%;
+    height: 20%;    
+    margin: 10px;
+}
+.QrcodePromptpay{
+    width: 60%;
+    height: 90%;
+    
+}
+.truebutton{
+    justify-content: center;
+    margin-top: 10px;
 }
