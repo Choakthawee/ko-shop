@@ -35,7 +35,7 @@ const Topup = () => {
               
             </p>
             <p className='Topup-tax'>
-              ค่าธรรมเนียม 20 %
+              ค่าธรรมเนียม 0 %
             </p>
           </div>
         </div>
