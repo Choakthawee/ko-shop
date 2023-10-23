@@ -47,10 +47,10 @@
 }
 
 .boxallitem:hover {
-  cursor: pointer;
-  transform: translateY(-5px);
+  cursor: pointer !important;
+  transform: translateY(-5px) !important;
   transition: transform 0.4s ease;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5) !important;
 }
 
 .boxallitem img {

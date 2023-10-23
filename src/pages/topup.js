@@ -18,10 +18,10 @@ const Topup = () => {
       }}
     >
       <div className='background'>
-        <h1 className='font-topup'>TOPUP CREDIT</h1>
-        <h2 className='font-topup2'>เติมเงินเข้าบัญชี</h2>
+        <h1 className='font-topup' data-aos = "fade-up" data-aos-delay = "0">TOPUP CREDIT</h1>
+        <h2 className='font-topup2' data-aos = "fade-up" data-aos-delay = "50">เติมเงินเข้าบัญชี</h2>
         <div className='boxflex'>
-          <Link to="/qrcode" className="box1">
+          <Link to="/qrcode" className="box1" data-aos = "fade-up" data-aos-delay = "100" data-aos-once="true">
             <img src={Qrcode } alt="Qrcode " className='Qrcode ' />
             <p className='Topup-Name'>
               QR Code
@@ -30,7 +30,7 @@ const Topup = () => {
               ค่าธรรมเนียม 1 %
             </p>
           </Link>
-          <Link to="truemoney" className="box2">
+          <Link to="/truemoney" className="box2" data-aos = "fade-up" data-aos-delay = "150" data-aos-once="true">
             <img src={Truemoney} alt="truemoney" className='Truemoney' />
             <p className='Topup-Name-Truemoney'>
               

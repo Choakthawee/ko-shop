@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Register = () => {
   return (
     <div className='registerScreen'>
-      <div className='registerbg'>
+      <div className='registerbg' data-aos = "fade-up" data-aos-delay = "0">
         <h1 className='fontRegister'>สมัครสมาชิก</h1>
         <div className="line-3"></div>
         

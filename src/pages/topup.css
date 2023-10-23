@@ -149,16 +149,15 @@
 }
 
 .box1, .box2 {
-    /* รายละเอียดของกล่องที่จะขยับเมื่อเอาเมาส์ไปชี้ */
-    transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .box1:hover, .box2:hover {
     /* รายละเอียดเมื่อกล่องถูกเมาส์ชี้ */
-    transform: translateY(-10px); /* ขยับขึ้นข้างบน 10px */
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5); /* เพิ่มเงาด้านล่างของกล่อง */
+    transform: translateY(-10px) !important;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5) !important;
 }
-.box1,
-.box2 {
+
+.box1,.box2 {
   text-decoration: none;
 }

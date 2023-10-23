@@ -1,6 +1,6 @@
 .valorantScreen {
     padding: 3rem;
-    height: 220vh;
+    height: 190vh;
     background-image: url('../images/bg.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -39,7 +39,7 @@
     text-align: center;
     -webkit-font-smoothing: subpixel-antialiased!important;
     -moz-osx-font-smoothing: grayscale!important;
-    background-color: rgb(255, 138, 60);
+    background-color: rgb(234, 121, 46);
     color: #fff;
 }
 

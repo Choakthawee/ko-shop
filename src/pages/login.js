@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Register = () => {
   return (
     <div className='loginScreen'>
-      <div className='loginbg'>
+      <div className='loginbg' data-aos = "fade-up" data-aos-delay = "0">
         <h1 className='fontLogin'>เข้าสู่ระบบ</h1>
         <div className="line-3"></div>
         
