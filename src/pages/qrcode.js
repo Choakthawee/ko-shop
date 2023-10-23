@@ -6,7 +6,7 @@ import Qrcode from '../images/topup-qrcode.png'; // ตรงนี้คือ�
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import THcode from '../images/thai_qr_payment.png';
 import QrcodePromptpay from '../images/Qrcodepromtpay.png'
-import { faUserPlus, faBackward, faSquareCheck ,faQrcode } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus, faBackward, faSquareCheck, faQrcode } from '@fortawesome/free-solid-svg-icons';
 const Qrcodepay = () => {
   return (
     <div
@@ -37,8 +37,8 @@ const Qrcodepay = () => {
                   />
                   <p className='QrText1'>มีค่าธรรมเนียม 1% ต่อรายการ</p>
 
-                  <div >
-                    <Button className="truebutton" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '400px', height: '50px', fontSize: '20px', marginRight: '10%', borderWidth: '0' }}>
+                  <div>
+                    <Button className="paybutton" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '400px', height: '50px', fontSize: '20px', marginRight: '10%', borderWidth: '0' }}>
                       <FontAwesomeIcon icon={faQrcode} /> สร้างคิวอาร์โค๊ด
                     </Button>
                   </div>
@@ -53,7 +53,7 @@ const Qrcodepay = () => {
               <img src={QrcodePromptpay} alt="QrcodePromptpay " className='QrcodePromptpay ' />
             </div>
             <div className='textmoneybox'>
-              <Button className="truebutton" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '350px', height: '50px', fontSize: '20px', marginRight: '10%', borderWidth: '0', marginLeft: '5%' }}>
+              <Button className="paybutton" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '400px', height: '50px', fontSize: '20px', marginRight: '10%', borderWidth: '0' ,marginLeft:'20%'}}>
                 <FontAwesomeIcon icon={faSquareCheck} /> ยืนยันการเติมเงิน
               </Button>
             </div>

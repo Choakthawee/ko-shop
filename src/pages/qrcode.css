@@ -1,5 +1,5 @@
 .backgroundqr {
-    background:transparent;
+    background: transparent;
     width: 80%;
     height: 80%;
     display: flex;
@@ -8,28 +8,32 @@
     align-items: center;
     flex-direction: column;
 }
-.qrtopup{
+
+.qrtopup {
     text-align: center;
     padding-top: 20px;
     font-size: 72px;
     font-weight: bold;
     background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(135, 81, 40) 50%, rgb(255, 102, 0) 100%);
     background-clip: text;
-    -webkit-background-clip: text; /* สำหรับเบราวเซอร์ Safari */
+    -webkit-background-clip: text;
+    /* สำหรับเบราวเซอร์ Safari */
     color: transparent;
     -webkit-text-stroke: 1px transparent;
 }
-.qrtopup2{
+
+.qrtopup2 {
     text-align: center;
     font-size: 24px;
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
     font-weight: bold;
 }
-.boxqr{
+
+.boxqr {
     margin-top: 50px;
     background: white;
-    width:70%;
+    width: 70%;
     height: 80%;
     border-radius: 30px;
     display: flex;
@@ -40,17 +44,20 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     border: 5px solids;
 }
-.QrText{
+
+.QrText {
     font-size: 32px;
     text-align: center;
     margin: 30px;
 }
-.QrText1{
+
+.QrText1 {
     font-size: 18px;
     text-align: center;
     margin: 30px;
 }
-.boxpic{
+
+.boxpic {
     display: flex;
     margin-top: 10px;
     flex-direction: column;
@@ -58,43 +65,61 @@
     height: 100%;
     padding-right: 10px;
     justify-content: center;
+    align-items: center;
 }
-.Formgroup{
+
+.Formgroup {
     margin-left: 10px;
 }
-.THcode{
-    width:  100%;
+
+.THcode {
+    width: 66%;
     height: 30%;
     margin: 10px;
-    padding-right: 10px;
     border-top-right-radius: 30px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 30px;
-    
+
 }
-.Qrscan{
-    width: 100%;
-    height: 70%;
-    margin: 10px;
+
+.Qrscan {
+    width: 60%;
+    height: 60%;
     display: flex;
     /* เปิดใช้ Flexbox */
     align-items: center;
     /* จัดตำแหน่งแนวนอนให้อยู่ตรงกลาง */
     flex-direction: row;
     justify-content: center;
+    margin-left: 5%;
 }
-.textmoneybox{
+
+.textmoneybox {
     width: 100%;
-    height: 20%;    
+    height: 20%;
     margin: 10px;
 }
-.QrcodePromptpay{
+
+.QrcodePromptpay {
     width: 60%;
     height: 90%;
-    
+
 }
-.truebutton{
+
+.paybutton {
     justify-content: center;
     margin-top: 10px;
+    margin-left: 20px;
+    overflow: hidden;
+    /* เพิ่ม overflow: hidden */
+    transition: transform 0.2s;
+    /* เพิ่มการเปลี่ยนขนาดเมื่อ hover */
 }
+
+.paybutton:hover {
+    transform: scale(1.1);
+    /* เพิ่มขนาดของปุ่มเมื่อ hover */
+
+}
+

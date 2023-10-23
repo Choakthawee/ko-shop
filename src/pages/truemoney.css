@@ -62,7 +62,15 @@
 .fonttext{
     padding: 5px;
 }
-.paybutton{
+.truebutton{
     justify-content: center;
     margin-top: 10px;
+    overflow: hidden;
+    /* เพิ่ม overflow: hidden */
+    transition: transform 0.2s;
+    /* เพิ่มการเปลี่ยนขนาดเมื่อ hover */
+}
+.truebutton:hover{
+    transform: scale(1.1);
+    /* เพิ่มขนาดของปุ่มเมื่อ hover */
 }
