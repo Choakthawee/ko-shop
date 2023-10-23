@@ -9,11 +9,19 @@
     padding-top: 20px;
     font-size: 72px;
     font-weight: bold;
+<<<<<<< HEAD
     background: -webkit-linear-gradient(#d44300,#ff6900);
+=======
+    background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(135, 81, 40) 50%, rgb(255, 102, 0) 100%);
+>>>>>>> 9d31e1bfe597a47e2df08afe5ece53d58d69db5e
     background-clip: text;
     -webkit-background-clip: text; /* สำหรับเบราวเซอร์ Safari */
     color: transparent;
     -webkit-text-stroke: 1px transparent;
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 9d31e1bfe597a47e2df08afe5ece53d58d69db5e
 }
 
 .font-topup2 {
@@ -158,4 +166,8 @@
     /* รายละเอียดเมื่อกล่องถูกเมาส์ชี้ */
     transform: translateY(-10px); /* ขยับขึ้นข้างบน 10px */
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5); /* เพิ่มเงาด้านล่างของกล่อง */
+}
+.box1,
+.box2 {
+  text-decoration: none;
 }

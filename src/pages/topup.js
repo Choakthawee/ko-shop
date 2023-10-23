@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import background from "../images/bg.png";
 import './topup.css'
 import Qrcode from '../images/topup-qrcode.png'; // ตรงนี้คือการ import รูปภาพ
@@ -20,24 +21,29 @@ const Topup = () => {
         <h1 className='font-topup'>TOPUP CREDIT</h1>
         <h2 className='font-topup2'>เติมเงินเข้าบัญชี</h2>
         <div className='boxflex'>
+<<<<<<< HEAD
           <div className='box1'>
             <img src={Qrcode } alt="Qrcode " className='Qrcode' />
+=======
+          <Link to="/qrcode" className="box1">
+            <img src={Qrcode} alt="Qrcode " className='Qrcode ' />
+>>>>>>> 9d31e1bfe597a47e2df08afe5ece53d58d69db5e
             <p className='Topup-Name'>
               QR Code
             </p>
             <p className='Topup-tax'>
               ค่าธรรมเนียม 1 %
             </p>
-          </div>
-          <div className='box2'>
+          </Link>
+          <Link to="/truemoney" className="box2">
             <img src={Truemoney} alt="truemoney" className='Truemoney' />
             <p className='Topup-Name-Truemoney'>
-              
+
             </p>
             <p className='Topup-tax'>
               ค่าธรรมเนียม 20 %
             </p>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

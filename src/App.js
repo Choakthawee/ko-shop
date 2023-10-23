@@ -6,6 +6,8 @@ import Register from './pages/register';
 import Allitem from './pages/allitem';
 import Topup from './pages/topup';
 import Login from './pages/login';
+import Qrcodepay from './pages/qrcode';
+import Truemoneypay from './pages/truemoney';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path='/topup' component={Topup} />
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />
+        <Route path='/qrcode' component={Qrcodepay}/>
+        <Route path='/truemoney' component={Truemoneypay}/>
       </Switch>
     </Router>
   );
