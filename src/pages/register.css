@@ -50,22 +50,22 @@ form .form-control {
 }
 
 .registerbg {
-    background-color: #ffffff;
+    background-image: url('../images/bglogin.png');
     width: 80%;
     border-radius: 30px;
     padding: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
 
-.button:hover {
-    cursor: pointer;
-    transform: translateY(-10px);
-    transition: transform 0.3s ease;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
-}
-
 .button {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (max-width: 768px) {

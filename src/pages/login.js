@@ -1,18 +1,19 @@
 import React from 'react';
 import './login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserPlus, faUser ,faDoorOpen} from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus ,faDoorOpen} from '@fortawesome/free-solid-svg-icons';
 import { Form, Button } from 'react-bootstrap';
 
 const Register = () => {
   return (
     <div className='loginScreen'>
-      <div className='registerbg'>
+      <div className='loginbg'>
         <h1 className='fontLogin'>เข้าสู่ระบบ</h1>
         <div className="line-3"></div>
         
         <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:'50px'}}>
           <Form>
+            
             <Form.Group style={{marginBottom:'10px'}}>
               <Form.Label>Username</Form.Label>
               <Form.Control

@@ -1,5 +1,4 @@
 import React from 'react';
-import background from "../images/bg.png";
 import './register.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faBackward } from '@fortawesome/free-solid-svg-icons';

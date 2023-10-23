@@ -28,6 +28,7 @@
 }
 
 form {
+    font-weight: bold;
     font-size: 24px;
     width: 100%;
     max-width: 500px;
@@ -49,7 +50,7 @@ form .form-control {
     justify-content: space-between;
 }
 
-.registerbg {
+.loginbg {
     background-image: url('../images/bglogin.png');
     width: 80%;
     border-radius: 30px;
