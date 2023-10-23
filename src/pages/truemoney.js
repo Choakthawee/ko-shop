@@ -36,8 +36,8 @@ const Truemoneypay = () => {
               <div className='Walletbox'>
                 <div className='fonttext'>กรุณากรอกลิ้งซองของขวัญ</div>
               </div>
-              <div >
-                <Button className="truebutton" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '500px', height: '50px', fontSize: '20px', marginRight: '10%', borderWidth: '0' }}>
+              <div className='setbutton'>
+                <Button className="truebutton" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', height: '50px', fontSize: '20px',  borderWidth: '0' }}>
                   <FontAwesomeIcon icon={faSquareCheck} /> ยืนยันการเติมเงิน
                 </Button>
               </div>
