@@ -19,16 +19,16 @@ function App() {
       <Navbar />
       <Switch>
         <Route path='/' exact component={Allitem} />
-        <Route path='/allitem' component={Allitem} />
-        <Route path='/topup' component={Topup} />
-        <Route path='/register' component={Register} />
-        <Route path='/login' component={Login} />
-        <Route path='/qrcode' component={Qrcodepay}/>
-        <Route path='/truemoney' component={Truemoneypay}/>
-        <Route path='/valorant' component={Valorant} />
-        <Route path='/apex' component={Apex}/>
-        <Route path='/rov' component={Rov}/>
-        <Route path='/roblox' component={Roblox}/>
+        <Route path='/allitem' exact component={Allitem} />
+        <Route path='/topup' exact component={Topup} />
+        <Route path='/register' exact component={Register} />
+        <Route path='/login' exact component={Login} />
+        <Route path='/qrcode' exact component={Qrcodepay}/>
+        <Route path='/truemoney' exact component={Truemoneypay}/>
+        <Route path='/valorant' exact component={Valorant} />
+        <Route path='/apex' exact component={Apex}/>
+        <Route path='/rov' exact component={Rov}/>
+        <Route path='/roblox' exact component={Roblox}/>
       </Switch>
     </Router>
   );
