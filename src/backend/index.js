@@ -40,7 +40,7 @@ db.connect(err => {
 
 
 // เริ่มต้นเซิร์ฟเวอร์ Express
-const port =process.env.port || 3001;
+const port =process.env.port || 3000;
 app.listen(port,function(){
   console.log('เซิร์ฟเวอร์ Express กำลังทำงานที่พอร์ต ' , port);
 });
