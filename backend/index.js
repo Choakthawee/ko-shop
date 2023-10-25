@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser =require('body-parser');
-var mysql = require('mysql');
+const mysql = require('mysql');
 
 const app = express();
 app.use(bodyParser.json());
@@ -26,9 +26,7 @@ const db = mysql.createConnection({
   password: '',
   database: 'ko-shop'
 });
-con.connect(function(err){
-  if(err)throw err;
-});
+
 // เชื่อมต่อกับ MySQL
 db.connect(err => {
   if (err) {
@@ -40,7 +38,7 @@ db.connect(err => {
 
 
 // เริ่มต้นเซิร์ฟเวอร์ Express
-const port =process.env.port || 3000;
+const port = 3001;
 app.listen(port,function(){
   console.log('เซิร์ฟเวอร์ Express กำลังทำงานที่พอร์ต ' , port);
 });
