@@ -22,13 +22,13 @@ const Qrcodepay = () => {
       }}
     >
       <div className='backgroundqr'>
-        <h1 className='qrtopup'>QR-CODE</h1>
-        <h2 className='qrtopup2'>เติมเงินผ่านคิวอาร์โค๊ด</h2>
+        <h1 className='qrtopup' data-aos = 'fade-up' data-aos-delay = '0' >QR-CODE</h1>
+        <h2 className='qrtopup2'data-aos = 'fade-up' data-aos-delay = '50' >เติมเงินผ่านคิวอาร์โค๊ด</h2>
         <div className='boxqr'>
           <div className='box-qrcode'>
             <Form>
               <Form.Group>
-                <div className='Formgroup'>
+                <div className='Formgroup' data-aos = 'fade-up' data-aos-delay = '100'>
                   <p className='QrText'>กรอกจำนวนเงินที่ต้องการ</p>
                   <Form.Control
                     className='boxmoney'
@@ -49,7 +49,7 @@ const Qrcodepay = () => {
             </Form>
 
           </div>
-          <div className='boxpic'>
+          <div className='boxpic' data-aos = 'fade-up' data-aos-delay = '150'>
             <img src={THcode} alt="THcode " className='THcode ' />
             <div className='Qrscan'>
               <img src={QrcodePromptpay} alt="QrcodePromptpay " className='QrcodePromptpay ' />

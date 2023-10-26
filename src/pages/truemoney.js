@@ -20,9 +20,9 @@ const Truemoneypay = () => {
       }}
     >
       <div className='backgroundpay'>
-        <h1 className='topup'>TRUEMONEY</h1>
-        <h2 className='topup2'>บัตรเงินสดทรูมันนี่</h2>
-        <div className='boxtext'>
+        <h1 className='topup' data-aos = 'fade-up' data-aos-delay = '0'>TRUEMONEY</h1>
+        <h2 className='topup2' data-aos = 'fade-up' data-aos-delay = '50'>บัตรเงินสดทรูมันนี่</h2>
+        <div className='boxtext' data-aos = 'fade-up' data-aos-delay = '100'>
           <img src={Truemoney} alt="truemoney" className='TruemoenyImg' />
           <Form>
             <Form.Group>

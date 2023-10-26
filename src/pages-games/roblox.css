@@ -37,12 +37,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%; /* รูปภาพจะเป็น 33.33% ของความกว้างและมีระยะห่าง */
+    width: 40%; /* รูปภาพจะเป็น 33.33% ของความกว้างและมีระยะห่าง */
 }
 
 .show-robuxnow {
     background-color: #5E129B;
-    width: 50%;
+    width: 30%;
+    height: 24%;
     align-items: center;
     justify-content: center;
     align-self: center;
@@ -53,17 +54,6 @@
     border: 5px solid;
     border-color: white;
     overflow: hidden;
-}
-
-[data-aos="fade-up"] {
-    transform: translateY(20px);
-    opacity: 0;
-    transition: transform 0.3s, opacity 0.1s;
-}
-  
-[data-aos="fade-up"].aos-animate {
-    transform: translateY(0);
-    opacity: 1;
 }
 
 .font-robux{
