@@ -215,13 +215,13 @@
     margin-top: 10px;
 }
 
-.button:hover {
+.button-roblox:hover {
     cursor: pointer;
     transform: translateY(-3px);
     transition: transform 0.3s ease;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
-.button {
+.button-roblox {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
