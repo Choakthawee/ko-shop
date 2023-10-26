@@ -63,7 +63,7 @@ form .form-control {
 
 .button:hover {
     cursor: pointer;
-    transform: translateY(-5px);
+    transform: translateY(-3px)!important;
     transition: transform 0.3s ease;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 }
