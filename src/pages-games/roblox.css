@@ -1,6 +1,6 @@
 .robloxScreen {
     padding: 3rem;
-    height: 160vh;
+    height: auto;
     background-image: url('../images/bg.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -54,6 +54,7 @@
     border: 5px solid;
     border-color: white;
     overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
 
 .font-robux{
@@ -71,4 +72,156 @@
     font-size: 30px;
     margin-bottom: 10px;
     font-weight: bold;
+}
+
+.divtext-roblox{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.div-input-roblox1 {
+    background-color: white;
+    height: 100%;
+    width: auto;
+    margin-right: 2rem;
+    color: black;
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color:  #5E129B;
+    padding: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(158, 86, 220, 0.9)
+}
+
+.div-input-roblox2 {
+    background-color: black;
+    height: 100%;
+    width: 45%;
+    margin-right: 2rem;
+    color: white;
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color:  #5E129B;
+    padding: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(158, 86, 220, 0.9);
+    padding: 2rem
+}
+
+.input-roblox1{
+    border-color:  #5E129B;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 15px;
+    width: 60%;
+    padding-left: 10px;
+    margin-top: 1%;
+    border-width: 2px;
+    height: 50px;
+    background-color: #fff0dd;
+    box-shadow: 0 0 10px rgba(158, 86, 220, 0.9)
+}
+
+.input-roblox2{
+    border-color:  #5E129B;
+    border-style: solid;
+    border-width: 4px;
+    width: 100%;
+    padding-left: 10px;
+    margin-top: 1%;
+    border-width: 2px;
+    height: 50px;
+    background-color: #fff0dd;
+}
+
+.info-textroblox{
+    color: rgb(87, 85, 85);
+    margin-bottom: 10px;
+}
+
+.div-input-roblox1 input[type="text"]::-webkit-input-placeholder {
+    color: rgba(105, 98, 98, 0.893);
+}
+
+.input-robux{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%
+}
+
+.input-robux-text1{
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: .8rem .75rem;
+    font-size: 1rem;
+    margin-top: 0.1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.input-robux-text2{
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 0.1rem;
+    padding: .8rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.robux-text-color{
+    color: #38b44a!important;
+    font-weight: bold;
+}
+
+.total-robux-margin{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.global-margin{
+    margin-bottom:10px;
+    color: rgba(255, 255, 255, 0.584);
+}
+
+.mark-text{
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.button:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.button {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
