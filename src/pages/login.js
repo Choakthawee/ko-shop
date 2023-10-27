@@ -5,7 +5,7 @@ import { faUserPlus ,faDoorOpen} from '@fortawesome/free-solid-svg-icons';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Register = () => {
+const Login = () => {
   return (
     <div className='loginScreen'>
       <div className='loginbg' data-aos = "fade-up" data-aos-delay = "0">
@@ -56,4 +56,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
