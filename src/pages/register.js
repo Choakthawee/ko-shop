@@ -3,9 +3,48 @@ import './register.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faBackward } from '@fortawesome/free-solid-svg-icons';
 import { Form, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link ,  useHistory} from 'react-router-dom';
+import axios from 'axios';
+import { useState } from 'react';
 
 const Register = () => {
+  const [username,setUsername] = useState("");
+  const [password,setPassword] = useState("");
+  const [confirmpassword,setConfirmpassword] = useState("");
+  const [money,setMoney] = useState(0);
+  const [email,setEmail] = useState("");
+  const [userList,setUser]=useState([]);
+  
+  const history = useHistory();
+
+  //ดึงข้อมูลผู้ใช้ทั้งหมด
+  const getUser = () => {
+    axios.get('http://localhost:3001/user_info').then((response)=>{
+      setUser(response.data);
+    });
+  }
+
+  const addUsername = () =>{
+    axios.post('http://localhost:3001/create',{
+      username: username,
+      password: password,
+      confirmpassword: confirmpassword,
+      email:email
+    }).then((response) => {
+      setUser({
+        ...userList,    
+        username: username,
+        password: password,
+        confirmpassword: confirmpassword,
+        email:email
+      })
+      history.push('/login');
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+  }
+
   return (
     <div className='registerScreen'>
       <div className='registerbg' data-aos = "fade-up" data-aos-delay = "0">
@@ -21,6 +60,9 @@ const Register = () => {
                 name='username'
                 placeholder='กรุณากรอก username'
                 style={{borderRadius:'15px',borderWidth:'1px'}}
+                onChange={(event) =>{
+                  setUsername(event.target.value)
+                }}
               />
             </Form.Group>
 
@@ -31,6 +73,9 @@ const Register = () => {
                 name='password'
                 placeholder='กรุณากรอก password'
                 style={{borderRadius:'15px',borderWidth:'1px'}}
+                onChange={(event) =>{
+                  setPassword(event.target.value)
+                }}
               />
             </Form.Group>
 
@@ -41,6 +86,9 @@ const Register = () => {
                 name='confirmPassword'
                 placeholder='กรุณากรอก confirm password'
                 style={{borderRadius:'15px',borderWidth:'1px'}}
+                onChange={(event) =>{
+                  setConfirmpassword(event.target.value)
+                }}
               />
             </Form.Group>
 
@@ -51,13 +99,16 @@ const Register = () => {
                 name='email'
                 placeholder='กรุณากรอก email'
                 style={{borderRadius:'15px',borderWidth:'1px'}}
+                onChange={(event) =>{
+                  setEmail(event.target.value)
+                }}
               />
             </Form.Group>
           </Form>
         </div>
 
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2%' }}>
-            <Button className= "button" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginRight: '10%', borderWidth: '0' }}>
+            <Button className= "button" type="button" onClick={addUsername} style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginRight: '10%', borderWidth: '0' }}>
               <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: 5 }} /> สมัครสมาชิก
             </Button>
 

@@ -4,8 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus ,faDoorOpen} from '@fortawesome/free-solid-svg-icons';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useState } from 'react';
 
 const Login = () => {
+
   return (
     <div className='loginScreen'>
       <div className='loginbg' data-aos = "fade-up" data-aos-delay = "0">
@@ -22,6 +25,7 @@ const Login = () => {
                 name='username'
                 placeholder='กรุณากรอก username'
                 style={{borderRadius:'15px',borderWidth:'1px'}}
+               
               />
             </Form.Group>
 
