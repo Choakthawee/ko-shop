@@ -32,17 +32,32 @@ app.post('/create', (req, res) => {
   const confirmPassword = req.body.confirmPassword;
   const email = req.body.email;
   
-  db.query("INSERT INTO user_info (username,password,email) VALUES (?,?,?)",
-  [username,password,email],
-  (err,result) =>{
-    if(err){
-      res.status(400).send("Error");
-    }else{
-      res.status(200).send("Values inserted");
-    }
+  // เพิ่มเงื่อนไขเพิ่มเติม
+  if (!username || !password || !confirmPassword || !email) {
+    return res.status(400).send("กรุณากรอกข้อมูลให้ครบถ้วน");
   }
-  )
-})
+
+  if (password.length < 8 || password.length > 20) {
+    return res.status(400).send("รหัสผ่านต้องมีความยาวระหว่าง 8 ถึง 20 ตัวอักษร");
+  }
+
+  if (password !== confirmPassword) {
+    return res.status(400).send("รหัสผ่านและการยืนยันรหัสผ่านไม่ตรงกัน");
+  }
+
+  if (!email.includes('@')) {
+    return res.status(400).send("อีเมลไม่ถูกต้อง");
+  }
+
+  // หลังจากตรวจสอบข้อมูลให้ดำเนินการเพิ่มข้อมูลลงในฐานข้อมูล
+  db.query("INSERT INTO user_info (username, password, email) VALUES (?, ?, ?)", [username, password, email], (err, result) => {
+    if (err) {
+      return res.status(400).send("เกิดข้อผิดพลาดในการเพิ่มข้อมูล");
+    } else {
+      return res.status(200).send("ค่าถูกเพิ่มเข้าสู่ฐานข้อมูล");
+    }
+  });
+});
 
 // เริ่มต้นเซิร์ฟเวอร์ Express
 
