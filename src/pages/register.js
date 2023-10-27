@@ -25,6 +25,29 @@ const Register = () => {
   }
 
   const addUsername = () =>{
+    if (!username || !password || !confirmpassword || !email) {
+      // กรอกข้อมูลไม่ครบ ให้ทำอะไรตามที่คุณต้องการ เช่นแสดงข้อความแจ้งเตือน
+      alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+      return;
+    }
+    
+    if (password.length < 8 || password.length > 20) {
+      // ตรวจสอบความยาวของรหัสผ่าน
+      alert("รหัสผ่านต้องมีความยาวระหว่าง 8 ถึง 20 ตัวอักษร");
+      return;
+    }
+    
+    if (password !== confirmpassword) {
+      // ตรวจสอบว่ารหัสผ่านและยืนยันรหัสผ่านตรงกันหรือไม่
+      alert("รหัสผ่านและการยืนยันรหัสผ่านไม่ตรงกัน");
+      return;
+    }
+    
+    if (!email.includes("@")) {
+      // ตรวจสอบว่าอีเมลมี @ หรือไม่
+      alert("อีเมลไม่ถูกต้อง");
+      return;
+    }
     axios.post('http://localhost:3001/create',{
       username: username,
       password: password,
