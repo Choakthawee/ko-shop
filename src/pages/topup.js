@@ -1,9 +1,11 @@
 import React from 'react';
-import background from "../images/bg.png";
 import './topup.css'
 import Qrcode from '../images/topup-qrcode.png'; // ตรงนี้คือการ import รูปภาพ
 import Truemoney from '../images/true-money.png';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import videoBg from '../images/Halloween.mp4';
+
+
 const Topup = () => {
   return (
     <div
@@ -12,11 +14,13 @@ const Topup = () => {
         justifyContent: 'center',
         alignItems: 'center',
         height: '100vh',
-        backgroundImage: `url(${background})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
       }}
     >
+      <video autoPlay loop muted className='video-bg'>
+        <source src={videoBg} type='video/mp4' />
+      </video>
       <div className='background'>
         <h1 className='font-topup' data-aos = "fade-up" data-aos-delay = "0">TOPUP CREDIT</h1>
         <h2 className='font-topup2' data-aos = "fade-up" data-aos-delay = "50">เติมเงินเข้าบัญชี</h2>

@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import THcode from '../images/thai_qr_payment.png';
 import QrcodePromptpay from '../images/Qrcodepromtpay.png'
 import { faSquareCheck, faQrcode } from '@fortawesome/free-solid-svg-icons';
+import videoBg from '../images/Halloween.mp4';
 
 const Qrcodepay = () => {
   return (
@@ -16,11 +17,13 @@ const Qrcodepay = () => {
         justifyContent: 'center',
         alignItems: 'center',
         height: '100vh',
-        backgroundImage: `url(${background})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
       }}
     >
+      <video autoPlay loop muted className='video-bg'>
+        <source src={videoBg} type='video/mp4' />
+      </video>
       <div className='backgroundqr'>
         <h1 className='qrtopup' data-aos = 'fade-up' data-aos-delay = '0' >QR-CODE</h1>
         <h2 className='qrtopup2'data-aos = 'fade-up' data-aos-delay = '50' >เติมเงินผ่านคิวอาร์โค๊ด</h2>

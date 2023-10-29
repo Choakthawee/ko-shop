@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
-import background from "../images/bg.png";
 import './truemoney.css'
 import Truemoney from '../images/true-money.png';
 import { Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import videoBg from '../images/Halloween.mp4';
+
 
 import {faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 const Truemoneypay = () => {
@@ -14,11 +15,13 @@ const Truemoneypay = () => {
         justifyContent: 'center',
         alignItems: 'center',
         height: '100vh',
-        backgroundImage: `url(${background})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
       }}
     >
+      <video autoPlay loop muted className='video-bg'>
+        <source src={videoBg} type='video/mp4' />
+      </video>
       <div className='backgroundpay'>
         <h1 className='topup' data-aos = 'fade-up' data-aos-delay = '0'>TRUEMONEY</h1>
         <h2 className='topup2' data-aos = 'fade-up' data-aos-delay = '50'>บัตรเงินสดทรูมันนี่</h2>

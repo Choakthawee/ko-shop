@@ -4,6 +4,7 @@ import robux from '../roblox-robux/robux.png'
 import { Form,Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import videoBg from '../images/Halloween.mp4';
 
 const Roblox = () => {
     const [totalPrice, setTotalPrice] = useState(0);
@@ -22,6 +23,9 @@ const Roblox = () => {
 
     return (
         <div className="robloxScreen">
+            <video autoPlay loop muted className='video-bg'>
+                <source src={videoBg} type='video/mp4' />
+            </video>
             <div className='centered-container'>
                 <h1 className='font-roblox'>BUY ROBUX R$</h1>
             </div>
@@ -37,7 +41,7 @@ const Roblox = () => {
                 <p className='font-readytosend'>ไม่พร้อมจำหน่าย</p>
             </div>
 
-            <div className='divtext-roblox' data-aos="fade-up" data-aos-delay="50">
+            <div className='divtext-roblox' data-aos="fade-up" data-aos-delay="50" data-aos-once='true'>
                 <div className='div-input-roblox1'>
                     <h1 style={{marginBottom:'10px'}}>Roblox Username</h1>
                     <p className='info-textroblox'>กรุณากรอกชื่อผู้ใช้งาน roblox ของคุณ</p>
@@ -79,7 +83,7 @@ const Roblox = () => {
                     </Button>
                 </div>
 
-                <div className='div-input-roblox2' data-aos="fade-up" data-aos-delay="150">
+                <div className='div-input-roblox2' data-aos="fade-up" data-aos-delay="150" data-aos-once='true'>
                     <h1>ขั้นตอนการซื้อ R$ แบบ Map</h1>
                     <p style={{marginTop:'10px'}}>วิธีและการดำเนินการรูปแบบ Configure game</p>
                     <ol>

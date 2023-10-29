@@ -4,10 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faBackward } from '@fortawesome/free-solid-svg-icons';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import videoBg from '../images/Halloween.mp4';
+
 
 const Register = () => {
   return (
     <div className='registerScreen'>
+      <video autoPlay loop muted className='video-bg'>
+        <source src={videoBg} type='video/mp4' />
+      </video>
       <div className='registerbg' data-aos = "fade-up" data-aos-delay = "0">
         <h1 className='fontRegister'>สมัครสมาชิก</h1>
         <div className="line-3"></div>

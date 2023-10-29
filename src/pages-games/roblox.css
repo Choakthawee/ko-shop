@@ -1,7 +1,6 @@
 .robloxScreen {
     padding: 3rem;
     height: auto;
-    background-image: url('../images/bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -23,13 +22,12 @@
 .font-subroblox {
     font-size: 2rem;
     font-weight: bold;
-    color: black;
+    color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     background-clip: text;
     -webkit-background-clip: text;
     position: relative;
     margin-bottom: 35px;
-
 }
 
 .image-robux {

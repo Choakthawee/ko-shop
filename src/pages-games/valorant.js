@@ -9,6 +9,8 @@ import vp5550 from '../valorant-points/5550.png';
 import vp11500 from '../valorant-points/11500.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import videoBg from '../images/Halloween.mp4';
+
 
 const Valorant = () => {
   const [clickedIndex, setClickedIndex] = useState(null);
@@ -35,6 +37,9 @@ const Valorant = () => {
 
   return (
     <div className="valorantScreen">
+      <video autoPlay loop muted className='video-bg'>
+        <source src={videoBg} type='video/mp4' />
+      </video>
       <h2 className='form-section__circle' data-aos="fade-up">
         <span className='form-section__number'>1</span>
         <span className='form-section__name'>กรุณากรอก RiotID</span>
