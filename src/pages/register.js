@@ -1,13 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import './register.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faBackward } from '@fortawesome/free-solid-svg-icons';
 import { Form, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { Link,useHistory } from 'react-router-dom';
 import videoBg from '../images/Halloween.mp4';
+import axios from 'axios';
 import Swal from 'sweetalert2';
 
 const Register = () => {
