@@ -1,7 +1,6 @@
 .apexScreen {
     padding: 3rem;
     height: 160vh;
-    background-image: url('../images/bg.png');
     background-size: cover;
     background-repeat: no-repeat;
 }

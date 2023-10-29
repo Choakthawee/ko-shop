@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import './truemoney.css'
 import Truemoney from '../images/true-money.png';
 import { Form, Button } from 'react-bootstrap';

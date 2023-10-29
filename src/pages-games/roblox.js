@@ -35,7 +35,7 @@ const Roblox = () => {
             </div>
 
             <div className='show-robuxnow' data-aos="fade-up" data-aos-delay="0">
-                <img src={robux} className='image-robux'></img>
+                <img src={robux} className='image-robux' alt="Robux Icon" />
                 <p className='font-robux'>Rate 10/THB</p>
                 <p className='font-robuxnow'>0 R$</p>
                 <p className='font-readytosend'>ไม่พร้อมจำหน่าย</p>

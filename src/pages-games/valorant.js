@@ -51,14 +51,7 @@ const Valorant = () => {
               type='text'
               name='username'
               placeholder='กรุณากรอก Riot ID'
-              style={{
-                width: '30%',
-                paddingLeft: '10px',
-                marginTop: '1%',
-                borderRadius: '15px',
-                borderWidth: '1px',
-                height: '50px',
-              }}
+              className='valoInput'
             />
           </Form.Group>
         </div>

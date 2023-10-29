@@ -6,7 +6,7 @@
 }
 
 .valorantContainer {
-    background-color: white;
+    background-color: #e8eaf6;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; /* รูปภาพจะเรียงในแถวละ 3 */
@@ -15,7 +15,7 @@
 }
 
 .checkboxValo {
-    background-color: white;
+    background-color: #e8eaf6;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -48,7 +48,7 @@
     margin: -30px 0 0;
     display: flex;
     justify-content: space-between;
-    background-color: white;
+    background-color: #e8eaf6;
     width: 100%;
     border-width: 1px;
     border-top-left-radius: 10px;
@@ -76,7 +76,7 @@
 
 .image-box {
     background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     margin: 10px;
     padding: 10px;
     text-align: center;
@@ -103,6 +103,19 @@
     background-color: #32de84;
     color: white;
 }
+
+.valoInput {
+    width: 30%;
+    padding-left: 10px;
+    margin-top: 1%; 
+    border-radius: 15px;
+    border-width: 2px; 
+    height: 50px;
+    border-style: solid;
+    border-color: #ec690d;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  }
 
 @media (max-width: 768px) {
     .valorantContainer {

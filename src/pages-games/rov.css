@@ -4,3 +4,15 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.rovInput {
+    width: 30%;
+    padding-left: 10px;
+    margin-top: 1%;
+    border-radius: 15px;
+    border-width: 2px;
+    height: 50px;
+    border-style: solid;
+    border-color: #20466e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  }

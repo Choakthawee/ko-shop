@@ -1,5 +1,4 @@
 import React from 'react';
-import background from "../images/bg.png";
 import './qrcode.css'
 import { Form, Button } from 'react-bootstrap';
 import Qrcode from '../images/topup-qrcode.png'; // ตรงนี้คือการ import รูปภาพ
