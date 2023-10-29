@@ -31,7 +31,7 @@ const Login = () => {
           title: 'เข้าสู่ระบบสำเร็จ',
           text: 'ยินดีต้อนรับ! คุณได้เข้าสู่ระบบแล้ว'
         });
-        history.push('/allitem'); 
+        history.push('/profile'); 
       } else {
         Swal.fire({
           icon: 'error',
