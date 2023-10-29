@@ -5,18 +5,18 @@ import { faUserPlus ,faDoorOpen} from '@fortawesome/free-solid-svg-icons';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import videoBg from '../images/Halloween.mp4';
+import videoBg2 from '../images/Welcome.mp4'
 
 
 const Login = () => {
   return (
     <div className='loginScreen'>
       <video autoPlay loop muted className='video-bg'>
-          <source src={videoBg} type='video/mp4' />
+        <source src={videoBg} type='video/mp4' />
       </video>
       <div className='loginbg' data-aos = "fade-up" data-aos-delay = "0">
         <h1 className='fontLogin'>เข้าสู่ระบบ</h1>
         <div className="line-3"></div>
-        
         <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:'50px'}}>
           <Form>
             

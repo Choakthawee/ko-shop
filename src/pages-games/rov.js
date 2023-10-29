@@ -16,7 +16,7 @@ import counpon9 from '../rov-coupon/coupon9.png'
 
 
 const Rov = () => {
-    const [clickedIndex, setClickedIndex] = useState(null);
+  const [clickedIndex, setClickedIndex] = useState(null);
   const [totalPrice, setTotalPrice] = useState(0);
 
   const handleImageClick = (index, price) => {
