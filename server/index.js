@@ -25,7 +25,7 @@ app.get('/user_info',(req,res)=>{
     }
   });
 });
-
+//login
 app.post('/login', (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
@@ -40,7 +40,7 @@ app.post('/login', (req, res) => {
     }
   });
 })
-
+//register
 app.post('/create', (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
@@ -72,6 +72,26 @@ app.post('/create', (req, res) => {
       
     }
   });
+});
+//topup
+app.post('/topup', (req, res) => {
+  const phoneNumber = req.body.phoneNumber;
+  const amount = req.body.amount;
+  const username = req.user.username; // ใช้ req.user.username สำหรับรับค่า username จาก authentication
+
+  if (phoneNumber.startsWith('0') && phoneNumber.length === 10) {
+    // หากหมายเลขโทรศัพท์ขึ้นต้นด้วย "0" และมีความยาวที่ถูกต้อง
+    // ให้อัปเดตข้อมูลโดยตรง
+    db.query('UPDATE users SET money = money + ? WHERE username = ?', [amount, username], (err, result) => {
+      if (err) {
+        return res.status(400).send('เกิดข้อผิดพลาดในการเติมเงิน');
+      } else {
+        return res.status(200).send('เติมเงินสำเร็จ');
+      }
+    });
+  } else {
+    return res.status(400).send('โปรดใส่หมายเลขโทรศัพท์ที่ขึ้นต้นด้วย "0" และมีความยาว 10 หลัก');
+  }
 });
 
 // เริ่มต้นเซิร์ฟเวอร์ Express
