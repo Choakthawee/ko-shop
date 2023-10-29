@@ -26,7 +26,7 @@ const Register = () => {
   //   });
   // }
 
-  const addUsername = () => {
+  const addregister = () => {
     if (!username || !password || !confirmpassword || !email) {
       // กรอกข้อมูลไม่ครบ ใช้ SweetAlert2 เพื่อแสดงข้อความแจ้งเตือน
       Swal.fire({
@@ -161,7 +161,7 @@ const Register = () => {
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2%' }}>
-          <Button className="button" type="button" onClick={addUsername} style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginRight: '10%', borderWidth: '0' }}>
+          <Button className="button" type="button" onClick={addregister} style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginRight: '10%', borderWidth: '0' }}>
             <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: 5 }} /> สมัครสมาชิก
           </Button>
 
