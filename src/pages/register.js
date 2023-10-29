@@ -1,18 +1,14 @@
 import React from 'react';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import './register.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faBackward } from '@fortawesome/free-solid-svg-icons';
 import { Form, Button } from 'react-bootstrap';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
-import videoBg from '../images/Halloween.mp4';
-
-=======
-import { Link ,  useHistory} from 'react-router-dom';
 import axios from 'axios';
-import { useState } from 'react';
+import videoBg from '../images/Halloween.mp4';
 import Swal from 'sweetalert2';
->>>>>>> 005cccc54aed06dee97af70e944e56b1395242b2
 
 const Register = () => {
   const [username,setUsername] = useState("");
