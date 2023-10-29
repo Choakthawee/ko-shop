@@ -26,6 +26,21 @@ app.get('/user_info',(req,res)=>{
   });
 });
 
+app.post('/login', (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  db.query('SELECT * FROM user_info WHERE username = ? AND password = ?', [username, password], (err, result) => {
+    if (err) {
+      return res.status(400).send('Something went wrong');
+    }
+    if (result.length > 0) {
+      return res.status(200).send('Login successful');
+    } else {
+      return res.status(400).send('Invalid username or password');
+    }
+  });
+})
+
 app.post('/create', (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
