@@ -49,7 +49,7 @@
 
 .TruemoenyImg {
     width: 30%;
-    height: 30%;
+    height: 40%;
     min-width: 300px;
 }
 
@@ -92,4 +92,54 @@
     /* เพิ่มขนาดของปุ่มเมื่อ hover */
 }
 
+/* ปรับขนาดเมื่อหน้าจอเล็กลง */
+@media (max-width: 768px) {
+    .truebutton {
+        width: 100%;
+    }
 
+    .backgroundpay,
+    .boxtext,
+    .Walletbox {
+        width: 100%;
+    }
+
+    .topup {
+        font-size: 48px;
+    }
+
+    .topup2 {
+        font-size: 18px;
+    }
+
+    .TruemoenyImg {
+        width: 60%;
+        min-width: 200px;
+    }
+}
+
+/* ปรับขนาดเมื่อหน้าจอเล็กลงมากกว่านี้ */
+@media (max-width: 480px) {
+    .truebutton {
+        width: 100%;
+    }
+
+    .backgroundpay,
+    .boxtext,
+    .Walletbox {
+        width: 100%;
+    }
+
+    .topup {
+        font-size: 36px;
+    }
+
+    .topup2 {
+        font-size: 14px;
+    }
+
+    .TruemoenyImg {
+        width: 80%;
+        min-width: 150px;
+    }
+}

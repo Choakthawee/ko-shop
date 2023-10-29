@@ -29,16 +29,21 @@ const Truemoneypay = () => {
           <img src={Truemoney} alt="truemoney" className='TruemoenyImg' />
           <Form>
             <Form.Group>
-              <p className='Wallet'>ลิ้งรับซองของขวัญจาก TrueMoney Wallet</p>
+              <p className='Wallet'> กรอกเบอร์มือถือ</p>
               <Form.Control
                 type='text'
                 name='เติมเงิน'
-                placeholder='กรุณากรอก URL'
+                placeholder='กรุณากรอก เบอร์มือถือ'
                 style={{ borderRadius: '15px', borderWidth: '1px' ,textAlign:'center'}}
               />
-              <div className='Walletbox'>
-                <div className='fonttext'>กรุณากรอกลิ้งซองของขวัญ</div>
-              </div>
+              <div className='Wallet'>กรอกจำนวนเงินที่ต้องการเติม</div>
+              <Form.Control
+                type='text'
+                name='เติมเงิน'
+                placeholder='กรุณากรอก จำนวนเงิน'
+                style={{ borderRadius: '15px', borderWidth: '1px' ,textAlign:'center'}}
+              />
+              
               <div className='setbutton'>
                 <Button className="truebutton" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', height: '50px', fontSize: '20px',  borderWidth: '0' }}>
                   <FontAwesomeIcon icon={faSquareCheck} /> ยืนยันการเติมเงิน

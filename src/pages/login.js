@@ -4,10 +4,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus ,faDoorOpen} from '@fortawesome/free-solid-svg-icons';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import videoBg from '../images/Halloween.mp4';
 
 
 const Login = () => {
+=======
+import axios from 'axios';
+import { useState } from 'react';
+
+const Login = () => {
+
+>>>>>>> 005cccc54aed06dee97af70e944e56b1395242b2
   return (
     <div className='loginScreen'>
       <video autoPlay loop muted className='video-bg'>
@@ -27,6 +35,7 @@ const Login = () => {
                 name='username'
                 placeholder='กรุณากรอก username'
                 style={{borderRadius:'15px',borderWidth:'1px'}}
+               
               />
             </Form.Group>
 
