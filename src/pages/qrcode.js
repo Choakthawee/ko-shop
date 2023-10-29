@@ -7,8 +7,12 @@ import THcode from '../images/thai_qr_payment.png';
 import QrcodePromptpay from '../images/Qrcodepromtpay.png'
 import { faSquareCheck, faQrcode } from '@fortawesome/free-solid-svg-icons';
 import videoBg from '../images/Halloween.mp4';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import { useState } from 'react';
 
 const Qrcodepay = () => {
+  
   return (
     <div
       style={{
