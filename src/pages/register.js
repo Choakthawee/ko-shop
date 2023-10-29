@@ -1,11 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import './register.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faBackward } from '@fortawesome/free-solid-svg-icons';
 import { Form, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import videoBg from '../images/Halloween.mp4';
 import Swal from 'sweetalert2';
@@ -14,18 +13,18 @@ const Register = () => {
   const [username,setUsername] = useState("");
   const [password,setPassword] = useState("");
   const [confirmpassword,setConfirmpassword] = useState("");
-  const [money,setMoney] = useState(0);
+  // const [money,setMoney] = useState(0);
   const [email,setEmail] = useState("");
   const [userList,setUser]=useState([]);
   
   const history = useHistory();
 
-  //ดึงข้อมูลผู้ใช้ทั้งหมด
-  const getUser = () => {
-    axios.get('http://localhost:3001/user_info').then((response)=>{
-      setUser(response.data);
-    });
-  }
+  // //ดึงข้อมูลผู้ใช้ทั้งหมด
+  // const getUser = () => {
+  //   axios.get('http://localhost:3001/user_info').then((response)=>{
+  //     setUser(response.data);
+  //   });
+  // }
 
   const addUsername = () =>{
     if (!username || !password || !confirmpassword || !email) {
@@ -83,7 +82,19 @@ const Register = () => {
       history.push('/login');
     })
     .catch((error) => {
-      console.error("Error:", error);
+      if (error.response) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error.response.data // Display the error response message
+        });
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Something went wrong' // Display a generic error message
+        });
+      }
     });
   }
 
