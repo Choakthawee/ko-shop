@@ -10,12 +10,14 @@ import vp11500 from '../valorant-points/11500.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import videoBg from '../images/Halloween.mp4';
-
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Valorant = () => {
   const [clickedIndex, setClickedIndex] = useState(null);
   const [totalPrice, setTotalPrice] = useState(0);
-
+  const [userID,setuserID] = useState('');
   const handleImageClick = (index, price) => {
     if (index === clickedIndex) {
       setClickedIndex(null);
@@ -27,14 +29,58 @@ const Valorant = () => {
   };
 
   const images = [
-    { src: vp540, text: '฿150.00' },
-    { src: vp1130, text: '฿300.00' },
-    { src: vp1945, text: '฿500.00' },
-    { src: vp3930, text: '฿1,000.00' },
-    { src: vp5550, text: '฿1,400.00' },
-    { src: vp11500, text: '฿2,800.00' },
+    { src: vp540, text: '150.00' },
+    { src: vp1130, text: '300.00' },
+    { src: vp1945, text: '500.00' },
+    { src: vp3930, text: '1,000.00' },
+    { src: vp5550, text: '1,400.00' },
+    { src: vp11500, text: '2,800.00' },
   ];
-
+  const handlePurchaseConfirmation = () => {
+    const loggedInUsername = localStorage.getItem('username');
+    
+    if (loggedInUsername !==null && totalPrice>0 && userID.includes('#')&&userID.length>=3) {
+      axios.post('http://localhost:3001/deductMoney', {
+        username: loggedInUsername,
+        amount: totalPrice 
+        
+      })
+      .then((response) => {
+        
+        Swal.fire({
+          icon: 'success',
+          title: response.data,
+          text: 'พ้อยเข้าเกมแล้ว',
+        });
+        // อัพเดท UI หรือทำการดำเนินการเพิ่มเติมตามตอบรับ
+      })
+      .catch((error) => {
+        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'มีข้อผิดพลาด',
+          text: 'จำนวนเงินของคุณไม่พอกรุณาเติมเงินเพิ่ม',
+        });
+      });
+    } else {
+      if(!userID.includes("#")||!userID.length <3){
+        Swal.fire({
+          icon: 'error',
+          title: 'มีข้อผิดพลาด',
+          text: 'กรุณากรอก ID ',
+        });
+      }
+      else if(totalPrice==""){
+        Swal.fire({
+          icon: 'error',
+          title: 'มีข้อผิดพลาด',
+          text: 'กรุณาเลือกจำนวนที่ต้องการซื้อ',
+        });
+      }
+      
+      // จัดการ UI เพื่อแจ้งให้ผู้ใช้เลือกจำนวนและเข้าสู่ระบบ
+    }
+  };
   return (
     <div className="valorantScreen">
       <video autoPlay loop muted className='video-bg'>
@@ -52,6 +98,9 @@ const Valorant = () => {
               name='username'
               placeholder='กรุณากรอก Riot ID'
               className='valoInput'
+              onChange={(event) => {
+                setuserID(event.target.value)
+              }}
             />
           </Form.Group>
         </div>
@@ -68,10 +117,10 @@ const Valorant = () => {
           <div
             key={index}
             className={`image-box ${index === clickedIndex ? 'clicked' : ''}`}
-            onClick={() => handleImageClick(index, image.text)}
+            onClick={() => handleImageClick(index, image.text.replace(",",""))}
           >
             <img src={image.src} alt={image.text} />
-            <p>{image.text}</p>
+            <p>฿{image.text}</p>
           </div>
         ))}
       </div>
@@ -82,8 +131,8 @@ const Valorant = () => {
       </h2>
       
       <div className='checkboxValo'>
-          <p style={{ fontSize: '30px', fontWeight: 'bold', marginRight: '2rem' }}>รวมทั้งสิ้น : {totalPrice} บาท</p>
-          <Button className="button" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginBottom: '2%', borderWidth: '0' }}>
+          <p style={{ fontSize: '30px', fontWeight: 'bold', marginRight: '2rem' }}>รวมทั้งสิ้น : ฿{totalPrice} บาท</p>
+          <Button className="button" type="button" onClick={handlePurchaseConfirmation} style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginBottom: '2%', borderWidth: '0' }}>
             <FontAwesomeIcon icon={faCheckCircle} style={{ marginRight: 5 }} /> ยืนยันคำสั่งซื้อ
           </Button>
       </div>

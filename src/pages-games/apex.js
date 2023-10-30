@@ -10,11 +10,14 @@ import apexcoin3 from '../apex-coins/apexcoin2.mp4';
 import apexcoin4 from '../apex-coins/apexcoin3.mp4';
 import apexcoin5 from '../apex-coins/apexcoin4.mp4';
 import apexcoin6 from '../apex-coins/apexcoin5.mp4';
+import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Apex = () => {
   const [clickedIndex, setClickedIndex] = useState(null);
   const [totalPrice, setTotalPrice] = useState(0);
-
+  const [userID,setuserID] = useState('');
   const handleImageClick = (index, price) => {
     if (index === clickedIndex) {
       setClickedIndex(null);
@@ -26,14 +29,59 @@ const Apex = () => {
   };
 
   const videos = [
-    { src: apexcoin1, text: '฿149.00'},
-    { src: apexcoin2, text: '฿249.00' },
-    { src: apexcoin3, text: '฿549.00' },
-    { src: apexcoin4, text: '฿899.00' },
-    { src: apexcoin5, text: '฿1,499.00' },
-    { src: apexcoin6, text: '฿2,799.00' },
+    { src: apexcoin1, text: '149.00'},
+    { src: apexcoin2, text: '249.00' },
+    { src: apexcoin3, text: '549.00' },
+    { src: apexcoin4, text: '899.00' },
+    { src: apexcoin5, text: '1,499.00' },
+    { src: apexcoin6, text: '2,799.00' },
   ];
-
+  const handlePurchaseConfirmation = () => {
+    const loggedInUsername = localStorage.getItem('username');
+    
+    if (loggedInUsername !==null && totalPrice>0 && userID !=="") {
+      axios.post('http://localhost:3001/deductMoney', {
+        username: loggedInUsername,
+        amount: totalPrice 
+        
+      })
+      .then((response) => {
+        
+        Swal.fire({
+          icon: 'success',
+          title: response.data,
+          text: 'คอยน์เข้าเกมแล้ว',
+        });
+        // อัพเดท UI หรือทำการดำเนินการเพิ่มเติมตามตอบรับ
+      })
+      .catch((error) => {
+        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'มีข้อผิดพลาด',
+          text: 'จำนวนเงินของคุณไม่พอกรุณาเติมเงินเพิ่ม',
+        });
+      });
+    } else {
+      if(userID ==""){
+        Swal.fire({
+          icon: 'error',
+          title: 'มีข้อผิดพลาด',
+          text: 'กรุณากรอก ID ',
+        });
+      }
+      
+      else if (totalPrice==""){
+        Swal.fire({
+          icon: 'error',
+          title: 'มีข้อผิดพลาด',
+          text: 'กรุณาเลือกจำนวนที่ต้องการซื้อ',
+        });
+      }
+      
+      // จัดการ UI เพื่อแจ้งให้ผู้ใช้เลือกจำนวนและเข้าสู่ระบบ
+    }
+  };
   return (
     <div className="valorantScreen">
       <video autoPlay loop muted className='video-bg'>
@@ -53,6 +101,9 @@ const Apex = () => {
               name='username'
               placeholder='กรุณากรอก EA ID'
               className='valoInput'
+              onChange={(event) => {
+                setuserID(event.target.value)
+              }}
             />
           </Form.Group>
         </div>
@@ -69,12 +120,12 @@ const Apex = () => {
           <div
             key={index}
             className={`image-boxApex ${index === clickedIndex ? 'clicked' : ''}`}
-            onClick={() => handleImageClick(index, video.text)}
+            onClick={() => handleImageClick(index, video.text.replace(",",""))}
           >
             <video autoPlay loop muted width="300" height="200">
               <source src={video.src} type="video/mp4" />
             </video>
-            <p>{video.text}</p>
+            <p>฿{video.text}</p>
           </div>
         ))}
       </div>
@@ -85,8 +136,8 @@ const Apex = () => {
       </h2>
 
       <div className='checkboxValo'>
-        <p style={{ fontSize: '30px', fontWeight: 'bold', marginRight: '2rem' }}>รวมทั้งสิ้น : {totalPrice} บาท</p>
-        <Button className="button" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginBottom: '2%', borderWidth: '0' }}>
+        <p style={{ fontSize: '30px', fontWeight: 'bold', marginRight: '2rem' }}>รวมทั้งสิ้น : ฿{totalPrice} บาท</p>
+        <Button className="button" type="button" onClick={handlePurchaseConfirmation} style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginBottom: '2%', borderWidth: '0' }}>
           <FontAwesomeIcon icon={faCheckCircle} style={{ marginRight: 5 }} /> ยืนยันคำสั่งซื้อ
         </Button>
       </div>
