@@ -94,13 +94,15 @@ const Rov = () => {
           });
         }
       }
-    } else if (!loggedInUsername) { }
-    Swal.fire({
-      icon: 'error',
-      title: 'ผิดพลาด',
-      text: 'กรุณาล็อคอิน ',
-    });
-    history.push('/login');
+    } else if (!loggedInUsername) {
+      Swal.fire({
+        icon: 'error',
+        title: 'ผิดพลาด',
+        text: 'กรุณาล็อคอิน ',
+      });
+      history.push('/login');
+    }
+
   };
   return (
     <div className="valorantScreen">

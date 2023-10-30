@@ -18,6 +18,7 @@ const Valorant = () => {
   const [clickedIndex, setClickedIndex] = useState(null);
   const [totalPrice, setTotalPrice] = useState(0);
   const [userID, setuserID] = useState('');
+  const history = useHistory();
   const handleImageClick = (index, price) => {
     if (index === clickedIndex) {
       setClickedIndex(null);
@@ -38,62 +39,69 @@ const Valorant = () => {
   ];
   const handlePurchaseConfirmation = () => {
     const loggedInUsername = localStorage.getItem('username');
-
-    if (loggedInUsername !== null && totalPrice > 0 && userID.includes('#') && userID.length >= 3) {
-      let uid;
-      let tagid;
-      [uid, tagid] = userID.split('#');
-      if ((uid.length < 3 )|| (tagid.length < 3)) {
-        console.log("โง่");
-        Swal.fire({
-          icon: 'error',
-          title: 'ผิดพลาด',
-          text: 'กรุณากรอกหน้าและหลัง # อย่างต่ำ 3 ตัวอักษร',
-        });
-      }else{
-        axios.post('http://localhost:3001/deductMoney', {
-        username: loggedInUsername,
-        amount: totalPrice
-
-      })
-        .then((response) => {
-
-          Swal.fire({
-            icon: 'success',
-            title: response.data,
-            text: 'พ้อยเข้าเกมแล้ว',
-          });
-          // อัพเดท UI หรือทำการดำเนินการเพิ่มเติมตามตอบรับ
-        })
-        .catch((error) => {
-          console.error(error);
+    if (loggedInUsername) {
+      if (loggedInUsername !== null && totalPrice > 0 && userID.includes('#') && userID.length >= 3) {
+        let uid;
+        let tagid;
+        [uid, tagid] = userID.split('#');
+        if ((uid.length < 3) || (tagid.length < 3)) {
+          console.log("โง่");
           Swal.fire({
             icon: 'error',
             title: 'ผิดพลาด',
-            text: 'จำนวนเงินของคุณไม่พอกรุณาเติมเงินเพิ่ม',
+            text: 'กรุณากรอกหน้าและหลัง # อย่างต่ำ 3 ตัวอักษร',
           });
-        });
-      }
-      
-    } else {
-      if (!userID.includes("#") || !userID.length < 3) {
+        } else {
+          axios.post('http://localhost:3001/deductMoney', {
+            username: loggedInUsername,
+            amount: totalPrice
 
-        Swal.fire({
-          icon: 'error',
-          title: 'ผิดพลาด',
-          text: 'กรุณากรอก ID ',
-        });
-      }
-      else if (totalPrice == "") {
-        Swal.fire({
-          icon: 'error',
-          title: 'ผิดพลาด',
-          text: 'กรุณาเลือกจำนวนที่ต้องการซื้อ',
-        });
-      }
+          })
+            .then((response) => {
 
-      // จัดการ UI เพื่อแจ้งให้ผู้ใช้เลือกจำนวนและเข้าสู่ระบบ
+              Swal.fire({
+                icon: 'success',
+                title: response.data,
+                text: 'พ้อยเข้าเกมแล้ว',
+              });
+              // อัพเดท UI หรือทำการดำเนินการเพิ่มเติมตามตอบรับ
+            })
+            .catch((error) => {
+              console.error(error);
+              Swal.fire({
+                icon: 'error',
+                title: 'ผิดพลาด',
+                text: 'จำนวนเงินของคุณไม่พอกรุณาเติมเงินเพิ่ม',
+              });
+            });
+        }
+
+      } else {
+        if (!userID.includes("#") || !userID.length < 3) {
+
+          Swal.fire({
+            icon: 'error',
+            title: 'ผิดพลาด',
+            text: 'กรุณากรอก ID ',
+          });
+        }
+        else if (totalPrice == "") {
+          Swal.fire({
+            icon: 'error',
+            title: 'ผิดพลาด',
+            text: 'กรุณาเลือกจำนวนที่ต้องการซื้อ',
+          });
+        }
+      }
+    } else if (!loggedInUsername) {
+      Swal.fire({
+        icon: 'error',
+        title: 'ผิดพลาด',
+        text: 'กรุณาล็อคอิน ',
+      });
+      history.push('/login');
     }
+
   };
   return (
     <div className="valorantScreen">
@@ -131,7 +139,7 @@ const Valorant = () => {
           <div
             key={index}
             className={`image-boxApex ${index === clickedIndex ? 'clicked' : ''}`}
-            onClick={() => handleImageClick(index, video.text.replace(",",""))}
+            onClick={() => handleImageClick(index, video.text.replace(",", ""))}
           >
             <video autoPlay loop muted width="300" height="200">
               <source src={video.src} type="video/mp4" />
