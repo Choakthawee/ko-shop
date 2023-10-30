@@ -21,8 +21,9 @@ import Swal from 'sweetalert2';
 const Rov = () => {
   const [clickedIndex, setClickedIndex] = useState(null);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [userID,setuserID] = useState('');
-  const [userPass,setuserPass] = useState('');
+  const [userID, setuserID] = useState('');
+  const [userPass, setuserPass] = useState('');
+  const history = useHistory();
   const handleImageClick = (index, price) => {
     if (index === clickedIndex) {
       setClickedIndex(null);
@@ -46,55 +47,60 @@ const Rov = () => {
   ];
   const handlePurchaseConfirmation = () => {
     const loggedInUsername = localStorage.getItem('username');
-    
-    if (loggedInUsername !==null && totalPrice>0 && userID !== "" && userPass !== "") {
-      axios.post('http://localhost:3001/deductMoney', {
-        username: loggedInUsername,
-        amount: totalPrice 
-        
-      })
-      .then((response) => {
-        
-        Swal.fire({
-          icon: 'success',
-          title: response.data,
-          text: 'คูปองเข้าเกมแล้ว',
-        });
-        // อัพเดท UI หรือทำการดำเนินการเพิ่มเติมตามตอบรับ
-      })
-      .catch((error) => {
-        console.error(error);
-        Swal.fire({
-          icon: 'error',
-          title: 'ผิดพลาด',
-          text: 'จำนวนเงินของคุณไม่พอกรุณาเติมเงินเพิ่ม',
-        });
-      });
-    } else {
-      if(userID == ""){
-        Swal.fire({
-          icon: 'error',
-          title: 'ผิดพลาด',
-          text: 'กรุณากรอก ID ',
-        });
+    if (loggedInUsername) {
+      if (loggedInUsername !== null && totalPrice > 0 && userID !== "" && userPass !== "") {
+        axios.post('http://localhost:3001/deductMoney', {
+          username: loggedInUsername,
+          amount: totalPrice
+
+        })
+          .then((response) => {
+
+            Swal.fire({
+              icon: 'success',
+              title: response.data,
+              text: 'คูปองเข้าเกมแล้ว',
+            });
+            // อัพเดท UI หรือทำการดำเนินการเพิ่มเติมตามตอบรับ
+          })
+          .catch((error) => {
+            console.error(error);
+            Swal.fire({
+              icon: 'error',
+              title: 'ผิดพลาด',
+              text: 'จำนวนเงินของคุณไม่พอกรุณาเติมเงินเพิ่ม',
+            });
+          });
+      } else {
+        if (userID == "") {
+          Swal.fire({
+            icon: 'error',
+            title: 'ผิดพลาด',
+            text: 'กรุณากรอก ID ',
+          });
+        }
+        else if (userPass == "") {
+          Swal.fire({
+            icon: 'error',
+            title: 'ผิดพลาด',
+            text: 'กรุณากรอก Password ',
+          });
+        }
+        else if (totalPrice == "") {
+          Swal.fire({
+            icon: 'error',
+            title: 'ผิดพลาด',
+            text: 'กรุณาเลือกจำนวนที่ต้องการซื้อ',
+          });
+        }
       }
-      else if(userPass ==""){
-        Swal.fire({
-          icon: 'error',
-          title: 'ผิดพลาด',
-          text: 'กรุณากรอก Password ',
-        });
-      }
-      else if(totalPrice ==""){
-        Swal.fire({
-          icon: 'error',
-          title: 'ผิดพลาด',
-          text: 'กรุณาเลือกจำนวนที่ต้องการซื้อ',
-        });
-      }
-      
-      // จัดการ UI เพื่อแจ้งให้ผู้ใช้เลือกจำนวนและเข้าสู่ระบบ
-    }
+    } else if (!loggedInUsername) { }
+    Swal.fire({
+      icon: 'error',
+      title: 'ผิดพลาด',
+      text: 'กรุณาล็อคอิน ',
+    });
+    history.push('/login');
   };
   return (
     <div className="valorantScreen">
@@ -105,7 +111,7 @@ const Rov = () => {
         <span className='form-section__number'>1</span>
         <span className='form-section__name'>กรุณากรอก ID+PASSWORD</span>
       </h2>
-      <div className='valorantContainer' style={{ flexDirection: 'column' }} data-aos="fade-up" data-aos-delay = "0">
+      <div className='valorantContainer' style={{ flexDirection: 'column' }} data-aos="fade-up" data-aos-delay="0">
         <div style={{ marginLeft: '2rem', marginTop: '10px' }} >
           <Form.Group style={{ marginBottom: '10px' }}>
             <Form.Control
@@ -119,7 +125,7 @@ const Rov = () => {
             />
           </Form.Group>
         </div>
-        <div style={{ marginLeft: '2rem', marginTop: '10px' ,marginBottom:'20px'}} >
+        <div style={{ marginLeft: '2rem', marginTop: '10px', marginBottom: '20px' }} >
           <Form.Group style={{ marginBottom: '10px' }}>
             <Form.Control
               type='text'
@@ -134,7 +140,7 @@ const Rov = () => {
         </div>
       </div>
 
-      <h2 className='form-section__circle' style={{ marginTop: '3%' }} data-aos="fade-up" data-aos-delay = "100">
+      <h2 className='form-section__circle' style={{ marginTop: '3%' }} data-aos="fade-up" data-aos-delay="100">
         <span className='form-section__number'>2</span>
         <span className='form-section__name'>เลือกจำนวนที่ต้องการเติม</span>
       </h2>
@@ -144,7 +150,7 @@ const Rov = () => {
           <div
             key={index}
             className={`image-boxApex ${index === clickedIndex ? 'clicked' : ''}`}
-            onClick={() => handleImageClick(index, video.text.replace(",",""))}
+            onClick={() => handleImageClick(index, video.text.replace(",", ""))}
           >
             <video autoPlay loop muted width="300" height="200">
               <source src={video.src} type="video/mp4" />
@@ -158,12 +164,12 @@ const Rov = () => {
         <span className='form-section__number'>3</span>
         <span className='form-section__name'>ยืนยันคำสั่งซื้อ</span>
       </h2>
-      
+
       <div className='checkboxValo'>
-          <p style={{ fontSize: '30px', fontWeight: 'bold', marginRight: '2rem' }}>รวมทั้งสิ้น : ฿{totalPrice} บาท</p>
-          <Button className="button" type="button" onClick={handlePurchaseConfirmation} style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginBottom: '2%', borderWidth: '0' }}>
-            <FontAwesomeIcon icon={faCheckCircle} style={{ marginRight: 5 }} /> ยืนยันคำสั่งซื้อ
-          </Button>
+        <p style={{ fontSize: '30px', fontWeight: 'bold', marginRight: '2rem' }}>รวมทั้งสิ้น : ฿{totalPrice} บาท</p>
+        <Button className="button" type="button" onClick={handlePurchaseConfirmation} style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginBottom: '2%', borderWidth: '0' }}>
+          <FontAwesomeIcon icon={faCheckCircle} style={{ marginRight: 5 }} /> ยืนยันคำสั่งซื้อ
+        </Button>
       </div>
     </div>
   );
