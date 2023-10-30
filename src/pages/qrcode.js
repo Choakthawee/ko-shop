@@ -63,7 +63,7 @@ const Qrcodepay = () => {
             console.error(error);
             Swal.fire({
               icon: 'error',
-              title: 'มีข้อผิดพลาด',
+              title: 'ผิดพลาด',
               text: 'เกิดข้อผิดพลาดในการเติมเงิน โปรดลองอีกครั้ง',
             });
           });
