@@ -27,7 +27,7 @@ const Register = () => {
   // }
   const navigateToProfile = () => {
     setTimeout(() => {
-      history.push('/profile');
+      history.push('/login');
     }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
   };
   const addregister = () => {
