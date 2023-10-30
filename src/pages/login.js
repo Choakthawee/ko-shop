@@ -100,7 +100,7 @@ const Login = () => {
               <FontAwesomeIcon icon={faSignInAlt} style={{ marginRight: 5 }} /> เข้าสู่ระบบ
             </Button>
 
-            <Link to="/profile">
+            <Link to="/register">
               <Button className= "button" type="button" style={{ backgroundColor: '#E63946', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginBottom: '4%', borderWidth: '0' }}>
                 <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: 5 }} /> สมัครสมาชิก
               </Button>
