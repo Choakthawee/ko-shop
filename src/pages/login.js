@@ -14,7 +14,11 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [dataList, setdataList] = useState("");
   const history = useHistory();
-  
+  const navigateToProfile = () => {
+    setTimeout(() => {
+      history.push('/profile');
+    }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
+  };
   const login = () => {
     axios.post('http://localhost:3001/login', {
       username: username,
@@ -32,7 +36,7 @@ const Login = () => {
           text: 'ยินดีต้อนรับ! คุณได้เข้าสู่ระบบแล้ว'
         });
         localStorage.setItem('username', username);
-        history.push('/profile'); 
+        navigateToProfile();
       } else {
         Swal.fire({
           icon: 'error',
