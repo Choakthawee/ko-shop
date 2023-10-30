@@ -28,7 +28,6 @@ const Valorant = () => {
     }
   };
 
-<<<<<<< HEAD
   const videos = [
     { src: vp540, text: '฿150.00' },
     { src: vp1130, text: '฿300.00' },
@@ -36,15 +35,6 @@ const Valorant = () => {
     { src: vp3930, text: '฿1,000.00' },
     { src: vp5550, text: '฿1,400.00' },
     { src: vp11500, text: '฿2,800.00' },
-=======
-  const images = [
-    { src: vp540, text: '150.00' },
-    { src: vp1130, text: '300.00' },
-    { src: vp1945, text: '500.00' },
-    { src: vp3930, text: '1,000.00' },
-    { src: vp5550, text: '1,400.00' },
-    { src: vp11500, text: '2,800.00' },
->>>>>>> 7ea9ee6c45ad8c550ac6b1f0196840ca1924f2e7
   ];
   const handlePurchaseConfirmation = () => {
     const loggedInUsername = localStorage.getItem('username');
@@ -137,7 +127,6 @@ const Valorant = () => {
       </h2>
 
       <div className='valorantContainer' data-aos="fade-up" data-aos-delay="100">
-<<<<<<< HEAD
         {videos.map((video, index) => (
           <div
             key={index}
@@ -148,16 +137,6 @@ const Valorant = () => {
               <source src={video.src} type="video/mp4" />
             </video>
             <p>{video.text}</p>
-=======
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`image-box ${index === clickedIndex ? 'clicked' : ''}`}
-            onClick={() => handleImageClick(index, image.text.replace(",", ""))}
-          >
-            <img src={image.src} alt={image.text} />
-            <p>฿{image.text}</p>
->>>>>>> 7ea9ee6c45ad8c550ac6b1f0196840ca1924f2e7
           </div>
         ))}
       </div>
