@@ -26,8 +26,10 @@ const Profile = () => {
             cancelButtonColor: '#d33',
             confirmButtonText: 'ใช่, ออกจากระบบ'
         }).then((result) => {
-            localStorage.clear();
-            navigateToProfile();
+            if (result.isConfirmed) {
+                localStorage.clear();
+                navigateToProfile();
+            }
         })
     };
 
@@ -41,7 +43,7 @@ const Profile = () => {
             .catch((error) => {
                 console.error('มีข้อผิดพลาดในการดึงข้อมูล:', error);
             });
-    }, [username,setUser]);
+    }, [username, setUser]);
     return (
         <div className='Profile-Screen'>
             <video autoPlay loop muted className='video-bg'>
