@@ -19,7 +19,7 @@ const Truemoneypay = () => {
     const loggedInUsername = localStorage.getItem('username'); // Get username from Local Storage
     if (loggedInUsername) {
       if (phoneNumber.startsWith('0') && phoneNumber.length === 10) {
-        if (amount.trim() === '' || !amount.startsWith('0')) {
+        if (!amount.startsWith('0')&& amount!="") {
           axios
             .post('http://localhost:3001/topuptruemoney', {
               username: loggedInUsername,
@@ -46,7 +46,7 @@ const Truemoneypay = () => {
           Swal.fire({
             icon: 'error',
             title: 'ค่าเงินไม่ถูกต้อง',
-            text: 'โปรดใส่ค่าเงินที่ไม่ขึ้นต้นด้วย "0"',
+            text: 'โปรดใส่จำนวนเงินที่ต้องการเติม',
           });
         }
       } else {
