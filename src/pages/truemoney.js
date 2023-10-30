@@ -62,6 +62,7 @@ const Truemoneypay = () => {
         title: 'ยังไม่ได้ Login',
         text: 'กรุณาล็อคอิน',
       });
+      history.push('/login');
     }
   };
 

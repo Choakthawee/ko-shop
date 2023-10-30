@@ -18,13 +18,13 @@ const Qrcodepay = () => {
   const history = useHistory();
 
   const check0 = () => {
-    console.log(amount )
     if(localStorage.getItem('username') == null) {
       Swal.fire({
         icon: 'error',
         title: 'ยังไม่ได้ Login',
         text: 'กรุณาล็อคอิน',
       });
+      history.push('/login');
     }
     else if (amount.trim() !== '' && !amount.startsWith('0') && amount !== null) {
       setCk(true); Swal.fire({
