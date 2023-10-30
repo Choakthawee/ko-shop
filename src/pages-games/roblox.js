@@ -7,12 +7,15 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import videoBg from '../images/Halloween.mp4';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Link, useHistory } from 'react-router-dom';
 
 const Roblox = () => {
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalRobux, setTotalRobux] = useState(0);
     const [totalRobuxMap, setTotalRobuxMap] = useState(0);
-    const [userID,setuserID] = useState('');
+    const [userID, setuserID] = useState('');
+    const history = useHistory();
+
     const handleRobuxChange = (event) => {
         const robuxAmount = parseInt(event.target.value);
         const rate = 10; // Rate 10/THB
@@ -25,27 +28,35 @@ const Roblox = () => {
     const handlePurchaseConfirmation = () => {
         const loggedInUsername = localStorage.getItem('username');
 
-        if (loggedInUsername !== null && totalPrice > 0 && userID!=="") {
-            Swal.fire({
-                icon: 'error',
-                title: 'ผิดพลาด',
-                text: 'ตอนนี้ไม่มี Robux พร้อมขาย ',
-            });
-        } else {
-            if(userID =="")
-            Swal.fire({
-                icon: 'error',
-                title: 'ผิดพลาด',
-                text: 'กรุณากรอก ID ',
-            });
-            else if(totalPrice !==""){
+        if (loggedInUsername) {
+            if (loggedInUsername !== null && totalPrice > 0 && userID !== "") {
                 Swal.fire({
                     icon: 'error',
                     title: 'ผิดพลาด',
-                    text: 'กรุณาเลือกจำนวนที่ต้องการซื้อ',
+                    text: 'ตอนนี้ไม่มี Robux พร้อมขาย ',
                 });
+            } else {
+                if (userID == "")
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'ผิดพลาด',
+                        text: 'กรุณากรอก ID ',
+                    });
+                else if (totalPrice !== "") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'ผิดพลาด',
+                        text: 'กรุณาเลือกจำนวนที่ต้องการซื้อ',
+                    });
+                }
             }
-            // จัดการ UI เพื่อแจ้งให้ผู้ใช้เลือกจำนวนและเข้าสู่ระบบ
+        } else if (!loggedInUsername) {
+            Swal.fire({
+                icon: 'error',
+                title: 'ผิดพลาด',
+                text: 'กรุณาล็อคอิน ',
+            });
+            history.push('/login');
         }
     };
     return (
