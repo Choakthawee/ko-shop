@@ -17,7 +17,8 @@ import Swal from 'sweetalert2';
 const Apex = () => {
   const [clickedIndex, setClickedIndex] = useState(null);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [userID,setuserID] = useState('');
+  const [userID, setuserID] = useState('');
+  const history = useHistory();
   const handleImageClick = (index, price) => {
     if (index === clickedIndex) {
       setClickedIndex(null);
@@ -29,7 +30,7 @@ const Apex = () => {
   };
 
   const videos = [
-    { src: apexcoin1, text: '149.00'},
+    { src: apexcoin1, text: '149.00' },
     { src: apexcoin2, text: '249.00' },
     { src: apexcoin3, text: '549.00' },
     { src: apexcoin4, text: '899.00' },
@@ -38,49 +39,56 @@ const Apex = () => {
   ];
   const handlePurchaseConfirmation = () => {
     const loggedInUsername = localStorage.getItem('username');
-    
-    if (loggedInUsername !==null && totalPrice>0 && userID !=="") {
-      axios.post('http://localhost:3001/deductMoney', {
-        username: loggedInUsername,
-        amount: totalPrice 
-        
-      })
-      .then((response) => {
-        
-        Swal.fire({
-          icon: 'success',
-          title: response.data,
-          text: 'คอยน์เข้าเกมแล้ว',
-        });
-        // อัพเดท UI หรือทำการดำเนินการเพิ่มเติมตามตอบรับ
-      })
-      .catch((error) => {
-        console.error(error);
-        Swal.fire({
-          icon: 'error',
-          title: 'ผิดพลาด',
-          text: 'จำนวนเงินของคุณไม่พอกรุณาเติมเงินเพิ่ม',
-        });
+    if (loggedInUsername) {
+      if (loggedInUsername !== null && totalPrice > 0 && userID !== "") {
+        axios.post('http://localhost:3001/deductMoney', {
+          username: loggedInUsername,
+          amount: totalPrice
+
+        })
+          .then((response) => {
+
+            Swal.fire({
+              icon: 'success',
+              title: response.data,
+              text: 'คอยน์เข้าเกมแล้ว',
+            });
+            // อัพเดท UI หรือทำการดำเนินการเพิ่มเติมตามตอบรับ
+          })
+          .catch((error) => {
+            console.error(error);
+            Swal.fire({
+              icon: 'error',
+              title: 'ผิดพลาด',
+              text: 'จำนวนเงินของคุณไม่พอกรุณาเติมเงินเพิ่ม',
+            });
+          });
+      } else {
+        if (userID == "") {
+          Swal.fire({
+            icon: 'error',
+            title: 'ผิดพลาด',
+            text: 'กรุณากรอก ID ',
+          });
+        }
+
+        else if (totalPrice == "") {
+          Swal.fire({
+            icon: 'error',
+            title: 'ผิดพลาด',
+            text: 'กรุณาเลือกจำนวนที่ต้องการซื้อ',
+          });
+        }
+      }
+    } else if (!loggedInUsername) {
+      Swal.fire({
+        icon: 'error',
+        title: 'ผิดพลาด',
+        text: 'กรุณาล็อคอิน ',
       });
-    } else {
-      if(userID ==""){
-        Swal.fire({
-          icon: 'error',
-          title: 'ผิดพลาด',
-          text: 'กรุณากรอก ID ',
-        });
-      }
-      
-      else if (totalPrice==""){
-        Swal.fire({
-          icon: 'error',
-          title: 'ผิดพลาด',
-          text: 'กรุณาเลือกจำนวนที่ต้องการซื้อ',
-        });
-      }
-      
-      // จัดการ UI เพื่อแจ้งให้ผู้ใช้เลือกจำนวนและเข้าสู่ระบบ
+      history.push('/login');
     }
+
   };
   return (
     <div className="valorantScreen">
@@ -120,7 +128,7 @@ const Apex = () => {
           <div
             key={index}
             className={`image-boxApex ${index === clickedIndex ? 'clicked' : ''}`}
-            onClick={() => handleImageClick(index, video.text.replace(",",""))}
+            onClick={() => handleImageClick(index, video.text.replace(",", ""))}
           >
             <video autoPlay loop muted width="300" height="200">
               <source src={video.src} type="video/mp4" />
