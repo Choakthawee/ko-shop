@@ -10,9 +10,54 @@ import videoBg from '../images/Halloween.mp4';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useState } from 'react';
+import { Link ,useHistory } from 'react-router-dom';
 
 const Qrcodepay = () => {
-  
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [amount, setAmount] = useState('');
+  const history = useHistory();
+
+  const handleTopup = () => {
+    const loggedInUsername = localStorage.getItem('username'); // Get username from Local Storage
+    if (loggedInUsername) {
+      if (phoneNumber.startsWith('0') && phoneNumber.length === 10) {
+        axios
+          .post('http://localhost:3001/topup', {
+            username: loggedInUsername,
+            phoneNumber: phoneNumber,
+            amount: amount,
+          })
+          .then((response) => {
+            Swal.fire({
+              icon: 'success',
+              title: 'เติมเงินสำเร็จ',
+              text: 'บัตรเงินสดทรูมันนี่',
+            });
+            history.push('/allitem'); 
+          })
+          .catch((error) => {
+            console.error(error);
+            Swal.fire({
+              icon: 'error',
+              title: 'มีข้อผิดพลาด',
+              text: 'เกิดข้อผิดพลาดในการเติมเงิน โปรดลองอีกครั้ง',
+            });
+          });
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'เบอร์โทรศัพท์ไม่ถูกต้อง',
+          text: 'โปรดใส่หมายเลขโทรศัพท์ที่ขึ้นต้นด้วย "0" และมีความยาว 10 หลัก',
+        });
+      }
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'ยังไม่ได้ Login',
+        text: 'กรุณาล็อคอิน',
+      });
+    }
+  };
   return (
     <div
       style={{

@@ -4,6 +4,7 @@ import Truemoney from '../images/true-money.png';
 import { Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import videoBg from '../images/Halloween.mp4';
+import { Link ,useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useState } from 'react';
@@ -12,13 +13,14 @@ import {faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 const Truemoneypay = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [amount, setAmount] = useState('');
+  const history = useHistory();
 
   const handleTopup = () => {
     const loggedInUsername = localStorage.getItem('username'); // Get username from Local Storage
-
     if (loggedInUsername) {
       if (phoneNumber.startsWith('0') && phoneNumber.length === 10) {
-        axios
+        if(amount.trim() === '' || !amount.startsWith('0')){
+          axios
           .post('http://localhost:3001/topup', {
             username: loggedInUsername,
             phoneNumber: phoneNumber,
@@ -30,7 +32,7 @@ const Truemoneypay = () => {
               title: 'เติมเงินสำเร็จ',
               text: 'บัตรเงินสดทรูมันนี่',
             });
-            // Update the user interface after successful top-up (e.g., display new balance)
+            history.push('/allitem'); 
           })
           .catch((error) => {
             console.error(error);
@@ -40,6 +42,13 @@ const Truemoneypay = () => {
               text: 'เกิดข้อผิดพลาดในการเติมเงิน โปรดลองอีกครั้ง',
             });
           });
+        }else {
+          Swal.fire({
+            icon: 'error',
+            title: 'ค่าเงินไม่ถูกต้อง',
+            text: 'โปรดใส่ค่าเงินที่ไม่ขึ้นต้นด้วย "0"',
+          });
+        }
       } else {
         Swal.fire({
           icon: 'error',

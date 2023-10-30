@@ -31,6 +31,7 @@ const Login = () => {
           title: 'เข้าสู่ระบบสำเร็จ',
           text: 'ยินดีต้อนรับ! คุณได้เข้าสู่ระบบแล้ว'
         });
+        localStorage.setItem('username', username);
         history.push('/profile'); 
       } else {
         Swal.fire({

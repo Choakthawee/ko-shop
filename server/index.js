@@ -77,12 +77,11 @@ app.post('/create', (req, res) => {
 app.post('/topup', (req, res) => {
   const phoneNumber = req.body.phoneNumber;
   const amount = req.body.amount;
-  const username = req.user.username; // ใช้ req.user.username สำหรับรับค่า username จาก authentication
-
+  const username = req.body.username; // ใช้ req.user.username สำหรับรับค่า username จาก authentication
   if (phoneNumber.startsWith('0') && phoneNumber.length === 10) {
     // หากหมายเลขโทรศัพท์ขึ้นต้นด้วย "0" และมีความยาวที่ถูกต้อง
     // ให้อัปเดตข้อมูลโดยตรง
-    db.query('UPDATE users SET money = money + ? WHERE username = ?', [amount, username], (err, result) => {
+    db.query('UPDATE user_info SET money = money + ? WHERE username = ?', [amount, username], (err, result) => {
       if (err) {
         return res.status(400).send('เกิดข้อผิดพลาดในการเติมเงิน');
       } else {
