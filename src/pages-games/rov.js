@@ -46,6 +46,11 @@ const Rov = () => {
     { src: counpon9, text: '2,100.00' },
   ];
   const handlePurchaseConfirmation = () => {
+    const navigateToProfile = () => {
+      setTimeout(() => {
+        history.push('/profile');
+      }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
+    };
     const loggedInUsername = localStorage.getItem('username');
     if (loggedInUsername) {
       if (loggedInUsername !== null && totalPrice > 0 && userID !== "" && userPass !== "") {
@@ -61,7 +66,7 @@ const Rov = () => {
               title: response.data,
               text: 'คูปองเข้าเกมแล้ว',
             });
-            // อัพเดท UI หรือทำการดำเนินการเพิ่มเติมตามตอบรับ
+            navigateToProfile();
           })
           .catch((error) => {
             console.error(error);

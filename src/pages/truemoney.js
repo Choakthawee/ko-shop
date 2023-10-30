@@ -14,12 +14,16 @@ const Truemoneypay = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [amount, setAmount] = useState('');
   const history = useHistory();
-
+  const navigateToProfile = () => {
+    setTimeout(() => {
+      history.push('/profile');
+    }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
+  };
   const handleTopup = () => {
     const loggedInUsername = localStorage.getItem('username'); // Get username from Local Storage
     if (loggedInUsername) {
       if (phoneNumber.startsWith('0') && phoneNumber.length === 10) {
-        if (!amount.startsWith('0')&& amount!="") {
+        if (!amount.startsWith('0') && amount != "") {
           axios
             .post('http://localhost:3001/topuptruemoney', {
               username: loggedInUsername,
@@ -32,7 +36,7 @@ const Truemoneypay = () => {
                 title: 'เติมเงินสำเร็จ',
                 text: 'ทรูมันนี่วอเล็ต',
               });
-              history.push('/allitem');
+              navigateToProfile();
             })
             .catch((error) => {
               console.error(error);

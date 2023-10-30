@@ -16,7 +16,11 @@ const Qrcodepay = () => {
   const [amount, setAmount] = useState('');
   const [Ck, setCk] = useState(false);
   const history = useHistory();
-
+  const navigateToProfile = () => {
+    setTimeout(() => {
+      history.push('/profile');
+    }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
+  };
   const check0 = () => {
     if(localStorage.getItem('username') == null) {
       Swal.fire({
@@ -24,7 +28,7 @@ const Qrcodepay = () => {
         title: 'ยังไม่ได้ Login',
         text: 'กรุณาล็อคอิน',
       });
-      history.push('/login');
+      navigateToProfile();
     }
     else if (amount.trim() !== '' && !amount.startsWith('0') && amount !== null) {
       setCk(true); Swal.fire({

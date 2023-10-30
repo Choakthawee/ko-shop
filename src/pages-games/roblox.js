@@ -26,6 +26,11 @@ const Roblox = () => {
         setTotalRobux(robuxAmount);
     };
     const handlePurchaseConfirmation = () => {
+        const navigateToProfile = () => {
+            setTimeout(() => {
+              history.push('/profile');
+            }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
+          };
         const loggedInUsername = localStorage.getItem('username');
 
         if (loggedInUsername) {
@@ -35,6 +40,7 @@ const Roblox = () => {
                     title: 'ผิดพลาด',
                     text: 'ตอนนี้ไม่มี Robux พร้อมขาย ',
                 });
+                navigateToProfile();
             } else {
                 if (userID == "")
                     Swal.fire({

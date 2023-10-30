@@ -38,6 +38,11 @@ const Apex = () => {
     { src: apexcoin6, text: '2,799.00' },
   ];
   const handlePurchaseConfirmation = () => {
+    const navigateToProfile = () => {
+      setTimeout(() => {
+        history.push('/profile');
+      }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
+    };
     const loggedInUsername = localStorage.getItem('username');
     if (loggedInUsername) {
       if (loggedInUsername !== null && totalPrice > 0 && userID !== "") {
@@ -53,7 +58,7 @@ const Apex = () => {
               title: response.data,
               text: 'คอยน์เข้าเกมแล้ว',
             });
-            // อัพเดท UI หรือทำการดำเนินการเพิ่มเติมตามตอบรับ
+            navigateToProfile();
           })
           .catch((error) => {
             console.error(error);

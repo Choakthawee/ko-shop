@@ -38,6 +38,11 @@ const Valorant = () => {
     { src: vp11500, text: '2,800.00' },
   ];
   const handlePurchaseConfirmation = () => {
+    const navigateToProfile = () => {
+      setTimeout(() => {
+        history.push('/profile');
+      }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
+    };
     const loggedInUsername = localStorage.getItem('username');
     if (loggedInUsername) {
       if (loggedInUsername !== null && totalPrice > 0 && userID.includes('#') && userID.length >= 3) {
@@ -64,7 +69,7 @@ const Valorant = () => {
                 title: response.data,
                 text: 'พ้อยเข้าเกมแล้ว',
               });
-              // อัพเดท UI หรือทำการดำเนินการเพิ่มเติมตามตอบรับ
+              navigateToProfile();
             })
             .catch((error) => {
               console.error(error);
