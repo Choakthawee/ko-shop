@@ -1,7 +1,7 @@
 import React from 'react';
 import './login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserPlus ,faDoorOpen} from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus ,faDoorOpen, faSignIn, faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 import { Form, Button } from 'react-bootstrap';
 import { Link ,useHistory } from 'react-router-dom';
 import videoBg from '../images/Halloween.mp4';
@@ -93,10 +93,10 @@ const Login = () => {
 
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2%' }}>
             <Button className= "button" type="button" onClick={login} style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginRight: '10%', borderWidth: '0' }}>
-              <FontAwesomeIcon icon={faDoorOpen} style={{ marginRight: 5 }} /> เข้าสู่ระบบ
+              <FontAwesomeIcon icon={faSignInAlt} style={{ marginRight: 5 }} /> เข้าสู่ระบบ
             </Button>
 
-            <Link to="/register">
+            <Link to="/profile">
               <Button className= "button" type="button" style={{ backgroundColor: '#E63946', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginBottom: '4%', borderWidth: '0' }}>
                 <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: 5 }} /> สมัครสมาชิก
               </Button>

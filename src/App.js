@@ -30,7 +30,7 @@ function App() {
         <Route path='/apex' exact component={Apex}/>
         <Route path='/rov' exact component={Rov}/>
         <Route path='/roblox' exact component={Roblox}/>
-        {/* <Route path='/profile' exact component={Profile}/> */}
+        <Route path='/profile' exact component={Profile}/>
       </Switch>
     </Router>
   );

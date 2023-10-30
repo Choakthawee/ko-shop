@@ -1,0 +1,9 @@
+.Profile-Screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
