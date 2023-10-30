@@ -66,7 +66,7 @@ const Rov = () => {
         console.error(error);
         Swal.fire({
           icon: 'error',
-          title: 'มีข้อผิดพลาด',
+          title: 'ผิดพลาด',
           text: 'จำนวนเงินของคุณไม่พอกรุณาเติมเงินเพิ่ม',
         });
       });
@@ -74,21 +74,21 @@ const Rov = () => {
       if(userID == ""){
         Swal.fire({
           icon: 'error',
-          title: 'มีข้อผิดพลาด',
+          title: 'ผิดพลาด',
           text: 'กรุณากรอก ID ',
         });
       }
       else if(userPass ==""){
         Swal.fire({
           icon: 'error',
-          title: 'มีข้อผิดพลาด',
+          title: 'ผิดพลาด',
           text: 'กรุณากรอก Password ',
         });
       }
       else if(totalPrice ==""){
         Swal.fire({
           icon: 'error',
-          title: 'มีข้อผิดพลาด',
+          title: 'ผิดพลาด',
           text: 'กรุณาเลือกจำนวนที่ต้องการซื้อ',
         });
       }
