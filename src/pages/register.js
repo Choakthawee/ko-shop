@@ -25,7 +25,11 @@ const Register = () => {
   //     setUser(response.data);
   //   });
   // }
-
+  const navigateToProfile = () => {
+    setTimeout(() => {
+      history.push('/profile');
+    }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
+  };
   const addregister = () => {
     if (!username || !password || !confirmpassword || !email) {
       // กรอกข้อมูลไม่ครบ ใช้ SweetAlert2 เพื่อแสดงข้อความแจ้งเตือน
@@ -84,7 +88,7 @@ const Register = () => {
         title: 'สมัครสมาชิกสำเร็จ',
         text: 'ยินดีต้อนรับ! คุณได้สมัครสมาชิกแล้ว'
       });
-      history.push('/login');
+      navigateToProfile();
     })
       .catch((error) => {
         Swal.fire({

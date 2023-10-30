@@ -16,12 +16,23 @@ const db = mysql.createConnection({
 
 
 //รับข้อมูล
-app.get('/user_info',(req,res)=>{
-  db.query("SELECT * FROM user_info", (err, result) =>{
-    if(err){
+app.get('/user_info', (req, res) => {
+  const username = req.query.username; // สมมติว่าค่า username ถูกส่งมาใน req.query.username
+
+  db.query("SELECT money, email FROM user_info WHERE username = ?", [username], (err, result) => {
+    if (err) {
       console.log(err);
-    }else{
-      res.send(result);
+      res.status(500).send("มีข้อผิดพลาดในการดึงข้อมูล");
+    } else {
+      if (result.length > 0) {
+        const userInfo = {
+          money: result[0].money, // ดึงค่า money จากผลลัพธ์ที่ได้
+          email: result[0].email // ดึงค่า email จากผลลัพธ์ที่ได้
+        };
+        res.send(userInfo);
+      } else {
+        res.status(404).send("ไม่พบข้อมูลผู้ใช้งาน");
+      }
     }
   });
 });
@@ -40,6 +51,8 @@ app.post('/login', (req, res) => {
     }
   });
 })
+
+
 //register
 app.post('/create', (req, res) => {
   const username = req.body.username;
