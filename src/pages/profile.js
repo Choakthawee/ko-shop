@@ -31,6 +31,17 @@ const Profile = () => {
         })
     };
 
+    //ดึงข้อมูลผู้ใช้ทั้งหมด
+    useEffect(() => {
+        axios.get(`http://localhost:3001/user_info?username=${username}`)
+            .then((response) => {
+                console.log(response.data)
+                setUser(response.data);
+            })
+            .catch((error) => {
+                console.error('มีข้อผิดพลาดในการดึงข้อมูล:', error);
+            });
+    }, [username,setUser]);
     return (
         <div className='Profile-Screen'>
             <video autoPlay loop muted className='video-bg'>
