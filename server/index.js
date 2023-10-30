@@ -25,7 +25,22 @@ app.get('/user_info',(req,res)=>{
     }
   });
 });
-
+//login
+app.post('/login', (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  db.query('SELECT * FROM user_info WHERE username = ? AND password = ?', [username, password], (err, result) => {
+    if (err) {
+      return res.status(400).send('Something went wrong');
+    }
+    if (result.length > 0) {
+      return res.status(200).send('Login successful');
+    } else {
+      return res.status(400).send('Invalid username or password');
+    }
+  });
+})
+//register
 app.post('/create', (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
@@ -58,6 +73,77 @@ app.post('/create', (req, res) => {
     }
   });
 });
+//topuptruemoney
+app.post('/topuptruemoney', (req, res) => {
+  const phoneNumber = req.body.phoneNumber;
+  const amount = req.body.amount;
+  const username = req.body.username; // ใช้ req.user.username สำหรับรับค่า username จาก authentication
+  if (phoneNumber.startsWith('0') && phoneNumber.length === 10) {
+    // หากหมายเลขโทรศัพท์ขึ้นต้นด้วย "0" และมีความยาวที่ถูกต้อง
+    // ให้อัปเดตข้อมูลโดยตรง
+    db.query('UPDATE user_info SET money = money + ? WHERE username = ?', [amount, username], (err, result) => {
+      if (err) {
+        return res.status(400).send('เกิดข้อผิดพลาดในการเติมเงิน');
+      } else {
+        return res.status(200).send('เติมเงินสำเร็จ');
+      }
+    });
+  } else {
+    return res.status(400).send('โปรดใส่หมายเลขโทรศัพท์ที่ขึ้นต้นด้วย "0" และมีความยาว 10 หลัก');
+  }
+});
+//topupqrcode
+app.post('/topupqrcode', (req, res) => {
+  const amount = req.body.amount;
+  const username = req.body.username; // ใช้ req.user.username สำหรับรับค่า username จาก authentication
+
+  // ตรวจสอบเฉพาะค่า amount และ username
+  if (amount > 0) {
+    // หาก amount มากกว่า 0
+    // ให้อัปเดตข้อมูลโดยตรง
+    db.query('UPDATE user_info SET money = money + ? WHERE username = ?', [amount, username], (err, result) => {
+      if (err) {
+        return res.status(400).send('เกิดข้อผิดพลาดในการเติมเงิน');
+      } else {
+        return res.status(200).send('เติมเงินสำเร็จ');
+      }
+    });
+  } else {
+    return res.status(400).send('กรุณาใส่จำนวนเงินที่ถูกต้อง');
+  }
+});
+
+app.post('/deductMoney', (req, res) => {
+  const amount = req.body.amount;
+  const username = req.body.username;
+
+  db.query("SELECT money FROM user_info WHERE username = ?", [username], (err, result) => {
+    if (err) {
+      return res.status(400).send('เกิดข้อผิดพลาดในการซื้อ');
+    } else {
+      const moneyInAccount = result[0].money;
+
+      if (moneyInAccount < amount) {
+        return res.status(400).send('เงินในบัญชีไม่เพียงพอ');
+      } else {
+        const remainingMoney = moneyInAccount - amount;
+
+        if (remainingMoney < 0) {
+          return res.status(400).send('การหักเงินทำให้ยอดเงินติดลบ');
+        }
+
+        db.query('UPDATE user_info SET money = ? WHERE username = ?', [remainingMoney, username], (err, result) => {
+          if (err) {
+            return res.status(400).send('เกิดข้อผิดพลาดในการซื้อ');
+          } else {
+            return res.status(200).send('การซื้อสำเร็จ');
+          }
+        });
+      }
+    }
+  });
+});
+
 
 // เริ่มต้นเซิร์ฟเวอร์ Express
 

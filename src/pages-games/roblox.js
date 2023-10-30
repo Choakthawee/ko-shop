@@ -1,26 +1,53 @@
 import React, { useState } from 'react';
 import './roblox.css';
 import robux from '../roblox-robux/robux.png'
-import { Form,Button } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import videoBg from '../images/Halloween.mp4';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Roblox = () => {
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalRobux, setTotalRobux] = useState(0);
-    const [totalRobuxMap,setTotalRobuxMap] = useState(0);
-
+    const [totalRobuxMap, setTotalRobuxMap] = useState(0);
+    const [userID,setuserID] = useState('');
     const handleRobuxChange = (event) => {
         const robuxAmount = parseInt(event.target.value);
         const rate = 10; // Rate 10/THB
         const price = robuxAmount / rate;
-        const pricemap = (robuxAmount * (0.4285))+robuxAmount
+        const pricemap = (robuxAmount * (0.4285)) + robuxAmount
         setTotalRobuxMap(pricemap.toFixed(0));
         setTotalPrice(price.toFixed(2)); // Round to 2 decimal places
         setTotalRobux(robuxAmount);
     };
+    const handlePurchaseConfirmation = () => {
+        const loggedInUsername = localStorage.getItem('username');
 
+        if (loggedInUsername !== null && totalPrice > 0 && userID!=="") {
+            Swal.fire({
+                icon: 'error',
+                title: 'ผิดพลาด',
+                text: 'ตอนนี้ไม่มี Robux พร้อมขาย ',
+            });
+        } else {
+            if(userID =="")
+            Swal.fire({
+                icon: 'error',
+                title: 'ผิดพลาด',
+                text: 'กรุณากรอก ID ',
+            });
+            else if(totalPrice !==""){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'ผิดพลาด',
+                    text: 'กรุณาเลือกจำนวนที่ต้องการซื้อ',
+                });
+            }
+            // จัดการ UI เพื่อแจ้งให้ผู้ใช้เลือกจำนวนและเข้าสู่ระบบ
+        }
+    };
     return (
         <div className="robloxScreen">
             <video autoPlay loop muted className='video-bg'>
@@ -43,7 +70,7 @@ const Roblox = () => {
 
             <div className='divtext-roblox' data-aos="fade-up" data-aos-delay="50" data-aos-once='true'>
                 <div className='div-input-roblox1'>
-                    <h1 style={{marginBottom:'10px'}}>Roblox Username</h1>
+                    <h1 style={{ marginBottom: '10px' }}>Roblox Username</h1>
                     <p className='info-textroblox'>กรุณากรอกชื่อผู้ใช้งาน roblox ของคุณ</p>
                     <Form.Group style={{ marginBottom: '10px' }}>
                         <Form.Control
@@ -51,9 +78,12 @@ const Roblox = () => {
                             type='text'
                             name='username'
                             placeholder='Roblox Username'
+                            onChange={(event) => {
+                                setuserID(event.target.value)
+                            }}
                         />
                     </Form.Group>
-                    
+
                     <div className='input-robux'>
                         <div>
                             <span className='robux-text-color input-robux-text1'>
@@ -78,14 +108,14 @@ const Roblox = () => {
                     <p style={{ marginBottom: '10px', backgroundColor: '#fff0dd', borderRadius: '10px', height: '20%', alignItems: 'center', display: 'flex', justifyContent: 'center' }}>
                         ซื้อ <b className='robux-text-color total-robux-margin' > {totalRobux} R$</b> เป็นจำนวนเงินทั้งสิ้น {totalPrice} THB
                     </p>
-                    <Button className="button-roblox" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '100%', height: 'auto', fontSize: '20px', marginBottom: '2%', borderWidth: '0' }}>
+                    <Button className="button-roblox" type="button" onClick={handlePurchaseConfirmation} style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '100%', height: 'auto', fontSize: '20px', marginBottom: '2%', borderWidth: '0' }}>
                         <FontAwesomeIcon icon={faCheckCircle} style={{ marginRight: 5 }} /> ยืนยันคำสั่งซื้อ
                     </Button>
                 </div>
 
                 <div className='div-input-roblox2' data-aos="fade-up" data-aos-delay="150" data-aos-once='true'>
                     <h1>ขั้นตอนการซื้อ R$ แบบ Map</h1>
-                    <p style={{marginTop:'10px'}}>วิธีและการดำเนินการรูปแบบ Configure game</p>
+                    <p style={{ marginTop: '10px' }}>วิธีและการดำเนินการรูปแบบ Configure game</p>
                     <ol>
                         <li className='mark-text'>
                             กรุณากรอก Roblox Username เพื่อให้ระบบตรวจสอบข้อมูลเกมส์ของท่าน
@@ -94,7 +124,7 @@ const Roblox = () => {
                             กรอกจำนวน Robux ที่ต้องการซื้อโดยมีค่าบริการ Rate 10/THB
                         </li>
                         <li className='global-margin'>
-                            กรุณากดเข้า <b style={{color:'#e95420'}}>Game Configure</b> เพื่อเข้าไปตั้งค่าที่ Access Settings
+                            กรุณากดเข้า <b style={{ color: '#e95420' }}>Game Configure</b> เพื่อเข้าไปตั้งค่าที่ Access Settings
                         </li>
                         <li className='global-margin'>
                             กรุณาตั้งค่า Access Type เป็น Public Server
@@ -108,13 +138,13 @@ const Roblox = () => {
                         <li className='global-margin'>
                             ยืนยันการสั่งซื้อ Robux R$
                         </li>
-                        <li style={{marginBottom:'10px',color:'red'}}>
+                        <li style={{ marginBottom: '10px', color: 'red' }}>
                             โดย Robux จะเข้าบัญชีภายใน 5-7 วัน
                         </li>
 
-                        <h1 style={{marginTop:'20px'}}>คำเตือน เพื่อความปลอดภัยของคุณลูกค้า</h1>
+                        <h1 style={{ marginTop: '20px' }}>คำเตือน เพื่อความปลอดภัยของคุณลูกค้า</h1>
                         <ul>
-                            <li className='global-margin' style={{marginTop:'10px',marginBottom:'10px'}}>รหัสของคุณต้องมีอายุมากกว่า +1 ปี</li>
+                            <li className='global-margin' style={{ marginTop: '10px', marginBottom: '10px' }}>รหัสของคุณต้องมีอายุมากกว่า +1 ปี</li>
                             <li className='global-margin'>ต้องมีการเชื่อมอีเมลล์ และ มีการแต่งตัวที่ไม่ดูเป็นผู้เล่นใหม่</li>
                             <li className='global-margin'>ไม่แนะนำให้ลูกค้าสั่งซื้อ R$ จากระบบนี้ถี่เกินไปเพราะจะทำให้ Roblox ตรวจสอบรหัสของท่านได้</li>
                             <li className='global-margin'>ไม่แนะนำให้ลูกค้านำ R$ ไปเข้ากลุ่มหรือละเมิดกฎเกณฑ์ของ Roblox</li>

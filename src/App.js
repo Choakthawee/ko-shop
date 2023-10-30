@@ -12,6 +12,7 @@ import Valorant from './pages-games/valorant';
 import Apex from './pages-games/apex';
 import Rov from './pages-games/rov';
 import Roblox from './pages-games/roblox';
+import Profile from './pages/profile';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path='/apex' exact component={Apex}/>
         <Route path='/rov' exact component={Rov}/>
         <Route path='/roblox' exact component={Roblox}/>
+        {/* <Route path='/profile' exact component={Profile}/> */}
       </Switch>
     </Router>
   );
