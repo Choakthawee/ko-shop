@@ -58,7 +58,7 @@ const Apex = () => {
         console.error(error);
         Swal.fire({
           icon: 'error',
-          title: 'มีข้อผิดพลาด',
+          title: 'ผิดพลาด',
           text: 'จำนวนเงินของคุณไม่พอกรุณาเติมเงินเพิ่ม',
         });
       });
@@ -66,7 +66,7 @@ const Apex = () => {
       if(userID ==""){
         Swal.fire({
           icon: 'error',
-          title: 'มีข้อผิดพลาด',
+          title: 'ผิดพลาด',
           text: 'กรุณากรอก ID ',
         });
       }
@@ -74,7 +74,7 @@ const Apex = () => {
       else if (totalPrice==""){
         Swal.fire({
           icon: 'error',
-          title: 'มีข้อผิดพลาด',
+          title: 'ผิดพลาด',
           text: 'กรุณาเลือกจำนวนที่ต้องการซื้อ',
         });
       }

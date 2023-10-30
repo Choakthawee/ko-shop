@@ -28,20 +28,20 @@ const Roblox = () => {
         if (loggedInUsername !== null && totalPrice > 0 && userID!=="") {
             Swal.fire({
                 icon: 'error',
-                title: 'มีข้อผิดพลาด',
+                title: 'ผิดพลาด',
                 text: 'ตอนนี้ไม่มี Robux พร้อมขาย ',
             });
         } else {
             if(userID =="")
             Swal.fire({
                 icon: 'error',
-                title: 'มีข้อผิดพลาด',
+                title: 'ผิดพลาด',
                 text: 'กรุณากรอก ID ',
             });
             else if(totalPrice !==""){
                 Swal.fire({
                     icon: 'error',
-                    title: 'มีข้อผิดพลาด',
+                    title: 'ผิดพลาด',
                     text: 'กรุณาเลือกจำนวนที่ต้องการซื้อ',
                 });
             }
