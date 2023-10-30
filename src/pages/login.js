@@ -49,7 +49,7 @@ const Login = () => {
       Swal.fire({
         icon: 'error',
         title: 'เข้าสู่ระบบล้มเหลว',
-        text: 'Something went wrong. Please try again later.'
+        text: 'กรุณาสมัครมาชิก'
       });
     });
   };
