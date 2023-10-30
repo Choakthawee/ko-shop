@@ -4,12 +4,7 @@ import './register.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faBackward } from '@fortawesome/free-solid-svg-icons';
 import { Form, Button } from 'react-bootstrap';
-<<<<<<< HEAD
 import { Link,useHistory } from 'react-router-dom';
-=======
-import { Link, useHistory } from 'react-router-dom';
-import axios from 'axios';
->>>>>>> ea3d93abe5a779d2da0b8e6a7798450cb678259c
 import videoBg from '../images/Halloween.mp4';
 import axios from 'axios';
 import Swal from 'sweetalert2';

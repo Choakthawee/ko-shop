@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './valorant.css';
 import { Form, Button } from 'react-bootstrap';
-import vp540 from '../valorant-points/540.png';
-import vp1130 from '../valorant-points/1130.png';
-import vp1945 from '../valorant-points/1945.png';
-import vp3930 from '../valorant-points/3930.png';
-import vp5550 from '../valorant-points/5550.png';
-import vp11500 from '../valorant-points/11500.png';
+import vp540 from '../valorant-points/540.mp4';
+import vp1130 from '../valorant-points/1130.mp4';
+import vp1945 from '../valorant-points/1945.mp4';
+import vp3930 from '../valorant-points/3930.mp4';
+import vp5550 from '../valorant-points/5550.mp4';
+import vp11500 from '../valorant-points/11500.mp4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import videoBg from '../images/Halloween.mp4';
@@ -26,7 +26,7 @@ const Valorant = () => {
     }
   };
 
-  const images = [
+  const videos = [
     { src: vp540, text: '฿150.00' },
     { src: vp1130, text: '฿300.00' },
     { src: vp1945, text: '฿500.00' },
@@ -63,15 +63,17 @@ const Valorant = () => {
         <span className='form-section__name'>เลือกจำนวนที่ต้องการเติม</span>
       </h2>
 
-      <div className='valorantContainer' data-aos="fade-up" data-aos-delay = "100">
-        {images.map((image, index) => (
+      <div className='valorantContainer' data-aos="fade-up" data-aos-delay="100">
+        {videos.map((video, index) => (
           <div
             key={index}
-            className={`image-box ${index === clickedIndex ? 'clicked' : ''}`}
-            onClick={() => handleImageClick(index, image.text)}
+            className={`image-boxApex ${index === clickedIndex ? 'clicked' : ''}`}
+            onClick={() => handleImageClick(index, video.text)}
           >
-            <img src={image.src} alt={image.text} />
-            <p>{image.text}</p>
+            <video autoPlay loop muted width="300" height="200">
+              <source src={video.src} type="video/mp4" />
+            </video>
+            <p>{video.text}</p>
           </div>
         ))}
       </div>
