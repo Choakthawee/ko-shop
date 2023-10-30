@@ -4,15 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import videoBg from '../images/Halloween.mp4';
 import { Form, Button } from 'react-bootstrap';
-import counpon1 from '../rov-coupon/coupon1.png'
-import counpon2 from '../rov-coupon/coupon2.png'
-import counpon3 from '../rov-coupon/coupon3.png'
-import counpon4 from '../rov-coupon/coupon4.png'
-import counpon5 from '../rov-coupon/coupon5.png'
-import counpon6 from '../rov-coupon/coupon6.png'
-import counpon7 from '../rov-coupon/coupon7.png'
-import counpon8 from '../rov-coupon/coupon8.png'
-import counpon9 from '../rov-coupon/coupon9.png'
+import counpon1 from '../rov-coupon/coupon1.mp4'
+import counpon2 from '../rov-coupon/coupon2.mp4'
+import counpon3 from '../rov-coupon/coupon3.mp4'
+import counpon4 from '../rov-coupon/coupon4.mp4'
+import counpon5 from '../rov-coupon/coupon5.mp4'
+import counpon6 from '../rov-coupon/coupon6.mp4'
+import counpon7 from '../rov-coupon/coupon7.mp4'
+import counpon8 from '../rov-coupon/coupon8.mp4'
+import counpon9 from '../rov-coupon/coupon9.mp4'
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
@@ -33,7 +33,7 @@ const Rov = () => {
     }
   };
 
-  const images = [
+  const videos = [
     { src: counpon1, text: '40.00' },
     { src: counpon2, text: '72.00' },
     { src: counpon3, text: '120.00' },
@@ -139,15 +139,17 @@ const Rov = () => {
         <span className='form-section__name'>เลือกจำนวนที่ต้องการเติม</span>
       </h2>
 
-      <div className='valorantContainer' data-aos="fade-up" data-aos-delay = "100">
-        {images.map((image, index) => (
+      <div className='valorantContainer' data-aos="fade-up" data-aos-delay="100">
+        {videos.map((video, index) => (
           <div
             key={index}
-            className={`image-box ${index === clickedIndex ? 'clicked' : ''}`}
-            onClick={() => handleImageClick(index, image.text.replace(",",""))}
+            className={`image-boxApex ${index === clickedIndex ? 'clicked' : ''}`}
+            onClick={() => handleImageClick(index, video.text.replace(",",""))}
           >
-            <img src={image.src} alt={image.text} />
-            <p>฿{image.text}</p>
+            <video autoPlay loop muted width="300" height="200">
+              <source src={video.src} type="video/mp4" />
+            </video>
+            <p>฿{video.text}</p>
           </div>
         ))}
       </div>
