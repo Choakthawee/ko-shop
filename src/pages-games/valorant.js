@@ -29,12 +29,12 @@ const Valorant = () => {
   };
 
   const videos = [
-    { src: vp540, text: '฿150.00' },
-    { src: vp1130, text: '฿300.00' },
-    { src: vp1945, text: '฿500.00' },
-    { src: vp3930, text: '฿1,000.00' },
-    { src: vp5550, text: '฿1,400.00' },
-    { src: vp11500, text: '฿2,800.00' },
+    { src: vp540, text: '150.00' },
+    { src: vp1130, text: '300.00' },
+    { src: vp1945, text: '500.00' },
+    { src: vp3930, text: '1,000.00' },
+    { src: vp5550, text: '1,400.00' },
+    { src: vp11500, text: '2,800.00' },
   ];
   const handlePurchaseConfirmation = () => {
     const loggedInUsername = localStorage.getItem('username');
@@ -131,12 +131,12 @@ const Valorant = () => {
           <div
             key={index}
             className={`image-boxApex ${index === clickedIndex ? 'clicked' : ''}`}
-            onClick={() => handleImageClick(index, video.text)}
+            onClick={() => handleImageClick(index, video.text.replace(",",""))}
           >
             <video autoPlay loop muted width="300" height="200">
               <source src={video.src} type="video/mp4" />
             </video>
-            <p>{video.text}</p>
+            <p>฿{video.text}</p>
           </div>
         ))}
       </div>
