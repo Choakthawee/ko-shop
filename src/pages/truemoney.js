@@ -30,7 +30,7 @@ const Truemoneypay = () => {
               Swal.fire({
                 icon: 'success',
                 title: 'เติมเงินสำเร็จ',
-                text: 'บัตรเงินสดทรูมันนี่',
+                text: 'ทรูมันนี่วอเล็ต',
               });
               history.push('/allitem');
             })

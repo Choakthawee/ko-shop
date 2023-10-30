@@ -92,7 +92,7 @@ app.post('/topuptruemoney', (req, res) => {
     return res.status(400).send('โปรดใส่หมายเลขโทรศัพท์ที่ขึ้นต้นด้วย "0" และมีความยาว 10 หลัก');
   }
 });
-
+//topupqrcode
 app.post('/topupqrcode', (req, res) => {
   const amount = req.body.amount;
   const username = req.body.username; // ใช้ req.user.username สำหรับรับค่า username จาก authentication
@@ -112,6 +112,38 @@ app.post('/topupqrcode', (req, res) => {
     return res.status(400).send('กรุณาใส่จำนวนเงินที่ถูกต้อง');
   }
 });
+
+app.post('/deductMoney', (req, res) => {
+  const amount = req.body.amount;
+  const username = req.body.username;
+
+  db.query("SELECT money FROM user_info WHERE username = ?", [username], (err, result) => {
+    if (err) {
+      return res.status(400).send('เกิดข้อผิดพลาดในการซื้อ');
+    } else {
+      const moneyInAccount = result[0].money;
+
+      if (moneyInAccount < amount) {
+        return res.status(400).send('เงินในบัญชีไม่เพียงพอ');
+      } else {
+        const remainingMoney = moneyInAccount - amount;
+
+        if (remainingMoney < 0) {
+          return res.status(400).send('การหักเงินทำให้ยอดเงินติดลบ');
+        }
+
+        db.query('UPDATE user_info SET money = ? WHERE username = ?', [remainingMoney, username], (err, result) => {
+          if (err) {
+            return res.status(400).send('เกิดข้อผิดพลาดในการซื้อ');
+          } else {
+            return res.status(200).send('การซื้อสำเร็จ');
+          }
+        });
+      }
+    }
+  });
+});
+
 
 // เริ่มต้นเซิร์ฟเวอร์ Express
 

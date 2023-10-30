@@ -13,12 +13,16 @@ import counpon6 from '../rov-coupon/coupon6.png'
 import counpon7 from '../rov-coupon/coupon7.png'
 import counpon8 from '../rov-coupon/coupon8.png'
 import counpon9 from '../rov-coupon/coupon9.png'
+import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 
 const Rov = () => {
   const [clickedIndex, setClickedIndex] = useState(null);
   const [totalPrice, setTotalPrice] = useState(0);
-
+  const [userID,setuserID] = useState('');
+  const [userPass,setuserPass] = useState('');
   const handleImageClick = (index, price) => {
     if (index === clickedIndex) {
       setClickedIndex(null);
@@ -30,17 +34,68 @@ const Rov = () => {
   };
 
   const images = [
-    { src: counpon1, text: '฿40.00' },
-    { src: counpon2, text: '฿72.00' },
-    { src: counpon3, text: '฿120.00' },
-    { src: counpon4, text: '฿225.00' },
-    { src: counpon5, text: '฿375.00' },
-    { src: counpon6, text: '฿700.00' },
-    { src: counpon7, text: '฿1,050.00' },
-    { src: counpon8, text: '฿1,400.00' },
-    { src: counpon9, text: '฿2,100.00' },
+    { src: counpon1, text: '40.00' },
+    { src: counpon2, text: '72.00' },
+    { src: counpon3, text: '120.00' },
+    { src: counpon4, text: '225.00' },
+    { src: counpon5, text: '375.00' },
+    { src: counpon6, text: '700.00' },
+    { src: counpon7, text: '1,050.00' },
+    { src: counpon8, text: '1,400.00' },
+    { src: counpon9, text: '2,100.00' },
   ];
-
+  const handlePurchaseConfirmation = () => {
+    const loggedInUsername = localStorage.getItem('username');
+    
+    if (loggedInUsername !==null && totalPrice>0 && userID !== "" && userPass !== "") {
+      axios.post('http://localhost:3001/deductMoney', {
+        username: loggedInUsername,
+        amount: totalPrice 
+        
+      })
+      .then((response) => {
+        
+        Swal.fire({
+          icon: 'success',
+          title: response.data,
+          text: 'คูปองเข้าเกมแล้ว',
+        });
+        // อัพเดท UI หรือทำการดำเนินการเพิ่มเติมตามตอบรับ
+      })
+      .catch((error) => {
+        console.error(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'มีข้อผิดพลาด',
+          text: 'จำนวนเงินของคุณไม่พอกรุณาเติมเงินเพิ่ม',
+        });
+      });
+    } else {
+      if(userID == ""){
+        Swal.fire({
+          icon: 'error',
+          title: 'มีข้อผิดพลาด',
+          text: 'กรุณากรอก ID ',
+        });
+      }
+      else if(userPass ==""){
+        Swal.fire({
+          icon: 'error',
+          title: 'มีข้อผิดพลาด',
+          text: 'กรุณากรอก Password ',
+        });
+      }
+      else if(totalPrice ==""){
+        Swal.fire({
+          icon: 'error',
+          title: 'มีข้อผิดพลาด',
+          text: 'กรุณาเลือกจำนวนที่ต้องการซื้อ',
+        });
+      }
+      
+      // จัดการ UI เพื่อแจ้งให้ผู้ใช้เลือกจำนวนและเข้าสู่ระบบ
+    }
+  };
   return (
     <div className="valorantScreen">
       <video autoPlay loop muted className='video-bg'>
@@ -58,6 +113,9 @@ const Rov = () => {
               name='username'
               placeholder='กรุณากรอก ID'
               className='rovInput'
+              onChange={(event) => {
+                setuserID(event.target.value)
+              }}
             />
           </Form.Group>
         </div>
@@ -68,6 +126,9 @@ const Rov = () => {
               name='username'
               placeholder='กรุณากรอก Password'
               className='rovInput'
+              onChange={(event) => {
+                setuserPass(event.target.value)
+              }}
             />
           </Form.Group>
         </div>
@@ -83,10 +144,10 @@ const Rov = () => {
           <div
             key={index}
             className={`image-box ${index === clickedIndex ? 'clicked' : ''}`}
-            onClick={() => handleImageClick(index, image.text)}
+            onClick={() => handleImageClick(index, image.text.replace(",",""))}
           >
             <img src={image.src} alt={image.text} />
-            <p>{image.text}</p>
+            <p>฿{image.text}</p>
           </div>
         ))}
       </div>
@@ -97,8 +158,8 @@ const Rov = () => {
       </h2>
       
       <div className='checkboxValo'>
-          <p style={{ fontSize: '30px', fontWeight: 'bold', marginRight: '2rem' }}>รวมทั้งสิ้น : {totalPrice} บาท</p>
-          <Button className="button" type="button" style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginBottom: '2%', borderWidth: '0' }}>
+          <p style={{ fontSize: '30px', fontWeight: 'bold', marginRight: '2rem' }}>รวมทั้งสิ้น : ฿{totalPrice} บาท</p>
+          <Button className="button" type="button" onClick={handlePurchaseConfirmation} style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', width: '300px', height: '50px', fontSize: '20px', marginBottom: '2%', borderWidth: '0' }}>
             <FontAwesomeIcon icon={faCheckCircle} style={{ marginRight: 5 }} /> ยืนยันคำสั่งซื้อ
           </Button>
       </div>
