@@ -73,8 +73,8 @@ app.post('/create', (req, res) => {
     }
   });
 });
-//topup
-app.post('/topup', (req, res) => {
+//topuptruemoney
+app.post('/topuptruemoney', (req, res) => {
   const phoneNumber = req.body.phoneNumber;
   const amount = req.body.amount;
   const username = req.body.username; // ใช้ req.user.username สำหรับรับค่า username จาก authentication
@@ -90,6 +90,26 @@ app.post('/topup', (req, res) => {
     });
   } else {
     return res.status(400).send('โปรดใส่หมายเลขโทรศัพท์ที่ขึ้นต้นด้วย "0" และมีความยาว 10 หลัก');
+  }
+});
+
+app.post('/topupqrcode', (req, res) => {
+  const amount = req.body.amount;
+  const username = req.body.username; // ใช้ req.user.username สำหรับรับค่า username จาก authentication
+
+  // ตรวจสอบเฉพาะค่า amount และ username
+  if (amount > 0) {
+    // หาก amount มากกว่า 0
+    // ให้อัปเดตข้อมูลโดยตรง
+    db.query('UPDATE user_info SET money = money + ? WHERE username = ?', [amount, username], (err, result) => {
+      if (err) {
+        return res.status(400).send('เกิดข้อผิดพลาดในการเติมเงิน');
+      } else {
+        return res.status(200).send('เติมเงินสำเร็จ');
+      }
+    });
+  } else {
+    return res.status(400).send('กรุณาใส่จำนวนเงินที่ถูกต้อง');
   }
 });
 

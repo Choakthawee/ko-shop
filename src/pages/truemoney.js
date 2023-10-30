@@ -4,11 +4,11 @@ import Truemoney from '../images/true-money.png';
 import { Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import videoBg from '../images/Halloween.mp4';
-import { Link ,useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useState } from 'react';
-import {faSquareCheck } from '@fortawesome/free-solid-svg-icons';
+import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 
 const Truemoneypay = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -19,30 +19,30 @@ const Truemoneypay = () => {
     const loggedInUsername = localStorage.getItem('username'); // Get username from Local Storage
     if (loggedInUsername) {
       if (phoneNumber.startsWith('0') && phoneNumber.length === 10) {
-        if(amount.trim() === '' || !amount.startsWith('0')){
+        if (amount.trim() === '' || !amount.startsWith('0')) {
           axios
-          .post('http://localhost:3001/topup', {
-            username: loggedInUsername,
-            phoneNumber: phoneNumber,
-            amount: amount,
-          })
-          .then((response) => {
-            Swal.fire({
-              icon: 'success',
-              title: 'เติมเงินสำเร็จ',
-              text: 'บัตรเงินสดทรูมันนี่',
+            .post('http://localhost:3001/topuptruemoney', {
+              username: loggedInUsername,
+              phoneNumber: phoneNumber,
+              amount: amount,
+            })
+            .then((response) => {
+              Swal.fire({
+                icon: 'success',
+                title: 'เติมเงินสำเร็จ',
+                text: 'บัตรเงินสดทรูมันนี่',
+              });
+              history.push('/allitem');
+            })
+            .catch((error) => {
+              console.error(error);
+              Swal.fire({
+                icon: 'error',
+                title: 'มีข้อผิดพลาด',
+                text: 'เกิดข้อผิดพลาดในการเติมเงิน โปรดลองอีกครั้ง',
+              });
             });
-            history.push('/allitem'); 
-          })
-          .catch((error) => {
-            console.error(error);
-            Swal.fire({
-              icon: 'error',
-              title: 'มีข้อผิดพลาด',
-              text: 'เกิดข้อผิดพลาดในการเติมเงิน โปรดลองอีกครั้ง',
-            });
-          });
-        }else {
+        } else {
           Swal.fire({
             icon: 'error',
             title: 'ค่าเงินไม่ถูกต้อง',
@@ -81,9 +81,9 @@ const Truemoneypay = () => {
         <source src={videoBg} type='video/mp4' />
       </video>
       <div className='backgroundpay'>
-        <h1 className='topup' data-aos = 'fade-up' data-aos-delay = '0'>TRUEMONEY</h1>
-        <h2 className='topup2' data-aos = 'fade-up' data-aos-delay = '50'>เงินสดทรูมันนี่</h2>
-        <div className='boxtext' data-aos = 'fade-up' data-aos-delay = '100'>
+        <h1 className='topup' data-aos='fade-up' data-aos-delay='0'>TRUEMONEY</h1>
+        <h2 className='topup2' data-aos='fade-up' data-aos-delay='50'>เงินสดทรูมันนี่</h2>
+        <div className='boxtext' data-aos='fade-up' data-aos-delay='100'>
           <img src={Truemoney} alt="truemoney" className='TruemoenyImg' />
           <Form>
             <Form.Group>
@@ -92,7 +92,7 @@ const Truemoneypay = () => {
                 type='text'
                 name='เติมเงิน'
                 placeholder='กรุณากรอก เบอร์มือถือ'
-                style={{ borderRadius: '15px', borderWidth: '1px' ,textAlign:'center'}}
+                style={{ borderRadius: '15px', borderWidth: '1px', textAlign: 'center' }}
                 onChange={(event) => setPhoneNumber(event.target.value)}
               />
               <div className='Wallet'>กรอกจำนวนเงินที่ต้องการเติม</div>
@@ -100,12 +100,12 @@ const Truemoneypay = () => {
                 type='text'
                 name='เติมเงิน'
                 placeholder='กรุณากรอก จำนวนเงิน'
-                style={{ borderRadius: '15px', borderWidth: '1px' ,textAlign:'center'}}
+                style={{ borderRadius: '15px', borderWidth: '1px', textAlign: 'center' }}
                 onChange={(e) => setAmount(e.target.value)}
               />
-              
+
               <div className='setbutton'>
-                <Button className="truebutton" type="button" onClick={handleTopup} style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', height: '50px', fontSize: '20px',  borderWidth: '0' }}>
+                <Button className="truebutton" type="button" onClick={handleTopup} style={{ backgroundColor: '#06D6A0', color: 'white', borderRadius: '10px', height: '50px', fontSize: '20px', borderWidth: '0' }}>
                   <FontAwesomeIcon icon={faSquareCheck} /> ยืนยันการเติมเงิน
                 </Button>
               </div>
