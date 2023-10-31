@@ -42,22 +42,22 @@ const Navbar = () => {
         </NavLink>
         <Bars onClick={toggleMenu} />
         <NavMenu className={menuOpen ? 'active' : ''}>
-          <NavLink to='/allitem' activeStyle>
+          <NavLink to='/allitem' >
             <FontAwesomeIcon icon={faCartShopping} style={{ marginRight: 5 }} /> หมวดหมู่สินค้าทั้งหมด
           </NavLink>
-          <NavLink to='/topup' activeStyle>
+          <NavLink to='/topup' >
             <FontAwesomeIcon icon={faCirclePlus} style={{ marginRight: 5 }} /> เติมเงิน
           </NavLink>
           {loggedInUsername ? (
-            <NavLink to='/profile' activeStyle>
+            <NavLink to='/profile' >
               <FontAwesomeIcon icon={faUser} style={{ marginRight: 5 }} /> โปรไฟล์
             </NavLink>
           ) : (
             <>
-              <NavLink to='/register' activeStyle>
+              <NavLink to='/register' >
                 <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: 5 }} /> สมัครสมาชิก
               </NavLink>
-              <NavLink to='/login' activeStyle>
+              <NavLink to='/login' >
                 <FontAwesomeIcon icon={faUser} style={{ marginRight: 5 }} /> เข้าสู่ระบบ
               </NavLink>
             </>
