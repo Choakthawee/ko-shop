@@ -4,7 +4,7 @@ import Truemoney from '../images/true-money.png';
 import { Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import videoBg from '../images/Halloween.mp4';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useState } from 'react';

@@ -13,26 +13,19 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmpassword] = useState("");
-  // const [money,setMoney] = useState(0);
   const [email, setEmail] = useState("");
   const [userList, setUser] = useState([]);
 
   const history = useHistory();
 
-  // //ดึงข้อมูลผู้ใช้ทั้งหมด
-  // const getUser = () => {
-  //   axios.get('http://localhost:3001/user_info').then((response)=>{
-  //     setUser(response.data);
-  //   });
-  // }
   const navigateToProfile = () => {
     setTimeout(() => {
       history.push('/login');
-    }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
+    }, 1000); // หน่วงเวลา 1 วินาที 
   };
   const addregister = () => {
     if (!username || !password || !confirmpassword || !email) {
-      // กรอกข้อมูลไม่ครบ ใช้ SweetAlert2 เพื่อแสดงข้อความแจ้งเตือน
+    
       Swal.fire({
         icon: 'error',
         title: 'ผิดพลาด',
@@ -42,7 +35,7 @@ const Register = () => {
     }
 
     if (password.length < 8 || password.length > 20) {
-      // ตรวจสอบความยาวของรหัสผ่าน
+      
       Swal.fire({
         icon: 'error',
         title: 'ผิดพลาด',
@@ -52,7 +45,7 @@ const Register = () => {
     }
 
     if (password !== confirmpassword) {
-      // ตรวจสอบว่ารหัสผ่านและยืนยันรหัสผ่านตรงกันหรือไม่
+      
       Swal.fire({
         icon: 'error',
         title: 'ผิดพลาด',
@@ -62,7 +55,7 @@ const Register = () => {
     }
 
     if (!email.includes('@')) {
-      // ตรวจสอบว่าอีเมลมี @ หรือไม่
+      
       Swal.fire({
         icon: 'error',
         title: 'ผิดพลาด',

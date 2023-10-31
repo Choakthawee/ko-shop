@@ -41,7 +41,7 @@ const Valorant = () => {
     const navigateToProfile = () => {
       setTimeout(() => {
         history.push('/profile');
-      }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
+      }, 1000); // หน่วงเวลา 1 วินาที 
     };
     const loggedInUsername = localStorage.getItem('username');
     if (loggedInUsername) {
@@ -50,7 +50,6 @@ const Valorant = () => {
         let tagid;
         [uid, tagid] = userID.split('#');
         if ((uid.length < 3) || (tagid.length < 3)) {
-          console.log("โง่");
           Swal.fire({
             icon: 'error',
             title: 'ผิดพลาด',

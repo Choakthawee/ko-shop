@@ -1,7 +1,6 @@
 import React from 'react';
 import './qrcode.css'
 import { Form, Button } from 'react-bootstrap';
-import Qrcode from '../images/topup-qrcode.png'; // ตรงนี้คือการ import รูปภาพ
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import THcode from '../images/thai_qr_payment.png';
 import QrcodePromptpay from '../images/Qrcodepromtpay.png'
@@ -10,7 +9,7 @@ import videoBg from '../images/Halloween.mp4';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Qrcodepay = () => {
   const [amount, setAmount] = useState('');
@@ -19,7 +18,7 @@ const Qrcodepay = () => {
   const navigateToProfile = () => {
     setTimeout(() => {
       history.push('/login');
-    }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
+    }, 1000); // หน่วงเวลา 1 วินาที 
   };
   const check0 = () => {
     if(localStorage.getItem('username') == null) {
@@ -46,7 +45,7 @@ const Qrcodepay = () => {
     }
   }
   const handleTopup = () => {
-    const loggedInUsername = localStorage.getItem('username'); // Get username from Local Storage
+    const loggedInUsername = localStorage.getItem('username'); 
     
       if (loggedInUsername) {
         if (Ck) {

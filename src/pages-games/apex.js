@@ -10,7 +10,7 @@ import apexcoin3 from '../apex-coins/apexcoin2.mp4';
 import apexcoin4 from '../apex-coins/apexcoin3.mp4';
 import apexcoin5 from '../apex-coins/apexcoin4.mp4';
 import apexcoin6 from '../apex-coins/apexcoin5.mp4';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
@@ -41,7 +41,7 @@ const Apex = () => {
     const navigateToProfile = () => {
       setTimeout(() => {
         history.push('/profile');
-      }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
+      }, 1000); // หน่วงเวลา 1 วินาที 
     };
     const loggedInUsername = localStorage.getItem('username');
     if (loggedInUsername) {

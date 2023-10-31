@@ -5,9 +5,8 @@ import { Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import videoBg from '../images/Halloween.mp4';
-import axios from 'axios';
 import Swal from 'sweetalert2';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Roblox = () => {
     const [totalPrice, setTotalPrice] = useState(0);
@@ -29,7 +28,7 @@ const Roblox = () => {
         const navigateToProfile = () => {
             setTimeout(() => {
               history.push('/profile');
-            }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
+            }, 1000); // หน่วงเวลา 1 วินาที 
           };
         const loggedInUsername = localStorage.getItem('username');
 

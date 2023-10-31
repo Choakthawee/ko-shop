@@ -13,7 +13,7 @@ import counpon6 from '../rov-coupon/coupon6.mp4'
 import counpon7 from '../rov-coupon/coupon7.mp4'
 import counpon8 from '../rov-coupon/coupon8.mp4'
 import counpon9 from '../rov-coupon/coupon9.mp4'
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
@@ -49,7 +49,7 @@ const Rov = () => {
     const navigateToProfile = () => {
       setTimeout(() => {
         history.push('/profile');
-      }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
+      }, 1000); // หน่วงเวลา 1 วินาที 
     };
     const loggedInUsername = localStorage.getItem('username');
     if (loggedInUsername) {

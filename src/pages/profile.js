@@ -2,8 +2,8 @@ import videoBg from '../images/Halloween.mp4';
 import React, { useState, useEffect } from 'react';
 import './profile.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignOut, faEdit, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-import { Form, Button } from 'react-bootstrap';
+import { faSignOut,faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
@@ -15,7 +15,7 @@ const Profile = () => {
     const navigateToProfile = () => {
         setTimeout(() => {
             history.push('/login');
-        }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
+        }, 1000); // หน่วงเวลา 1 วินาที 
     };
     const handleLogout = () => {
         Swal.fire({
@@ -33,11 +33,9 @@ const Profile = () => {
         })
     };
 
-    //ดึงข้อมูลผู้ใช้ทั้งหมด
     useEffect(() => {
         axios.get(`http://localhost:3001/user_info?username=${username}`)
             .then((response) => {
-                console.log(response.data)
                 setUser(response.data);
             })
             .catch((error) => {

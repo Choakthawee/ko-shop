@@ -1,7 +1,7 @@
 import React from 'react';
 import './login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserPlus ,faDoorOpen, faSignIn, faSignInAlt} from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus , faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 import { Form, Button } from 'react-bootstrap';
 import { Link ,useHistory } from 'react-router-dom';
 import videoBg from '../images/Halloween.mp4';
@@ -17,7 +17,7 @@ const Login = () => {
   const navigateToProfile = () => {
     setTimeout(() => {
       history.push('/profile');
-    }, 1000); // หน่วงเวลา 1 วินาที (1000 มิลลิวินาที)
+    }, 1000); // หน่วงเวลา 1 วินาที 
   };
   const login = () => {
     axios.post('http://localhost:3001/login', {
