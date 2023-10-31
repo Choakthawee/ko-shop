@@ -1,6 +1,6 @@
 import React from 'react';
 import './topup.css'
-import Qrcode from '../images/topup-qrcode.png'; // ตรงนี้คือการ import รูปภาพ
+import Qrcode from '../images/topup-qrcode.png'; 
 import Truemoney from '../images/true-money.png';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import videoBg from '../images/Halloween.mp4';
