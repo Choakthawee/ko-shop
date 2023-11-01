@@ -20,6 +20,15 @@ const Login = () => {
     }, 1000); // หน่วงเวลา 1 วินาที 
   };
   const login = () => {
+    if (!username || !password ) {
+    
+      Swal.fire({
+        icon: 'error',
+        title: 'ผิดพลาด',
+        text: 'กรุณากรอกข้อมูลให้ครบถ้วน',
+      });
+      return;
+    }
     axios.post('http://localhost:3001/login', {
       username: username,
       password: password,
