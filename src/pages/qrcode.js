@@ -17,7 +17,7 @@ const Qrcodepay = () => {
 	const history = useHistory();
 	const navigateToProfile = () => {
 		setTimeout(() => {
-			history.push("/profile");
+			history.push("/Login");
 		}, 1000); // หน่วงเวลา 1 วินาที
 	};
 	const check0 = () => {
