@@ -59,12 +59,12 @@ const Profile = () => {
 					<div style={{ justifyContent: "flex-starts", marginBottom: "10px" }}>
 						<h3 className="const-div">
 							<p className="font-sizehead">ชื่อผู้ใช้งาน :</p>
-							<span className="username-font">diskarn</span>
+							<span className="username-font">{username}</span>
 						</h3>
 						<h3 className="const-div">
 							<p className="font-sizehead">ยอดเงินคงเหลือ :</p>
 							<span className="username-font">
-								0 บาท
+								{user.money} บาท
 								<Link to="/topup">
 									<FontAwesomeIcon icon={faPlusCircle} className="iconstyle" />
 								</Link>
@@ -72,7 +72,7 @@ const Profile = () => {
 						</h3>
 						<h3 className="const-email">
 							<p className="font-sizehead">อีเมลล์ :</p>
-							<span className="email-font">gamertvgentleman@gmail.com</span>
+							<span className="email-font">{user.email}</span>
 						</h3>
 					</div>
 					<Button

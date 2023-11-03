@@ -116,7 +116,10 @@ const Valorant = () => {
 				<span className="form-section__number">1</span>
 				<span className="form-section__name">กรุณากรอก RiotID</span>
 			</h2>
-			<div className="valorantContainer" data-aos="fade-up" data-aos-delay="0">
+			<div
+				className="valorantContainerText"
+				data-aos="fade-up"
+				data-aos-delay="0">
 				<div style={{ marginLeft: "2rem", marginTop: "10px" }}>
 					<Form.Group className="margin-btroblox">
 						<Form.Control
