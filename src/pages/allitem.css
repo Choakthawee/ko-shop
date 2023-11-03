@@ -4,10 +4,10 @@
 	font-weight: bold;
 	background: -webkit-linear-gradient(#d44300, #f07e2c);
 	background-clip: text;
-	-webkit-background-clip: text; /* สำหรับเบราวเซอร์ Safari */
+	-webkit-background-clip: text;
 	color: transparent;
 	-webkit-text-stroke: 1px transparent;
-	position: relative; /* เพิ่มเพื่อกำหนดพิกัดและขนาดของ pseudo-element */
+	position: relative;
 }
 
 .font-suballitem {
@@ -62,7 +62,7 @@
 		align-items: center;
 	}
 	.boxallitem {
-		margin-top: 10px; /* เพิ่มระยะห่างของกล่องเมื่อแสดงเป็นแถว */
+		margin-top: 10px;
 	}
 }
 
@@ -74,8 +74,8 @@
 }
 
 .boxallitem img {
-	max-width: 100%; /* ไม่เกินความกว้างของกล่อง */
-	max-height: 100%; /* ไม่เกินความสูงของกล่อง */
+	max-width: 100%;
+	max-height: 100%;
 }
 
 .boxallflex1 {

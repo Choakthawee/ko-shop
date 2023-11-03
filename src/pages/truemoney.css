@@ -58,6 +58,15 @@
 	min-width: 300px;
 }
 
+.div-truemoney {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
 .Wallet {
 	font-size: 18px;
 	text-align: center;

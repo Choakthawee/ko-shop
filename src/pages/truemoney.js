@@ -71,15 +71,7 @@ const Truemoneypay = () => {
 	};
 
 	return (
-		<div
-			style={{
-				display: "flex",
-				justifyContent: "center",
-				alignItems: "center",
-				height: "100vh",
-				backgroundSize: "cover",
-				backgroundRepeat: "no-repeat",
-			}}>
+		<div className="div-truemoney">
 			<video autoPlay loop muted className="video-bg">
 				<source src={videoBg} type="video/mp4" />
 			</video>
