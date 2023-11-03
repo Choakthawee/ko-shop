@@ -17,7 +17,7 @@ const Qrcodepay = () => {
   const history = useHistory();
   const navigateToProfile = () => {
     setTimeout(() => {
-      history.push('/login');
+      history.push('/profile');
     }, 1000); // หน่วงเวลา 1 วินาที 
   };
   const check0 = () => {
@@ -27,7 +27,7 @@ const Qrcodepay = () => {
         title: 'ยังไม่ได้ Login',
         text: 'กรุณาล็อคอิน',
       });
-      navigateToProfile();
+      history.push('/login');
     }
     else if (amount.trim() !== '' && !amount.startsWith('0') && amount !== null) {
       setCk(true); Swal.fire({
@@ -60,7 +60,7 @@ const Qrcodepay = () => {
               title: 'เติมเงินสำเร็จ',
               text: 'qrcode',
             });
-            history.push('/allitem');
+            navigateToProfile();
           })
           .catch((error) => {
             console.error(error);
