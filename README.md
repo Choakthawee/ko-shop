@@ -1,3 +1,4 @@
+Read Me
 ขั้นตอนการติดตั้งเว็ปเติมเกมส์
 1.ให้โหลด database ที่ชื่อว่า ko-shop แล้ว import ลงใน mysql
 2.จากนั้นโหลด xampp เพื่อในการเปิดใช้งาน apache และใช้งาน Mysql ที่มี database ที่ลงไว้
