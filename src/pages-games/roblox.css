@@ -1,225 +1,290 @@
 .robloxScreen {
-    padding: 3rem;
-    height: auto;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
+	padding: 2rem;
+	height: auto;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
 }
 
 .font-roblox {
-    margin: 20px;
-    font-size: 3rem;
-    font-weight: bold;
-    background: -webkit-linear-gradient(#00d451, #05813b);
-    background-clip: text;
-    -webkit-background-clip: text; /* สำหรับเบราวเซอร์ Safari */
-    color: transparent;
-    -webkit-text-stroke: 1px transparent;
-    position: relative; /* เพิ่มเพื่อกำหนดพิกัดและขนาดของ pseudo-element */
+	margin: 20px;
+	font-size: 3rem;
+	font-weight: bold;
+	background: -webkit-linear-gradient(#00d451, #05813b);
+	background-clip: text;
+	-webkit-background-clip: text; /* สำหรับเบราวเซอร์ Safari */
+	color: transparent;
+	-webkit-text-stroke: 1px transparent;
+	position: relative; /* เพิ่มเพื่อกำหนดพิกัดและขนาดของ pseudo-element */
 }
 
 .font-subroblox {
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    background-clip: text;
-    -webkit-background-clip: text;
-    position: relative;
-    margin-bottom: 35px;
+	font-size: 2rem;
+	font-weight: bold;
+	color: white;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	background-clip: text;
+	-webkit-background-clip: text;
+	position: relative;
+	margin-bottom: 35px;
 }
 
 .image-robux {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 40%; /* รูปภาพจะเป็น 33.33% ของความกว้างและมีระยะห่าง */
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 40%; /* รูปภาพจะเป็น 33.33% ของความกว้างและมีระยะห่าง */
 }
 
 .show-robuxnow {
-    background-color: #5E129B;
-    width: 30%;
-    height: 24%;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    display: flex;    
-    border-width: 2px;
-    border-radius: 30px;
-    flex-direction: column;
-    border: 5px solid;
-    border-color: white;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+	background-color: #5e129b;
+	width: 30%;
+	height: 24%;
+	align-items: center;
+	justify-content: center;
+	align-self: center;
+	display: flex;
+	border-width: 2px;
+	border-radius: 30px;
+	flex-direction: column;
+	border: 5px solid;
+	border-color: white;
+	overflow: hidden;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
 
-.font-robux{
-    color:rgba(255, 255, 255, 0.655);
-    margin-bottom: 10px;
+.font-robux {
+	color: rgba(255, 255, 255, 0.655);
+	margin-bottom: 10px;
 }
 
-.font-readytosend{
-    color:red;
-    margin-bottom: 10px;
+.font-readytosend {
+	color: red;
+	margin-bottom: 10px;
 }
 
-.font-robuxnow{
-    color:orange;
-    font-size: 30px;
-    margin-bottom: 10px;
-    font-weight: bold;
+.font-robuxnow {
+	color: orange;
+	font-size: 30px;
+	margin-bottom: 10px;
+	font-weight: bold;
 }
 
-.divtext-roblox{
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.divtext-roblox {
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 
 .div-input-roblox1 {
-    background-color: white;
-    height: 100%;
-    width: auto;
-    margin-right: 2rem;
-    color: black;
-    border-width: 4px;
-    border-style: solid;
-    border-radius: 10px;
-    border-color:  #5E129B;
-    padding: 1rem;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(158, 86, 220, 0.9)
+	background-color: white;
+	height: 100%;
+	width: auto;
+	margin-right: 2rem;
+	color: black;
+	border-width: 4px;
+	border-style: solid;
+	border-radius: 10px;
+	border-color: #5e129b;
+	padding: 1rem;
+	overflow: hidden;
+	box-shadow: 0 0 10px rgba(158, 86, 220, 0.9);
 }
 
 .div-input-roblox2 {
-    background-color: black;
-    height: 100%;
-    width: 45%;
-    margin-right: 2rem;
-    color: white;
-    border-width: 4px;
-    border-style: solid;
-    border-radius: 10px;
-    border-color:  #5E129B;
-    padding: 1rem;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(158, 86, 220, 0.9);
-    padding: 2rem
+	background-color: black;
+	height: 100%;
+	width: 45%;
+	margin-right: 2rem;
+	color: white;
+	border-width: 4px;
+	border-style: solid;
+	border-radius: 10px;
+	border-color: #5e129b;
+	padding: 1rem;
+	overflow: hidden;
+	box-shadow: 0 0 10px rgba(158, 86, 220, 0.9);
+	padding: 2rem;
 }
 
-.input-roblox1{
-    border-color:  #5E129B;
-    border-style: solid;
-    border-width: 4px;
-    border-radius: 15px;
-    width: 60%;
-    padding-left: 10px;
-    margin-top: 1%;
-    border-width: 2px;
-    height: 50px;
-    background-color: #fff0dd;
-    box-shadow: 0 0 10px rgba(158, 86, 220, 0.9)
+.input-roblox1 {
+	border-color: #5e129b;
+	border-style: solid;
+	border-width: 4px;
+	border-radius: 15px;
+	width: 60%;
+	padding-left: 10px;
+	margin-top: 1%;
+	border-width: 2px;
+	height: 50px;
+	background-color: #fff0dd;
+	box-shadow: 0 0 10px rgba(158, 86, 220, 0.9);
 }
 
-.input-roblox2{
-    border-color:  #5E129B;
-    border-style: solid;
-    border-width: 4px;
-    width: 100%;
-    padding-left: 10px;
-    margin-top: 1%;
-    border-width: 2px;
-    height: 50px;
-    background-color: #fff0dd;
+.input-roblox2 {
+	border-color: #5e129b;
+	border-style: solid;
+	border-radius: 0px;
+	width: 100%;
+	padding-left: 10px;
+	margin-top: 1%;
+	border-width: 2px;
+	height: 50px;
+	background-color: #fff0dd;
 }
 
-.info-textroblox{
-    color: rgb(87, 85, 85);
-    margin-bottom: 10px;
+.info-textroblox {
+	color: rgb(87, 85, 85);
+	margin-bottom: 10px;
 }
 
 .div-input-roblox1 input[type="text"]::-webkit-input-placeholder {
-    color: rgba(105, 98, 98, 0.893);
+	color: rgba(105, 98, 98, 0.893);
 }
 
-.input-robux{
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-    width: 100%
+.input-robux {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-align: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	width: 100%;
 }
 
-.input-robux-text1{
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: .8rem .75rem;
-    font-size: 1rem;
-    margin-top: 0.1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #e9ecef;
-    border: 1px solid #ced4da;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+.input-robux-text1 {
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 0.8rem 0.75rem;
+	font-size: 1rem;
+	margin-top: 0.1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #e9ecef;
+	border: 1px solid #ced4da;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
 }
 
-.input-robux-text2{
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-top: 0.1rem;
-    padding: .8rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #e9ecef;
-    border: 1px solid #ced4da;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+.input-robux-text2 {
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-top: 0.1rem;
+	padding: 0.8rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #e9ecef;
+	border: 1px solid #ced4da;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
-.robux-text-color{
-    color: #38b44a!important;
-    font-weight: bold;
+.robux-text-color {
+	color: #38b44a !important;
+	font-weight: bold;
 }
 
-.total-robux-margin{
-    margin-left: 5px;
-    margin-right: 5px;
+.robux-complete {
+	margin-bottom: 10px;
+	background-color: #fff0dd;
+	border-radius: 10px;
+	height: 20%;
+	align-items: center;
+	display: flex;
+	justify-content: center;
 }
 
-.global-margin{
-    margin-bottom:10px;
-    color: rgba(255, 255, 255, 0.584);
+.total-robux-margin {
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
-.mark-text{
-    font-weight: 700;
-    margin-bottom: 10px;
-    margin-top: 10px;
+.global-margin {
+	margin-bottom: 10px;
+	color: rgba(255, 255, 255, 0.584);
+}
+
+.mark-text {
+	font-weight: 700;
+	margin-bottom: 10px;
+	margin-top: 10px;
 }
 
 .button-roblox:hover {
-    cursor: pointer;
-    transform: translateY(-3px);
-    transition: transform 0.3s ease;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	transform: translateY(-3px);
+	transition: transform 0.3s ease;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .button-roblox {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.input-group-append {
+	margin-top: 0px;
+}
+
+.roblox-btn {
+	background-color: #06d6a0;
+	color: white;
+	border-radius: 10px;
+	width: 100%;
+	height: auto;
+	font-size: 20px;
+	margin-bottom: 2%;
+	border-width: 0;
+}
+
+.margin-btroblox {
+	margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+	.divtext-roblox {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.show-robuxnow {
+		width: 100%;
+	}
+
+	.div-input-roblox2 {
+		margin-top: 10%;
+		width: 100%;
+	}
+
+	.input-roblox2 {
+		width: 80%;
+		margin-left: -8px;
+	}
+
+	.input-group-append {
+		margin-bottom: 5%;
+		margin-left: 50px;
+	}
+
+	.robux-complete {
+		font-size: 14px;
+		height: 70px;
+	}
+
+	.input-robux-text2 {
+		border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;
+	}
 }

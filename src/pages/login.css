@@ -1,84 +1,123 @@
 .line-3 {
-    border-style: solid;
-    border-color: #000000;
-    border-width: 2px 0 0 0;
-    margin-top: 10px;
-    width: 90%;
-    height: 0px;
-    position: relative;
-    transform-origin: 0 0;
-    transform: rotate(-0.149deg) scale(1, 1);
-    margin-bottom: 20px;
+	border-style: solid;
+	border-color: #000000;
+	border-width: 2px 0 0 0;
+	margin-top: 10px;
+	width: 90%;
+	height: 0px;
+	position: relative;
+	transform-origin: 0 0;
+	transform: rotate(-0.149deg) scale(1, 1);
+	margin-bottom: 20px;
 }
 
-.fontLogin{
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    font-size: 50px;
-    color: #000000;
-    margin-left: 4rem;
+.fontLogin {
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	font-size: 50px;
+	color: #000000;
+	margin-left: 4rem;
 }
 
 .loginScreen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    padding: 5rem;
-    background-size: cover;
-    background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+	padding: 2rem;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 form {
-    font-weight: bold;
-    font-size: 24px;
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 20px;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+	font-weight: bold;
+	font-size: 24px;
+	width: 100%;
+	max-width: 500px;
+	margin-bottom: 20px;
+	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
 }
 
 form .form-group {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 form .form-control {
-    padding: 15px;
-    font-size: 18px;
-    width: 100%;
+	padding: 15px;
+	font-size: 18px;
+	width: 100%;
 }
 
 .form-row {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
+}
+
+.bg-display-login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;
+}
+
+.margin-lg {
+	margin-bottom: 10px;
+}
+
+.margin-iconlg {
+	margin-right: 5px;
 }
 
 .loginbg {
-    background-image: url('../images/bglogin.png');
-    width: 80%;
-    border-radius: 30px;
-    padding: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-    background-size: cover;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
+	background-image: url("../images/bglogin.png");
+	margin-top: 70px;
+	width: 80%;
+	border-radius: 30px;
+	padding: 40px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 .button:hover {
-    cursor: pointer;
-    transform: translateY(-10px);
-    transition: transform 0.3s ease;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	transform: translateY(-10px);
+	transition: transform 0.3s ease;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .button {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.buttonLogin {
+	background-color: rgb(191, 12, 12);
+}
+
+.form-login-label {
+	margin-left: 0rem;
 }
 
 @media screen and (max-width: 768px) {
-    .loginbg {
-        width: 100%;
-        margin: 0;
-        border-radius: 0;
-    }
+	.loginbg {
+		width: 100%;
+		margin: 0;
+		border-radius: 0;
+	}
+
+	.fontLogin {
+		margin-left: 6rem;
+		font-size: 30px;
+		font-weight: bold;
+		margin-top: 2rem;
+	}
+
+	.form-login-label {
+		margin-left: 7.5rem;
+	}
 }

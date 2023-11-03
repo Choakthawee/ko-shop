@@ -1,130 +1,179 @@
 .valorantScreen {
-    padding: 3rem;
-    height: auto;
-    padding: 5rem;
-    background-size: cover;
-    background-repeat: no-repeat;
+	padding: 2rem;
+	height: auto;
+	padding-top: 3rem;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .valorantContainer {
-    background-color: #e8eaf6;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* รูปภาพจะเรียงในแถวละ 3 */
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+	background-color: #e8eaf6;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between; /* รูปภาพจะเรียงในแถวละ 3 */
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
 .checkboxValo {
-    background-color: #e8eaf6;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    padding-right: 50px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+	background-color: #e8eaf6;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	padding-right: 50px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
-.form-section__number{
-    border: 4px solid #fff;
-    border-radius: 50%;
-    margin: -15px 0;
-    margin-left: 20px;
-    position: absolute;
-    font-family: NotoSans-Bold,sans-serif;
-    font-size: 1.25rem;
-    line-height: 36px;
-    width: 46px;
-    height: 46px;
-    text-align: center;
-    -webkit-font-smoothing: subpixel-antialiased!important;
-    -moz-osx-font-smoothing: grayscale!important;
-    background-color: rgb(234, 121, 46);
-    color: #fff;
+.form-section__number {
+	border: 4px solid #fff;
+	border-radius: 50%;
+	margin: -15px 0;
+	margin-left: 20px;
+	position: absolute;
+	font-family: NotoSans-Bold, sans-serif;
+	font-size: 1.25rem;
+	line-height: 36px;
+	width: 46px;
+	height: 46px;
+	text-align: center;
+	-webkit-font-smoothing: subpixel-antialiased !important;
+	-moz-osx-font-smoothing: grayscale !important;
+	background-color: rgb(234, 121, 46);
+	color: #fff;
 }
 
-.form-section__circle{
-    font-family: NotoSans-Bold,sans-serif;
-    font-size: 1.25rem;
-    margin: -30px 0 0;
-    display: flex;
-    justify-content: space-between;
-    background-color: #e8eaf6;
-    width: 100%;
-    border-width: 1px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+.form-section__circle {
+	font-family: NotoSans-Bold, sans-serif;
+	font-size: 1.25rem;
+	margin: -20px 0 0;
+	display: flex;
+	justify-content: space-between;
+	background-color: #e8eaf6;
+	width: 100%;
+	border-width: 1px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
 
-.form-section__name{
-    margin-top: 10px;
-    color: black;
-    margin-left: 80px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+.form-section__name {
+	font-weight: bold;
+	margin-top: 10px;
+	color: black;
+	margin-left: 80px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.form-section__instruction{
-    font-size: .6875rem;
-    font-family: NotoSans-Italic,sans-serif;
-    line-height: 15px;
-    margin: 5px 0 0;
-    color: #897493;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    margin-bottom: 5px;
-    margin-left: 2rem;
+.form-section__instruction {
+	font-size: 0.6875rem;
+	font-family: NotoSans-Italic, sans-serif;
+	line-height: 15px;
+	margin: 5px 0 0;
+	color: #897493;
+	word-break: break-word;
+	overflow-wrap: break-word;
+	margin-bottom: 5px;
+	margin-left: 2rem;
 }
 
 .image-box {
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    margin: 10px;
-    padding: 10px;
-    text-align: center;
-    transition: background-color 0.3s;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-    width: 30%; /* รูปภาพจะเป็น 33.33% ของความกว้างและมีระยะห่าง */
-    box-sizing: border-box;
+	background-color: white;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+	transition: background-color 0.3s;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 10px;
+	width: 30%; /* รูปภาพจะเป็น 33.33% ของความกว้างและมีระยะห่าง */
+	box-sizing: border-box;
 }
-  
+
 .image-box img {
-    width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
 }
-  
+
 .image-box p {
-    margin: 10px 0;
+	margin: 10px 0;
 }
-  
+
 .image-box.clicked {
-    background-color: #32de84;
-    color: white;
+	background-color: #32de84;
+	color: white;
 }
 
 .valoInput {
-    width: 30%;
-    padding-left: 10px;
-    margin-top: 1%; 
-    border-radius: 15px;
-    border-width: 2px; 
-    height: 50px;
-    border-style: solid;
-    border-color: #ec690d;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  }
+	width: 100%;
+	padding-left: 10px;
+	margin-top: 1%;
+	border-radius: 15px;
+	border-width: 2px;
+	height: 50px;
+	border-style: solid;
+	border-color: #ec690d;
+	margin-bottom: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.margin-item {
+	margin-top: 3%;
+}
+
+.price-valo {
+	font-size: 30px;
+	font-weight: bold;
+	margin-right: 2rem;
+}
+
+.button-valo {
+	background-color: #06d6a0;
+	color: white;
+	border-radius: 10px;
+	width: 300px;
+	height: 50px;
+	font-size: 20px;
+	margin-bottom: 2%;
+	border-width: 0;
+}
 
 @media (max-width: 768px) {
-    .valorantContainer {
-        flex-direction: column; /* เมื่อหน้าจอย่อลงแล้วจะเรียงแถวละ 1 */
-        align-items: center;
-    }
-  
-    .image-box {
-        width: 100%; /* เปลี่ยนเป็น 100% ในรุปแบบเล็กลง */
-    }
+	.valorantContainer {
+		flex-direction: column; /* เมื่อหน้าจอย่อลงแล้วจะเรียงแถวละ 1 */
+		align-items: center;
+		margin-top: -1px;
+	}
+
+	.image-box {
+		width: 100%; /* เปลี่ยนเป็น 100% ในรุปแบบเล็กลง */
+	}
+
+	.valoInput {
+		width: 100%;
+	}
+
+	.margin-item {
+		margin-top: 7%;
+	}
+
+	.checkboxValo {
+		margin-top: -1px;
+		display: flex;
+		align-items: center;
+		align-self: center;
+		justify-content: center;
+	}
+
+	.price-valo {
+		margin-left: 4rem;
+		margin-top: 15px;
+		font-size: 19px;
+	}
+
+	.button-valo {
+		margin-left: 3rem;
+	}
 }

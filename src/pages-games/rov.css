@@ -1,18 +1,42 @@
 .rovScreen {
-    padding: 3rem;
-    height: auto;
-    background-size: cover;
-    background-repeat: no-repeat;
+	padding: 3rem;
+	height: auto;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .rovInput {
-    width: 30%;
-    padding-left: 10px;
-    margin-top: 1%;
-    border-radius: 15px;
-    border-width: 2px;
-    height: 50px;
-    border-style: solid;
-    border-color: #20466e;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  }
+	width: 30%;
+	padding-left: 10px;
+	margin-top: 1%;
+	border-radius: 15px;
+	border-width: 2px;
+	height: 50px;
+	border-style: solid;
+	border-color: #20466e;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.rov-input2 {
+	margin-left: 2rem;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+.form-section__instructionrov {
+	font-size: 0.6875rem;
+	font-family: NotoSans-Italic, sans-serif;
+	line-height: 15px;
+	margin: 10px 0 0;
+	color: #897493;
+	word-break: break-word;
+	overflow-wrap: break-word;
+	margin-bottom: 10px;
+	margin-left: 2rem;
+}
+
+@media (max-width: 768px) {
+	.rovInput {
+		width: 100%;
+	}
+}

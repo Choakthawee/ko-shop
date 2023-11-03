@@ -1,163 +1,178 @@
 .background {
-    background:transparent;
-    width: 80%;
-    height: 80%;
+	margin-top: 100px;
+	background: transparent;
+	width: 80%;
+	height: 80%;
 }
 
 .font-topup {
-    text-align: center;
-    padding-top: 20px;
-    font-size: 72px;
-    font-weight: bold;
-    background: -webkit-linear-gradient(#ece4dd,#ea8c08,#ea610c);
-    background-clip: text;
-    -webkit-background-clip: text; /* สำหรับเบราวเซอร์ Safari */
-    color: transparent;
-    -webkit-text-stroke: 1px transparent;
+	text-align: center;
+	padding-top: 20px;
+	font-size: 72px;
+	font-weight: bold;
+	background: -webkit-linear-gradient(#ece4dd, #ea8c08, #ea610c);
+	background-clip: text;
+	-webkit-background-clip: text; /* สำหรับเบราวเซอร์ Safari */
+	color: transparent;
+	-webkit-text-stroke: 1px transparent;
 }
 .font-topup2 {
-    text-align: center;
-    font-size: 24px;
-    color: rgb(255, 255, 255);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-    font-weight: bold;
+	text-align: center;
+	font-size: 24px;
+	color: rgb(255, 255, 255);
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+	font-weight: bold;
 }
 
 .boxflex {
-    display: flex;
-    height: 80%;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	height: 80%;
+	justify-content: center;
+	align-items: center;
+}
+
+.topup-div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .box1 {
-    background-color: #f0d0a3;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 30px;
-    width: 40%;
-    height: 70%;
-    border: 5px solid;
-    border-color: rgb(255, 94, 0);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-right: 10px;
-    display: flex;
-    /* เปิดใช้ Flexbox */
-    align-items: center;
-    /* จัดตำแหน่งแนวนอนให้อยู่ตรงกลาง */
-    flex-direction: column;
+	background-color: #f0d0a3;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 30px;
+	width: 40%;
+	height: 70%;
+	border: 5px solid;
+	border-color: rgb(255, 94, 0);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+	display: flex;
+	/* เปิดใช้ Flexbox */
+	align-items: center;
+	/* จัดตำแหน่งแนวนอนให้อยู่ตรงกลาง */
+	flex-direction: column;
 }
 
 .box2 {
-    background-color: #f0d0a3;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 30px;
-    width: 40%;
-    height: 70%;
-    border: 5px solid;
-    border-color: rgb(255, 94, 0);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-right: 10px;
-    display: flex;
-    /* เปิดใช้ Flexbox */
-    align-items: center;
-    /* จัดตำแหน่งแนวนอนให้อยู่ตรงกลาง */
-    flex-direction: column;
+	background-color: #f0d0a3;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 30px;
+	width: 40%;
+	height: 70%;
+	border: 5px solid;
+	border-color: rgb(255, 94, 0);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+	display: flex;
+	/* เปิดใช้ Flexbox */
+	align-items: center;
+	/* จัดตำแหน่งแนวนอนให้อยู่ตรงกลาง */
+	flex-direction: column;
 }
 
 .Topup-Name {
-    text-align: center;
-    color: rgb(128, 128, 128);
-    font-size: 28px;
-    margin-bottom: 10px;
-    font-weight: bold;
-
+	text-align: center;
+	color: rgb(128, 128, 128);
+	font-size: 28px;
+	margin-bottom: 10px;
+	font-weight: bold;
 }
 .Topup-Name-Truemoney {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 10px;
-    font-weight: bold;
+	text-align: center;
+	font-size: 28px;
+	margin-bottom: 10px;
+	font-weight: bold;
 }
 
 .Topup-Name-Truemoney::before {
-    content: 'True';
-    color: red;
+	content: "True";
+	color: red;
 }
 
 .Topup-Name-Truemoney::after {
-    content: 'Money';
-    color: orange;
+	content: "Money";
+	color: orange;
 }
 
 .Topup-tax {
-    text-align: center;
-    color: rgb(255, 98, 0);
-    font-size: 14px;
-    font-weight: bold;
+	text-align: center;
+	color: rgb(255, 98, 0);
+	font-size: 14px;
+	font-weight: bold;
 }
 
-.Qrcode  {
-    width:70%;
-    height: 50%;
-    margin: 20px;
+.Qrcode {
+	width: 70%;
+	height: 50%;
+	margin: 20px;
 }
 
 .Truemoney {
-    width: 70%;
-    height: 50%;
-    margin: 20px;
+	width: 70%;
+	height: 50%;
+	margin: 20px;
 }
 
 .gradient-text {
-    background: linear-gradient(to right, black 50%, red 50%);
-    background-clip: text;
-    color: transparent;
+	background: linear-gradient(to right, black 50%, red 50%);
+	background-clip: text;
+	color: transparent;
 }
 
 @media (max-width: 768px) {
-    .font-topup {
-        font-size: 48px;
-        
-    }
+	.background {
+		margin-top: 20px;
+	}
 
-    .font-topup2 {
-        font-size: 16px;
-        margin-bottom: 80px;
-    }
-    .boxflex {
-        flex-direction: column; /* จัดเรียงแนวตั้งเมื่อหน้าจอเล็กลง */
-    }
-    .box1,
-    .box2 {
-        width: 100%;
-        padding-bottom: 30px;
-        /* เปลี่ยนพื้นหลัง .box1 และ .box2 เมื่อหน้าจอเล็กลง */
-    }
+	.font-topup {
+		font-size: 48px;
+	}
 
-    .Promptpay{
-        width: 140px;
-        height: 140px;
-    }
-    .Truemoney {
-        width: 250px;
-        height: 140px;
-    }
+	.font-topup2 {
+		font-size: 16px;
+		margin-bottom: 80px;
+	}
+	.boxflex {
+		flex-direction: column; /* จัดเรียงแนวตั้งเมื่อหน้าจอเล็กลง */
+	}
+	.box1,
+	.box2 {
+		width: 100%;
+		padding-bottom: 30px;
+		/* เปลี่ยนพื้นหลัง .box1 และ .box2 เมื่อหน้าจอเล็กลง */
+	}
+
+	.Promptpay {
+		width: 140px;
+		height: 140px;
+	}
+	.Truemoney {
+		width: 250px;
+		height: 140px;
+	}
 }
 
-.box1, .box2 {
-  transition: transform 0.2s, box-shadow 0.2s;
+.box1,
+.box2 {
+	transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.box1:hover, .box2:hover {
-    /* รายละเอียดเมื่อกล่องถูกเมาส์ชี้ */
-    transform: translateY(-10px) !important;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5) !important;
+.box1:hover,
+.box2:hover {
+	/* รายละเอียดเมื่อกล่องถูกเมาส์ชี้ */
+	transform: translateY(-10px) !important;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5) !important;
 }
 
-.box1,.box2 {
-  text-decoration: none;
+.box1,
+.box2 {
+	text-decoration: none;
 }

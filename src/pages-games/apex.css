@@ -1,43 +1,72 @@
 .apexScreen {
-    padding: 3rem;
-    height: 160vh;
-    background-size: cover;
-    background-repeat: no-repeat;
+	padding: 3rem;
+	height: 160vh;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .image-boxApex {
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    margin: 10px;
-    padding: 10px;
-    text-align: center;
-    transition: background-color 0.3s;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-    width: 30%;
-    box-sizing: border-box;
+	background-color: white;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+	transition: background-color 0.3s;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 10px;
+	width: 30%;
+	box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+	.image-boxApex {
+		width: 90%;
+	}
 }
 
 .image-boxApex video {
-    width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
 }
 
 .image-boxApex p {
-    margin: 10px 0;
+	margin: 10px 0;
 }
-  
+
 .image-boxApex.clicked {
-    background-color: #32de84;
-    color: white;
+	background-color: #32de84;
+	color: white;
 }
 
 .apexContainer {
-    background-color: #e8eaf6;
-    display: flex;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+	background-color: #e8eaf6;
+	display: flex;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.apexInput {
+	width: 100%;
+	padding-left: 10px;
+	margin-top: 1%;
+	border-radius: 15px;
+	border-width: 2px;
+	height: 50px;
+	border-style: solid;
+	border-color: #ec690d;
+	margin-bottom: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+	.apexInput {
+		width: 80%;
+	}
+
+	.apexContainer {
+		margin-top: -1px;
+	}
 }

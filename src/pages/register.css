@@ -1,79 +1,175 @@
 .line-3 {
-    border-style: solid;
-    border-color: #000000;
-    border-width: 2px 0 0 0;
-    margin-top: 10px;
-    width: 90%;
-    height: 0px;
-    position: relative;
-    transform-origin: 0 0;
-    transform: rotate(-0.149deg) scale(1, 1);
-    margin-bottom: 20px;
+	border-style: solid;
+	border-color: #000000;
+	border-width: 3px 0 0 0;
+	margin-top: 10px;
+	margin-left: 15px;
+	width: 90%;
+	height: 0px;
+	position: relative;
+	transform-origin: 0 0;
+	transform: rotate(-0.149deg) scale(1, 1);
+	margin-bottom: 20px;
 }
 
-.fontRegister{
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    font-size: 50px;
-    color: #000000;
-    margin-left: 5rem;
+.fontRegister {
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	font-size: 50px;
+	color: #000000;
+	margin-left: 5rem;
 }
 
 .registerScreen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    padding: 5rem;
-    background-size: cover;
-    background-repeat: no-repeat;
-}  
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+	padding: 2rem;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
 
 form {
-    font-size: 24px;
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 20px;
+	font-size: 24px;
+	width: 100%;
+	max-width: 500px;
+	margin-bottom: 20px;
 }
 
 form .form-group {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 form .form-control {
-    padding: 15px;
-    font-size: 18px;
-    width: 100%;
+	padding: 15px;
+	font-size: 18px;
+	width: 100%;
+	border-radius: 20px;
+	border-width: 1px;
 }
 
 .form-row {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 .registerbg {
-    background-image: url('../images/bglogin.png');
-    width: 80%;
-    border-radius: 30px;
-    padding: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-    background-size: cover;
+	background-image: url("../images/bglogin.png");
+	width: 80%;
+	border-radius: 30px;
+	padding: 40px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+	background-size: cover;
 }
 
 .button {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .button:hover {
-    cursor: pointer;
-    transform: translateY(-3px)!important;
-    transition: transform 0.3s ease;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	transform: translateY(-3px) !important;
+	transition: transform 0.3s ease;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.button-register {
+	background-color: #06d6a0 !important;
+	color: white;
+	width: 250px;
+	border-radius: 10px;
+	margin-right: 10%;
+	border-width: 0;
+	border-color: #06d6a0 !important;
+}
+
+.button-register:hover {
+	cursor: pointer;
+	transform: translateY(-3px) !important;
+	transition: transform 0.3s ease;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+	background-color: #06d6a0;
+}
+
+.button-back {
+	background-color: #e63946 !important;
+	color: white;
+	width: 250px;
+	height: 50px;
+	border-radius: 10px;
+	margin-left: 10%;
+	border-width: 0;
+	border-color: #e63946 !important;
+}
+
+.button-back:hover {
+	cursor: pointer;
+	transform: translateY(-3px) !important;
+	transition: transform 0.3s ease;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+	background-color: #e63946 !important;
+}
+
+.div-btnreg {
+	display: flex;
+	justify-content: center;
+	margin-top: 1%;
+}
+
+.div-formreg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.style-color {
+	color: #000000;
+}
+
+.margin-icon {
+	margin-right: 5px;
+}
+
+.margin-form {
+	margin-bottom: 10px;
 }
 
 @media screen and (max-width: 768px) {
-    .registerbg {
-        width: 100%;
-        margin: 0;
-        border-radius: 0;
-    }
+	.registerbg {
+		width: 100%;
+		margin: 0;
+		border-radius: 0;
+		padding: 20px;
+	}
+
+	.div-btnreg {
+		flex-direction: column;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.button-back {
+		margin-top: 20px;
+		height: 50px;
+		margin-left: 0px;
+	}
+
+	.button-register {
+		height: 50px;
+		margin-right: 0px;
+	}
+
+	.fontRegister {
+		margin-left: 6rem;
+		font-size: 30px;
+		font-weight: bold;
+		margin-top: 2rem;
+	}
+
+	.style-color {
+		color: white;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+	}
 }

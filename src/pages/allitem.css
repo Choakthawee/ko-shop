@@ -56,6 +56,16 @@
 	margin-top: 10px;
 }
 
+@media (max-width: 768px) {
+	.boxallflex2 {
+		flex-direction: column;
+		align-items: center;
+	}
+	.boxallitem {
+		margin-top: 10px; /* เพิ่มระยะห่างของกล่องเมื่อแสดงเป็นแถว */
+	}
+}
+
 .boxallitem:hover {
 	cursor: pointer !important;
 	transform: translateY(-5px) !important;
@@ -79,20 +89,6 @@
 .boxallflex2 {
 	display: flex;
 	justify-content: space-between;
-}
-
-.my-container {
-	display: flex;
-	flex-wrap: wrap; /* ให้กล่อง Wrap เมื่อเกิน 3 กล่อง */
-	justify-content: center;
-	align-items: center;
-	height: 70%;
-	width: auto;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	border-radius: 30px;
-	padding-bottom: 1rem;
-	padding-top: 1rem;
 }
 
 .valorant {

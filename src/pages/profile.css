@@ -1,9 +1,95 @@
 .Profile-Screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    padding: 5rem;
-    background-size: cover;
-    background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+	padding: 2rem;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.profile-div {
+	display: flex;
+	justify-content: center;
+	margin-top: 2%;
+	flex-direction: column;
+	align-items: center;
+}
+
+.buttonprofile {
+	background-color: #e63946;
+	color: white;
+	border-radius: 10px;
+	width: 300px;
+	height: 50px;
+	font-size: 20px;
+	margin-bottom: 4%;
+	border-width: 0;
+	align-self: flex-end;
+}
+
+.const-div {
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.const-email {
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.font-sizehead {
+	font-weight: bold;
+}
+
+.username-font {
+	margin-left: 7rem;
+	color: green;
+}
+
+.email-font {
+	color: green;
+}
+
+.iconstyle {
+	margin-left: 5px;
+	color: green;
+}
+
+@media (max-width: 768px) {
+	.Profile-Screen {
+		padding: 2rem;
+	}
+
+	.buttonprofile {
+		width: 250px;
+		height: 50px;
+	}
+
+	.profile-div {
+		height: 100%;
+		width: 100%;
+	}
+
+	.const-div {
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.username-font {
+		margin-left: -3rem;
+	}
+
+	.const-email {
+		flex-direction: column;
+	}
+
+	.email-font {
+		font-size: 20px;
+		font-weight: bold;
+	}
 }

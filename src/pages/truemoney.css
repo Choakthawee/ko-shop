@@ -1,145 +1,159 @@
 .backgroundpay {
-    background: transparent;
-    width: 80%;
-    height: 80%;
-    display: flex;
-    height: 80%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+	background: transparent;
+	width: 80%;
+	height: 80%;
+	display: flex;
+	height: 80%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 .topup {
-    text-align: center;
-    padding-top: 20px;
-    font-size: 72px;
-    font-weight: bold;
-    background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(135, 81, 40) 50%, rgb(255, 102, 0) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    /* สำหรับเบราวเซอร์ Safari */
-    color: transparent;
-    -webkit-text-stroke: 1px transparent;
+	text-align: center;
+	padding-top: 20px;
+	font-size: 72px;
+	font-weight: bold;
+	background: linear-gradient(
+		to bottom,
+		rgb(0, 0, 0) 0%,
+		rgb(135, 81, 40) 50%,
+		rgb(255, 102, 0) 100%
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	/* สำหรับเบราวเซอร์ Safari */
+	color: transparent;
+	-webkit-text-stroke: 1px transparent;
 }
 
 .topup2 {
-    text-align: center;
-    font-size: 24px;
-    color: rgb(255, 255, 255);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-    font-weight: bold;
+	text-align: center;
+	font-size: 24px;
+	color: rgb(255, 255, 255);
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+	font-weight: bold;
 }
 
 .boxtext {
-    margin-top: 50px;
-    background-color: white;
-    width: 80%;
-    height: 80%;
-    border-radius: 30px;
-    display: flex;
-    /* เปิดใช้ Flexbox */
-    align-items: center;
-    /* จัดตำแหน่งแนวนอนให้อยู่ตรงกลาง */
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    padding-left: 10px;
-    padding-right: 10px;
+	margin-top: 50px;
+	background-color: white;
+	width: 80%;
+	height: 80%;
+	border-radius: 30px;
+	display: flex;
+	/* เปิดใช้ Flexbox */
+	align-items: center;
+	/* จัดตำแหน่งแนวนอนให้อยู่ตรงกลาง */
+	flex-direction: column;
+	justify-content: center;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .TruemoenyImg {
-    width: 30%;
-    height: 40%;
-    min-width: 300px;
+	width: 30%;
+	height: 40%;
+	min-width: 300px;
 }
 
 .Wallet {
-    font-size: 18px;
-    text-align: center;
-    margin: 10px;
+	font-size: 18px;
+	text-align: center;
+	margin: 10px;
 }
 
 .Walletbox {
-    font-size: 18px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    border: 1px solid;
-    margin: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+	font-size: 18px;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	border: 1px solid;
+	margin: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
 }
 
 .fonttext {
-    padding: 5px;
+	padding: 5px;
 }
 
 .truebutton {
-    justify-content: center;
-    margin-top: 10px;
-    overflow: hidden;
-    width: 100%;
-    align-items: center;
-    text-align: center;
-    /* เพิ่ม overflow: hidden */
-    transition: transform 0.2s;
-    /* เพิ่มการเปลี่ยนขนาดเมื่อ hover */
+	justify-content: center;
+	margin-top: 10px;
+	overflow: hidden;
+	width: 100%;
+	align-items: center;
+	text-align: center;
+	/* เพิ่ม overflow: hidden */
+	transition: transform 0.2s;
+	/* เพิ่มการเปลี่ยนขนาดเมื่อ hover */
 }
 
 .truebutton:hover {
-    transform: scale(1.1);
-    /* เพิ่มขนาดของปุ่มเมื่อ hover */
-    /* เพิ่มขนาดของปุ่มเมื่อ hover */
+	transform: scale(1.1);
+	/* เพิ่มขนาดของปุ่มเมื่อ hover */
+	/* เพิ่มขนาดของปุ่มเมื่อ hover */
+}
+
+.btn-truemoney {
+	background-color: #06d6a0;
+	color: white;
+	border-radius: 10px;
+	height: 50px;
+	font-size: 20px;
+	border-width: 0;
 }
 
 /* ปรับขนาดเมื่อหน้าจอเล็กลง */
 @media (max-width: 768px) {
-    .truebutton {
-        width: 100%;
-    }
+	.truebutton {
+		width: 100%;
+	}
 
-    .backgroundpay,
-    .boxtext,
-    .Walletbox {
-        width: 100%;
-    }
+	.backgroundpay,
+	.boxtext,
+	.Walletbox {
+		width: 100%;
+	}
 
-    .topup {
-        font-size: 48px;
-    }
+	.topup {
+		font-size: 48px;
+	}
 
-    .topup2 {
-        font-size: 18px;
-    }
+	.topup2 {
+		font-size: 18px;
+	}
 
-    .TruemoenyImg {
-        width: 60%;
-        min-width: 200px;
-    }
+	.TruemoenyImg {
+		width: 60%;
+		min-width: 200px;
+	}
 }
 
 /* ปรับขนาดเมื่อหน้าจอเล็กลงมากกว่านี้ */
 @media (max-width: 480px) {
-    .truebutton {
-        width: 100%;
-    }
+	.truebutton {
+		width: 100%;
+	}
 
-    .backgroundpay,
-    .boxtext,
-    .Walletbox {
-        width: 100%;
-    }
+	.backgroundpay,
+	.boxtext,
+	.Walletbox {
+		width: 100%;
+	}
 
-    .topup {
-        font-size: 36px;
-    }
+	.topup {
+		font-size: 36px;
+	}
 
-    .topup2 {
-        font-size: 14px;
-    }
+	.topup2 {
+		font-size: 14px;
+	}
 
-    .TruemoenyImg {
-        width: 80%;
-        min-width: 150px;
-    }
+	.TruemoenyImg {
+		width: 80%;
+		min-width: 150px;
+	}
 }
