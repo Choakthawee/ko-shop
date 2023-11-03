@@ -63,7 +63,7 @@ const Qrcodepay = () => {
 							title: "เติมเงินสำเร็จ",
 							text: "qrcode",
 						});
-						history.push("/allitem");
+						history.push("/Profile");
 					})
 					.catch((error) => {
 						console.error(error);
