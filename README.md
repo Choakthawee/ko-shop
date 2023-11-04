@@ -36,3 +36,5 @@
 - **ใส่คำสั่งนี้ไปใน package.json ที่อยู่ในโฟล์เดอร์ server "dev":"nodemon index"**
 
 - **จากนั้นรันโค๊ดได้ปกติ**
+- 
+<h1 align="center"> Documentation : https://docs.google.com/document/d/1YC9VzTzlML4ClkvplWn6Hwz6tEIvyF9vnXnnR6YkAXs/edit </h1>
